@@ -1,0 +1,39 @@
+version: '3'
+services:
+ # Nginx server configuration   
+  web:
+    image: nginx:1.17
+    depends_on:
+      - mariadb
+      - php
+    links:
+      - mariadb
+      - php
+    volumes:
+      - ./html:/var/www/html
+      - ./nginx/sites-available:/etc/nginx/conf.d/
+    ports:
+      - "8003:80"
+ # Php-fpm configuration
+  php:
+    build:
+      context: './php'
+      dockerfile: Dockerfile
+    volumes:
+      - ./html:/var/www/html
+      - ./php/config/php.ini:/usr/local/etc/php/php.ini
+ # Mysql configuration
+  mariadb:
+    build: 
+      context: "./mariadb"
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+        - MYSQL_DATABASE=vtiger_db
+        - MYSQL_ROOT_PASSWORD=password
+        - MYSQL_USER=vtiger_user
+        - MYSQL_PASSWORD=vtiger_user@123
+    ports:
+        - "3310:3306"
+    volumes:
+        - "./dbdata:/var/lib/mysql"
