@@ -1,4 +1,4 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2022-11-07 12:59:42
+<?php /* Smarty version Smarty-3.1.7, created on 2022-11-07 13:31:01
          compiled from "/var/www/html/includes/runtime/../../layouts/v7/modules/Install/Step4.tpl" */ ?>
 <?php /*%%SmartyHeaderCode:304012726369013ee12de2-13210873%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
@@ -7,7 +7,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '0ac8f8e4c827bd140ce005cab26742ee54a0074b' => 
     array (
       0 => '/var/www/html/includes/runtime/../../layouts/v7/modules/Install/Step4.tpl',
-      1 => 1667825683,
+      1 => 1667827586,
       2 => 'file',
     ),
   ),
@@ -15,6 +15,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.7',
+  'unifunc' => 'content_6369013ee4a90',
   'variables' => 
   array (
     'DB_HOSTNAME' => 0,
@@ -32,8 +34,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'TIMEZONE' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_6369013ee4a90',
 ),false); /*/%%SmartyHeaderCode%%*/?>
 <?php if ($_valid && !is_callable('content_6369013ee4a90')) {function content_6369013ee4a90($_smarty_tpl) {?>
 
