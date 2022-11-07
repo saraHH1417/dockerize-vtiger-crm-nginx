@@ -1,0 +1,15 @@
+version: '3'
+services:
+ # Php-fpm configuration
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .././app/html:/var/www/html
+      - ./config/php.ini:/usr/local/etc/php/php.ini
+
+networks: 
+  default: 
+    external: 
+      name: vtiger_network
