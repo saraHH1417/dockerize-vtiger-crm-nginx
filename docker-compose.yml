@@ -1,3 +1,4 @@
+# This is local edition that has multiple  services together
 version: '3'
 services:
  # Nginx server configuration   
@@ -10,22 +11,22 @@ services:
       - mariadb
       - php
     volumes:
-      - ./html:/var/www/html
+      - ./app/html:/var/www/html
       - ./nginx/sites-available:/etc/nginx/conf.d/
     ports:
-      - "8003:80"
+      - "8009:80"
  # Php-fpm configuration
   php:
     build:
       context: './php'
       dockerfile: Dockerfile
     volumes:
-      - ./html:/var/www/html
+      - ./app/html:/var/www/html
       - ./php/config/php.ini:/usr/local/etc/php/php.ini
  # Mysql configuration
   mariadb:
     build: 
-      context: "./mariadb"
+      context: "./database"
       dockerfile: Dockerfile
     restart: always
     environment:
@@ -34,6 +35,6 @@ services:
         - MYSQL_USER=vtiger_user
         - MYSQL_PASSWORD=vtiger_user@123
     ports:
-        - "3310:3306"
+        - "3318:3306"
     volumes:
-        - "./dbdata:/var/lib/mysql"
+        - "./database/dbdata:/var/lib/mysql"
