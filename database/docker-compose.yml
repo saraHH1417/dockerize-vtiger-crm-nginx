@@ -12,11 +12,12 @@ services:
         - MYSQL_USER=vtiger_user
         - MYSQL_PASSWORD=vtiger_user@123
     ports:
-        - "3310:3306"
+        - "3320:3306"
     volumes:
-        - "./dbdata:/var/lib/mysql"
+        - "./dbdata:/var/lib/mysql" 
+    networks:
+      - database_vtiger
 
-networks: 
-  default: 
-    external: 
-      name: vtiger_network
+networks:
+  database_vtiger:
+    name: database_vtiger

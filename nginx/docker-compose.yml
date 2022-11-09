@@ -8,8 +8,12 @@ services:
       - ./sites-available:/etc/nginx/conf.d/
     ports:
       - "8003:80"
+    networks:
+      - nginx_vtiger
+      - php_vtiger
 
-networks: 
-  default: 
-    external: 
-      name: vtiger_network
+networks:
+  nginx_vtiger:
+    name: nginx_vtiger
+  php_vtiger:
+    name: php_vtiger

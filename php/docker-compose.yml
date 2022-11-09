@@ -8,8 +8,12 @@ services:
     volumes:
       - .././app/html:/var/www/html
       - ./config/php.ini:/usr/local/etc/php/php.ini
+    networks:
+      - database_vtiger
+      - php_vtiger
 
-networks: 
-  default: 
-    external: 
-      name: vtiger_network
+networks:
+  database_vtiger:
+    name: database_vtiger
+  php_vtiger:
+    name: php_vtiger
