@@ -9,11 +9,8 @@ services:
     ports:
       - "8003:80"
     networks:
-      - nginx_vtiger
-      - php_vtiger
-
+      - nginx
+      
 networks:
-  nginx_vtiger:
-    name: nginx_vtiger
-  php_vtiger:
-    name: php_vtiger
+  nginx:
+    name: nginx

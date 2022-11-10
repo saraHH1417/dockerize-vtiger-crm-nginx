@@ -9,11 +9,14 @@ services:
       - .././app/html:/var/www/html
       - ./config/php.ini:/usr/local/etc/php/php.ini
     networks:
-      - database_vtiger
-      - php_vtiger
+      - database
+      - php
+      - nginx
 
 networks:
-  database_vtiger:
-    name: database_vtiger
-  php_vtiger:
-    name: php_vtiger
+  database:
+    name: database
+  php:
+    name: php
+  nginx:
+    name: nginx
