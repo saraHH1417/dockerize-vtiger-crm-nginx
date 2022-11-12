@@ -3,6 +3,9 @@ services:
  # Nginx server configuration   
   web:
     image: nginx:1.23.2-alpine
+    # build: 
+    #   context: .
+    #   dockerfile: Dockerfile
     volumes:
       - .././app/html:/var/www/html
       - ./sites-available:/etc/nginx/conf.d/

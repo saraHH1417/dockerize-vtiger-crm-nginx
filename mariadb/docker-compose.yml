@@ -1,0 +1,23 @@
+version: '3'
+services:
+ # Mysql configuration
+  mariadb:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+        - MYSQL_DATABASE=vtiger_db
+        - MYSQL_ROOT_PASSWORD=password
+        - MYSQL_USER=vtiger_user
+        - MYSQL_PASSWORD=vtiger_user@123
+    ports:
+        - "3320:3306"
+    volumes:
+        - "./dbdata:/var/lib/mysql" 
+    networks:
+      - mariadb
+
+networks:
+  mariadb:
+    name: mariadb

@@ -1,0 +1,18 @@
+version: '3'
+services:
+  php1:
+    extends:
+      file: ".././common_php/docker-compose.yml"
+      service: php
+    networks:
+      - php
+      - nginx
+      - mariadb
+
+networks:
+  php:
+    name: php
+  nginx:
+    name: nginx
+  mariadb:
+    name: mariadb   

@@ -1,22 +1,30 @@
-version: '3'
+version: "3"
+ 
 services:
- # Php-fpm configuration
-  php:
+  php1:
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - .././app/html:/var/www/html
-      - ./config/php.ini:/usr/local/etc/php/php.ini
+      - ".././app/html:/var/www/html"
+      - "./config/php.ini:/usr/local/etc/php/php.ini"
     networks:
-      - database
+      - mariadb
       - php
       - nginx
+      
+  php2:
+    extends:
+      service: php1
+
+  php3:
+    extends:
+      service: php1
 
 networks:
-  database:
-    name: database
   php:
     name: php
   nginx:
     name: nginx
+  mariadb:
+    name: mariadb  
