@@ -26,7 +26,7 @@ services:
  # Mysql configuration
   mariadb:
     build: 
-      context: "./database"
+      context: "./mariadb"
       dockerfile: Dockerfile
     restart: always
     environment:

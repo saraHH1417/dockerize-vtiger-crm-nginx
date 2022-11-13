@@ -1,25 +1,25 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2022-11-07 14:34:59
+<?php /* Smarty version Smarty-3.1.7, created on 2022-11-13 11:41:22
          compiled from "/var/www/html/includes/runtime/../../layouts/v7/modules/Install/Step2.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:3648987863691793178bc3-60552848%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:10288524876370d7e2880722-24207177%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '8efb401c7b0e8cc6a4bb8bd5b0b638f4f3605801' => 
     array (
       0 => '/var/www/html/includes/runtime/../../layouts/v7/modules/Install/Step2.tpl',
-      1 => 1667830458,
+      1 => 1668339521,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3648987863691793178bc3-60552848',
+  'nocache_hash' => '10288524876370d7e2880722-24207177',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_6369179319a14',
+  'unifunc' => 'content_6370d7e28a184',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_6369179319a14')) {function content_6369179319a14($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_6370d7e28a184')) {function content_6370d7e28a184($_smarty_tpl) {?>
 
 <div class="row main-container">
 	<div class="inner-container">
