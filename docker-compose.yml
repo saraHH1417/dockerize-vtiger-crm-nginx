@@ -37,4 +37,4 @@ services:
     ports:
         - "3318:3306"
     volumes:
-        - "./database/dbdata:/var/lib/mysql"
+        - "./mariadb/dbdata:/var/lib/mysql"

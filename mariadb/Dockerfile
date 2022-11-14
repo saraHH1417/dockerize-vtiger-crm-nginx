@@ -1,4 +1,4 @@
-FROM mariadb:latest
+FROM mariadb:10.9.3
 
 
 RUN rm -rf /etc/my.cnf

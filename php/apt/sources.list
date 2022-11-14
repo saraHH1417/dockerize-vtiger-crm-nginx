@@ -1,0 +1,9 @@
+
+#deb http://MIRROR/DIST/ VERSION [COMPONENT1] ...
+
+deb http://a.docker-registry.ir/debian/ buster main contrib non-free
+deb-src http://a.docker-registry.ir/debian/ buster main contrib non-free
+deb http://a.docker-registry.ir/debian/ buster-updates main contrib non-free
+deb-src http://a.docker-registry.ir/debian/ buster-updates main contrib non-free
+deb http://a.docker-registry.ir/debian-security/ buster/updates main contrib non-free
+deb-src http://a.docker-registry.ir/debian-security/ buster/updates main contrib non-free
