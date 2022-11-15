@@ -9,14 +9,14 @@ services:
       - .././app/html:/var/www/html
       - ./config/php.ini:/usr/local/etc/php/php.ini
     networks:
-      - mariadb
-      - php
-      - nginx
+      - mariadbb
+      - phpp
+      - nginxx
 
 networks:
-  mariadb:
-    name: mariadb
-  php:
-    name: php
-  nginx:
-    name: nginx
+  mariadbb:
+    name: mariadbb
+  phpp:
+    name: phpp
+  nginxx:
+    name: nginxx

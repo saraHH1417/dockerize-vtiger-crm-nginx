@@ -12,12 +12,16 @@ services:
         - MYSQL_USER=vtiger_user
         - MYSQL_PASSWORD=vtiger_user@123
     ports:
-        - "3322:3306"
+        - "3324:3306"
     volumes:
-        - "./dbdata:/var/lib/mysql" 
+        - "vtigerMariadb:/var/lib/mysql" 
     networks:
-      - mariadb
+      - mariadbb
 
+volumes:
+  vtigerMariadb:
 networks:
-  mariadb:
-    name: mariadb
+  mariadbb:
+    name: mariadbb
+
+  

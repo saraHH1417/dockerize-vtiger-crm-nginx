@@ -9,10 +9,10 @@ services:
       - .././app/html:/var/www/html
       - ./sites-available/site.conf:/etc/nginx/sites-available/site.conf
     ports:
-      - "8003:80"
+      - "8015:80"
     networks:
-      - nginx
+      - nginxx
       
 networks:
-  nginx:
-    name: nginx
+  nginxx:
+    name: nginxx
