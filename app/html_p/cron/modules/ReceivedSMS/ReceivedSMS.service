@@ -1,0 +1,39 @@
+<?php
+/* ********************************************************************************
+ * The content of this file is subject to the VTFarsi.ir Modules License("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTFarsi.ir
+ * Portions created by VTFarsi.ir. are Copyright(C) VTFarsi Team
+ * All Rights Reserved.
+ * ****************************************************************************** */
+include_once 'include/Zend/Json.php';
+include_once 'vtlib/Vtiger/Module.php';
+include_once 'include/utils/VtlibUtils.php';
+include_once 'include/QueryGenerator/QueryGenerator.php';
+include_once 'modules/Users/Users.php';
+include_once 'includes/main/WebUI.php';
+include_once('data/Tracker.php');
+include_once('include/utils/utils.php');
+include_once 'include/Webservices/Create.php';
+include_once 'include/Webservices/Query.php';
+include_once 'includes/runtime/LanguageHandler.php';
+require_once('include/logging.php');
+define('ReceivedSMSWebService', true);
+error_reporting(0);
+@set_time_limit(0);
+@ini_set('max_execution_time', 0);
+$adb         = PearDatabase::getInstance();
+$moduleName  = "ReceivedSMS";
+$moduleModel = Vtiger_Module_Model::getInstance($moduleName);
+if ($moduleModel->isActive()) {
+    $service    = new ReceivedSMS_WebService_Model;
+    $serverlist = $service->listConfiguredServers();
+    if (count($serverlist) > 0) {
+        foreach ($serverlist as $key => $value) {
+            $SMSENTRIES = $service->fireReceivedSMS($key);
+                foreach ($SMSENTRIES as $SMSENTRY) {
+                      include('modules/ReceivedSMS/lib/query.php');
+                }
+        }
+    }
+}

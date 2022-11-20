@@ -1,0 +1,53 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_twostep_login</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_twostep_login` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL,
+  `unique_id` tinytext NOT NULL,
+  `code` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_twostep_settings</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_twostep_settings` (
+  `id` tinyint(4) NOT NULL AUTO_INCREMENT,
+  `status` varchar(3) NOT NULL DEFAULT '0',
+  `force` varchar(3) NOT NULL DEFAULT '0',
+  `authenticator` varchar(3) NOT NULL DEFAULT '0',
+  `sms` varchar(3) NOT NULL DEFAULT '0',
+  `email` varchar(3) NOT NULL DEFAULT '0',
+  `bcodes` varchar(3) NOT NULL DEFAULT '0',
+  `code_length` varchar(3) NOT NULL DEFAULT '7',
+  `bcode_length` varchar(3) NOT NULL DEFAULT '6',
+  `nums` varchar(3) NOT NULL DEFAULT '10',
+  `days` varchar(3) NOT NULL DEFAULT '30',
+  `titlename` tinytext NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_twostep_users</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_twostep_users` (
+  `userid` int(11) NOT NULL,
+  `unique_id` varchar(20) NOT NULL,
+  `backup_codes` text,
+  `used_codes` text,
+  `secret` varchar(255) DEFAULT NULL,
+  `device` varchar(255) DEFAULT NULL,
+  `bcode_date` datetime DEFAULT NULL,
+  `auth_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`userid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+	</tables>
+</schema>

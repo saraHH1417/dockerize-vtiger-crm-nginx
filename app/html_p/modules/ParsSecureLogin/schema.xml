@@ -1,0 +1,48 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_parssecurelogin</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_parssecurelogin` (
+  `active` tinyint(1) DEFAULT '1',
+  `attempsnumber` int(11) NOT NULL COMMENT 'Number of attempts',
+  `timelock` int(11) DEFAULT NULL COMMENT 'Time lock',
+  `allow_ips` text,
+  `blocked_ip` text,
+  `weekdays` varchar(255) DEFAULT NULL,
+  `login_disable` int(5) DEFAULT '0',
+  `working_disable` int(5) DEFAULT '0',
+  `time_starts` varchar(25) DEFAULT NULL,
+  `time_ends` varchar(25) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parssecurelogin_users</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_parssecurelogin_users` (
+  `id` int(19) NOT NULL,
+  KEY `fk_1_vtiger_bruteforce_users` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parssecurelogin_logs</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_parssecurelogin_logs` (
+  `login_id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `user_ip` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `login_time` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `status` varchar(25) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `os` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `browser` varchar(50) CHARACTER SET utf8 DEFAULT NULL,
+  `unblock` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`login_id`),
+  KEY `user_name` (`user_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
+            ]]></sql>
+		</table>
+	</tables>
+</schema>

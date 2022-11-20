@@ -1,0 +1,325 @@
+.gwd-page-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gwd-page-content {
+  background-color: transparent;
+  -webkit-transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  -moz-transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  transform: perspective(1400px) matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  position: absolute;
+}
+
+.gwd-page-wrapper {
+  position: relative;
+  -webkit-transform: translateZ(0px);
+  -moz-transform: translateZ(0px);
+  transform: translateZ(0px);
+}
+
+.gwd-page-size {
+  width: 870px;
+  height: 230px;
+}
+
+.gwd-img-h02u {
+  position: absolute;
+  width: 115px;
+  height: 154px;
+  left: 383px;
+  top: 33px;
+}
+
+.gwd-img-7v3u {
+  position: absolute;
+  width: 73px;
+  height: 64px;
+  left: 574.5px;
+  top: 19px;
+}
+
+.gwd-img-9335 {
+  position: absolute;
+  top: 122.49999999999932px;
+  left: 626px;
+  width: 58px;
+  height: 58px;
+}
+
+.gwd-img-yxyv {
+  position: absolute;
+  width: 60px;
+  height: 53px;
+  left: 526px;
+  top: 114px;
+}
+
+.gwd-img-z6r4 {
+  width: 73px;
+  height: 64px;
+  left: 726px;
+  top: 112px;
+}
+
+.gwd-img-dup8 {
+  top: 30.499999999999993px;
+  left: 686px;
+  width: 60px;
+  height: 53px;
+}
+
+.gwd-img-qtqz {
+  position: absolute;
+  top: 2px;
+  left: 1.5000000000020464px;
+  width: 72px;
+  height: 91px;
+  opacity: 0;
+}
+
+.gwd-img-bek9 {
+  position: absolute;
+  top: 1.4999999999999716px;
+  left: 1px;
+  width: 72px;
+  height: 95px;
+  opacity: 0;
+}
+
+.gwd-img-o5f0 {
+  position: absolute;
+  top: 61px;
+  left: 307px;
+  width: 94px;
+  height: 86px;
+  opacity: 1;
+}
+
+.gwd-img-1nd9 {
+  position: absolute;
+  top: 141.50000000000097px;
+  left: 1px;
+  width: 84px;
+  height: 88px;
+  opacity: 0;
+}
+
+.gwd-gen-sp71 .gwd-gen-x707gwdanimation {
+  -webkit-animation: gwd-gen-x707gwdanimation_gwd-keyframes 4s linear 0s infinite forwards;
+  -moz-animation: gwd-gen-x707gwdanimation_gwd-keyframes 4s linear 0s infinite forwards;
+  animation: gwd-gen-x707gwdanimation_gwd-keyframes 4s linear 0s infinite forwards;
+}
+
+.gwd-gen-sp71 .gwd-gen-ajdxgwdanimation {
+  -webkit-animation: gwd-gen-ajdxgwdanimation_gwd-keyframes 3.5s linear 0s infinite forwards;
+  -moz-animation: gwd-gen-ajdxgwdanimation_gwd-keyframes 3.5s linear 0s infinite forwards;
+  animation: gwd-gen-ajdxgwdanimation_gwd-keyframes 3.5s linear 0s infinite forwards;
+}
+
+.gwd-gen-sp71 .gwd-gen-x092gwdanimation {
+  -webkit-animation: gwd-gen-x092gwdanimation_gwd-keyframes 2.89375s linear 0.00625s infinite forwards;
+  -moz-animation: gwd-gen-x092gwdanimation_gwd-keyframes 2.89375s linear 0.00625s infinite forwards;
+  animation: gwd-gen-x092gwdanimation_gwd-keyframes 2.89375s linear 0.00625s infinite forwards;
+}
+
+.gwd-gen-sp71 .gwd-gen-jzcagwdanimation {
+  -webkit-animation: gwd-gen-jzcagwdanimation_gwd-keyframes 3s linear 0s infinite forwards;
+  -moz-animation: gwd-gen-jzcagwdanimation_gwd-keyframes 3s linear 0s infinite forwards;
+  animation: gwd-gen-jzcagwdanimation_gwd-keyframes 3s linear 0s infinite forwards;
+}
+
+.gwd-gen-sp71 .gwd-gen-bjg3gwdanimation {
+  -webkit-animation: gwd-gen-bjg3gwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+  -moz-animation: gwd-gen-bjg3gwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+  animation: gwd-gen-bjg3gwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+}
+
+.gwd-img-0x92 {
+  top: 127px;
+  left: 527px;
+  width: 60px;
+  height: 53px;
+}
+
+.gwd-gen-sp71 .gwd-gen-fet8gwdanimation {
+  -webkit-animation: gwd-gen-fet8gwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+  -moz-animation: gwd-gen-fet8gwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+  animation: gwd-gen-fet8gwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+}
+
+.gwd-img-2gpr {
+  top: 6px;
+  left: 551.4999999999999px;
+  width: 73px;
+  height: 64px;
+}
+
+.gwd-gen-sp71 .gwd-gen-uu9ugwdanimation {
+  -webkit-animation: gwd-gen-uu9ugwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+  -moz-animation: gwd-gen-uu9ugwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+  animation: gwd-gen-uu9ugwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+}
+
+.gwd-gen-sp71 .gwd-gen-c6hsgwdanimation {
+  -webkit-animation: gwd-gen-c6hsgwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+  -moz-animation: gwd-gen-c6hsgwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+  animation: gwd-gen-c6hsgwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+}
+.gwd-gen-sp71 .gwd-gen-k1bxgwdanimation {
+  -webkit-animation: gwd-gen-k1bxgwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+  -moz-animation: gwd-gen-k1bxgwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+  animation: gwd-gen-k1bxgwdanimation_gwd-keyframes 3.2s linear 0s infinite forwards;
+}
+
+@-webkit-keyframes gwd-gen-k1bxgwdanimation_gwd-keyframes {
+  0% { top: 17px; left: 557px; width: 73px; height: 64px; -webkit-animation-timing-function: linear; }
+  56.25% { top: 6px; left: 551.4999999999999px; width: 73px; height: 64px; -webkit-animation-timing-function: linear; }
+  100% { top: 17px; left: 557px; width: 73px; height: 64px; -webkit-animation-timing-function: linear; }
+}
+@-moz-keyframes gwd-gen-k1bxgwdanimation_gwd-keyframes {
+  0% { top: 17px; left: 557px; width: 73px; height: 64px; -moz-animation-timing-function: linear; }
+  56.25% { top: 6px; left: 551.4999999999999px; width: 73px; height: 64px; -moz-animation-timing-function: linear; }
+  100% { top: 17px; left: 557px; width: 73px; height: 64px; -moz-animation-timing-function: linear; }
+}
+@keyframes gwd-gen-k1bxgwdanimation_gwd-keyframes {
+  0% { top: 17px; left: 557px; width: 73px; height: 64px; animation-timing-function: linear; }
+  56.25% { top: 6px; left: 551.4999999999999px; width: 73px; height: 64px; animation-timing-function: linear; }
+  100% { top: 17px; left: 557px; width: 73px; height: 64px; animation-timing-function: linear; }
+}
+@-webkit-keyframes gwd-gen-fet8gwdanimation_gwd-keyframes {
+  0% { top: 131.49999999999994px; left: 621px; width: 58px; height: 58px; -webkit-animation-timing-function: linear; }
+  56.25% { top: 122.49999999999932px; left: 626px; width: 58px; height: 58px; -webkit-animation-timing-function: linear; }
+  100% { top: 131px; left: 621px; width: 58px; height: 58px; -webkit-animation-timing-function: linear; }
+}
+@-moz-keyframes gwd-gen-fet8gwdanimation_gwd-keyframes {
+  0% { top: 131.49999999999994px; left: 621px; width: 58px; height: 58px; -moz-animation-timing-function: linear; }
+  56.25% { top: 122.49999999999932px; left: 626px; width: 58px; height: 58px; -moz-animation-timing-function: linear; }
+  100% { top: 131px; left: 621px; width: 58px; height: 58px; -moz-animation-timing-function: linear; }
+}
+@keyframes gwd-gen-fet8gwdanimation_gwd-keyframes {
+  0% { top: 131.49999999999994px; left: 621px; width: 58px; height: 58px; animation-timing-function: linear; }
+  56.25% { top: 122.49999999999932px; left: 626px; width: 58px; height: 58px; animation-timing-function: linear; }
+  100% { top: 131px; left: 621px; width: 58px; height: 58px; animation-timing-function: linear; }
+}
+@-webkit-keyframes gwd-gen-uu9ugwdanimation_gwd-keyframes {
+  0% { top: 42px; left: 666px; width: 60px; height: 53px; -webkit-animation-timing-function: linear; }
+  56.25% { top: 30.499999999999993px; left: 686px; width: 60px; height: 53px; -webkit-animation-timing-function: linear; }
+  100% { top: 42px; left: 666px; width: 60px; height: 53px; -webkit-animation-timing-function: linear; }
+}
+@-moz-keyframes gwd-gen-uu9ugwdanimation_gwd-keyframes {
+  0% { top: 42px; left: 666px; width: 60px; height: 53px; -moz-animation-timing-function: linear; }
+  56.25% { top: 30.499999999999993px; left: 686px; width: 60px; height: 53px; -moz-animation-timing-function: linear; }
+  100% { top: 42px; left: 666px; width: 60px; height: 53px; -moz-animation-timing-function: linear; }
+}
+@keyframes gwd-gen-uu9ugwdanimation_gwd-keyframes {
+  0% { top: 42px; left: 666px; width: 60px; height: 53px; animation-timing-function: linear; }
+  56.25% { top: 30.499999999999993px; left: 686px; width: 60px; height: 53px; animation-timing-function: linear; }
+  100% { top: 42px; left: 666px; width: 60px; height: 53px; animation-timing-function: linear; }
+}
+@-webkit-keyframes gwd-gen-ajdxgwdanimation_gwd-keyframes {
+  0% { top: 1.4999999999999716px; left: 1px; width: 72px; height: 95px; opacity: 0; -webkit-animation-timing-function: linear; }
+  68.5714% { top: 57px; left: 318px; width: 72px; height: 95px; opacity: 1; -webkit-animation-timing-function: linear; }
+  100% { top: 85.49999999999949px; left: 2px; width: 72px; height: 95px; opacity: 0; -webkit-animation-timing-function: linear; }
+}
+@-moz-keyframes gwd-gen-ajdxgwdanimation_gwd-keyframes {
+  0% { top: 1.4999999999999716px; left: 1px; width: 72px; height: 95px; opacity: 0; -moz-animation-timing-function: linear; }
+  68.5714% { top: 57px; left: 318px; width: 72px; height: 95px; opacity: 1; -moz-animation-timing-function: linear; }
+  100% { top: 85.49999999999949px; left: 2px; width: 72px; height: 95px; opacity: 0; -moz-animation-timing-function: linear; }
+}
+@keyframes gwd-gen-ajdxgwdanimation_gwd-keyframes {
+  0% { top: 1.4999999999999716px; left: 1px; width: 72px; height: 95px; opacity: 0; animation-timing-function: linear; }
+  68.5714% { top: 57px; left: 318px; width: 72px; height: 95px; opacity: 1; animation-timing-function: linear; }
+  100% { top: 85.49999999999949px; left: 2px; width: 72px; height: 95px; opacity: 0; animation-timing-function: linear; }
+}
+@-webkit-keyframes gwd-gen-x092gwdanimation_gwd-keyframes {
+  0% { top: 141.50000000000097px; left: 1px; width: 84px; height: 88px; opacity: 0; -webkit-animation-timing-function: linear; }
+  65.4428% { top: 61.49999999999872px; left: 316px; width: 84px; height: 88px; opacity: 1; -webkit-animation-timing-function: linear; }
+  100% { top: 141.49999999999955px; left: 1px; width: 84px; height: 88px; opacity: 0; -webkit-animation-timing-function: linear; }
+}
+@-moz-keyframes gwd-gen-x092gwdanimation_gwd-keyframes {
+  0% { top: 141.50000000000097px; left: 1px; width: 84px; height: 88px; opacity: 0; -moz-animation-timing-function: linear; }
+  65.4428% { top: 61.49999999999872px; left: 316px; width: 84px; height: 88px; opacity: 1; -moz-animation-timing-function: linear; }
+  100% { top: 141.49999999999955px; left: 1px; width: 84px; height: 88px; opacity: 0; -moz-animation-timing-function: linear; }
+}
+@keyframes gwd-gen-x092gwdanimation_gwd-keyframes {
+  0% { top: 141.50000000000097px; left: 1px; width: 84px; height: 88px; opacity: 0; animation-timing-function: linear; }
+  65.4428% { top: 61.49999999999872px; left: 316px; width: 84px; height: 88px; opacity: 1; animation-timing-function: linear; }
+  100% { top: 141.49999999999955px; left: 1px; width: 84px; height: 88px; opacity: 0; animation-timing-function: linear; }
+}
+@-webkit-keyframes gwd-gen-x707gwdanimation_gwd-keyframes {
+  0% { top: 2px; left: 1.5000000000020464px; width: 72px; height: 91px; opacity: 0; -webkit-animation-timing-function: linear; }
+  65% { top: 39.5px; left: 307.50000000000193px; width: 72px; height: 91px; opacity: 1; -webkit-animation-timing-function: linear; }
+  100% { top: 40.5px; left: 0.5px; width: 72px; height: 91px; opacity: 0; -webkit-animation-timing-function: linear; }
+}
+@-moz-keyframes gwd-gen-x707gwdanimation_gwd-keyframes {
+  0% { top: 2px; left: 1.5000000000020464px; width: 72px; height: 91px; opacity: 0; -moz-animation-timing-function: linear; }
+  65% { top: 39.5px; left: 307.50000000000193px; width: 72px; height: 91px; opacity: 1; -moz-animation-timing-function: linear; }
+  100% { top: 40.5px; left: 0.5px; width: 72px; height: 91px; opacity: 0; -moz-animation-timing-function: linear; }
+}
+@keyframes gwd-gen-x707gwdanimation_gwd-keyframes {
+  0% { top: 2px; left: 1.5000000000020464px; width: 72px; height: 91px; opacity: 0; animation-timing-function: linear; }
+  65% { top: 39.5px; left: 307.50000000000193px; width: 72px; height: 91px; opacity: 1; animation-timing-function: linear; }
+  100% { top: 40.5px; left: 0.5px; width: 72px; height: 91px; opacity: 0; animation-timing-function: linear; }
+}
+@-webkit-keyframes gwd-gen-jzcagwdanimation_gwd-keyframes {
+  0% { top: 98.49999999999916px; left: 3px; width: 94px; height: 86px; opacity: 0; -webkit-animation-timing-function: linear; }
+  40% { top: 61px; left: 307px; width: 94px; height: 86px; opacity: 1; -webkit-animation-timing-function: linear; }
+  100% { top: -0.5px; left: 2px; width: 94px; height: 86px; opacity: 0; -webkit-animation-timing-function: linear; }
+}
+@-moz-keyframes gwd-gen-jzcagwdanimation_gwd-keyframes {
+  0% { top: 98.49999999999916px; left: 3px; width: 94px; height: 86px; opacity: 0; -moz-animation-timing-function: linear; }
+  40% { top: 61px; left: 307px; width: 94px; height: 86px; opacity: 1; -moz-animation-timing-function: linear; }
+  100% { top: -0.5px; left: 2px; width: 94px; height: 86px; opacity: 0; -moz-animation-timing-function: linear; }
+}
+@keyframes gwd-gen-jzcagwdanimation_gwd-keyframes {
+  0% { top: 98.49999999999916px; left: 3px; width: 94px; height: 86px; opacity: 0; animation-timing-function: linear; }
+  40% { top: 61px; left: 307px; width: 94px; height: 86px; opacity: 1; animation-timing-function: linear; }
+  100% { top: -0.5px; left: 2px; width: 94px; height: 86px; opacity: 0; animation-timing-function: linear; }
+}
+@-webkit-keyframes gwd-gen-bjg3gwdanimation_gwd-keyframes {
+  0% { top: 114px; left: 526px; width: 60px; height: 53px; -webkit-animation-timing-function: linear; }
+  56.25% { top: 127px; left: 527px; width: 60px; height: 53px; -webkit-animation-timing-function: linear; }
+  100% { top: 114px; left: 526px; width: 60px; height: 53px; -webkit-animation-timing-function: linear; }
+}
+@-moz-keyframes gwd-gen-bjg3gwdanimation_gwd-keyframes {
+  0% { top: 114px; left: 526px; width: 60px; height: 53px; -moz-animation-timing-function: linear; }
+  56.25% { top: 127px; left: 527px; width: 60px; height: 53px; -moz-animation-timing-function: linear; }
+  100% { top: 114px; left: 526px; width: 60px; height: 53px; -moz-animation-timing-function: linear; }
+}
+@keyframes gwd-gen-bjg3gwdanimation_gwd-keyframes {
+  0% { top: 114px; left: 526px; width: 60px; height: 53px; animation-timing-function: linear; }
+  56.25% { top: 127px; left: 527px; width: 60px; height: 53px; animation-timing-function: linear; }
+  100% { top: 114px; left: 526px; width: 60px; height: 53px; animation-timing-function: linear; }
+}
+@-webkit-keyframes gwd-gen-c6hsgwdanimation_gwd-keyframes {
+  0% { top: 111px; left: 738.4999999999999px; width: 73px; height: 64px; -webkit-animation-timing-function: linear; }
+  56.25% { top: 112px; left: 726px; width: 73px; height: 64px; -webkit-animation-timing-function: linear; }
+  100% { top: 111px; left: 738px; width: 73px; height: 64px; -webkit-animation-timing-function: linear; }
+}
+@-moz-keyframes gwd-gen-c6hsgwdanimation_gwd-keyframes {
+  0% { top: 111px; left: 738.4999999999999px; width: 73px; height: 64px; -moz-animation-timing-function: linear; }
+  56.25% { top: 112px; left: 726px; width: 73px; height: 64px; -moz-animation-timing-function: linear; }
+  100% { top: 111px; left: 738px; width: 73px; height: 64px; -moz-animation-timing-function: linear; }
+}
+@keyframes gwd-gen-c6hsgwdanimation_gwd-keyframes {
+  0% { top: 111px; left: 738.4999999999999px; width: 73px; height: 64px; animation-timing-function: linear; }
+  56.25% { top: 112px; left: 726px; width: 73px; height: 64px; animation-timing-function: linear; }
+  100% { top: 111px; left: 738px; width: 73px; height: 64px; animation-timing-function: linear; }
+}
+.gwd-gen-k1bxgwdanimation-gen-animation0keyframe {
+  top: 17px;
+  left: 557px;
+  width: 73px;
+  height: 64px;
+}
+[data-gwd-component-id="page1"] {
+  overflow: hidden;
+  width: 870px;
+  height: 230px;
+  margin: 0px auto;
+}

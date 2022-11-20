@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_parsindicator</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_parsindicator` (
+  `parsindicatorid` int(11) NOT NULL DEFAULT '0',
+  `description` text,
+  `subject` varchar(128) DEFAULT NULL,
+  `internal_no` varchar(128) DEFAULT NULL,
+  `letter_type` varchar(128) DEFAULT NULL,
+  `document_no` varchar(128) DEFAULT NULL,
+  `shipment_type` varchar(128) DEFAULT NULL,
+  `date_of_letter` date DEFAULT NULL,
+  `related_to` int(19) DEFAULT NULL,
+  `title` varchar(128) DEFAULT NULL,
+  `sent_or_received_by` varchar(128) DEFAULT NULL,
+  `dimensions` varchar(128) DEFAULT NULL,
+  `file_of_letter` int(19) DEFAULT NULL,
+  `number_of_pages` int(11) DEFAULT NULL,
+  `type` varchar(128) DEFAULT NULL,
+  `related_letter` int(19) DEFAULT NULL,
+  `attachment` varchar(128) DEFAULT NULL,
+  PRIMARY KEY (`parsindicatorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parsindicatorcf</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_parsindicatorcf` (
+  `parsindicatorid` int(11) NOT NULL,
+  `tags` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`parsindicatorid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+	</tables>
+</schema>

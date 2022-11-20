@@ -1,0 +1,32 @@
+<?xml version='1.0'?>
+<module>
+<name>Rooms</name>
+<label>Rooms</label>
+<parent></parent>
+<version>1.0</version>
+<license>
+	<file>License.html</file>
+</license>
+<dependencies>
+	<vtiger_version>6.0.0rc</vtiger_version>
+	<vtiger_max_version>7.*</vtiger_max_version>
+</dependencies>
+<modulebundle>true</modulebundle>
+<modulelist>
+<dependent_module>
+<name>RoomsMessages</name>
+<install_sequence>1</install_sequence>
+<filepath>RoomsMessages.zip</filepath>
+</dependent_module>
+<dependent_module>
+<name>RoomsUsers</name>
+<install_sequence>2</install_sequence>
+<filepath>RoomsUsers.zip</filepath>
+</dependent_module>
+<dependent_module>
+<name>Rooms</name>
+<install_sequence>3</install_sequence>
+<filepath>Rooms.zip</filepath>
+</dependent_module>
+</modulelist>
+</module>

@@ -1,0 +1,11 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>relatedrecordupdate_settings</name>
+			<sql><![CDATA[CREATE TABLE `relatedrecordupdate_settings` (
+				`enable`  int(3) NULL DEFAULT NULL 
+				)]]></sql>
+		</table>
+	</tables>
+</schema>

@@ -1,0 +1,40 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_roomsusers</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_roomsusers` (
+  `roomsusersid` int(19) NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) DEFAULT NULL,
+  `room_id` int(19) DEFAULT NULL,
+  `room_status` varchar(255) DEFAULT NULL,
+  `archived` tinyint(3) DEFAULT '0',
+  `favorite` tinyint(3) DEFAULT '0',
+  PRIMARY KEY (`roomsusersid`),
+  KEY `vtiger_roomsusers_roomsusersid_idx` (`roomsusersid`) USING BTREE,
+  KEY `vtiger_roomsusers_room_id` (`room_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_roomsuserscf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_roomsuserscf` (
+  `roomsusersid` int(11) NOT NULL,
+  PRIMARY KEY (`roomsusersid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_roomsusers_user_field</name>
+			<sql><![CDATA[CREATE TABLE IF NOT EXISTS `vtiger_roomsusers_user_field` (
+  `recordid` int(25) NOT NULL,
+  `userid` int(25) NOT NULL,
+  `starred` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_roomsusers</name>
+			<sql><![CDATA[ALTER TABLE `vtiger_roomsusers` 
+                ADD INDEX `vtiger_roomsusers_roomsusersid_idx` (`roomsusersid`) USING BTREE, 
+                ADD INDEX `vtiger_roomsusers_room_id` (`room_id`) USING BTREE ;]]></sql>
+		</table>
+	</tables>
+</schema>

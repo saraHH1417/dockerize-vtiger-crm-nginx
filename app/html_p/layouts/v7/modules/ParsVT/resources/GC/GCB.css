@@ -1,0 +1,97 @@
+/* ********************************************************************************
+ * The content of this file is subject to the VTFarsi.ir Modules License("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTFarsi.ir
+ * Portions created by VTFarsi.ir. are Copyright(C) VTFarsi Team
+ * All Rights Reserved.
+ * ****************************************************************************** */
+.splitElement.splitBox2 * {
+    direction: ltr;
+}
+
+#savingMessage {
+    right: 50% !important;
+    left: unset !important;
+    margin-right: -100px !important;
+    margin-left: unset !important;
+}
+.teamworkIcon.withLabel {
+    padding-left:5px !important;
+    padding-right:unset !important;
+}
+.cvcColorSquare {
+    text-align: right;
+    -moz-box-shadow: -2px 2px 2px #999;
+}
+.ui-resizable-n { cursor: n-resize; height: 7px; width: 100%; top: -5px; right: 0; }
+.ui-resizable-s { cursor: s-resize; height: 7px; width: 100%; bottom: -5px; right: 0; }
+.ui-resizable-e { cursor: w-resize; width: 7px; left: -5px; top: 0; height: 100%; }
+.ui-resizable-w { cursor: e-resize; width: 7px; right: -5px; top: 0; height: 100%; }
+.ui-resizable-se { cursor: sw-resize; width: 12px; height: 12px; left: 1px; bottom: 1px; }
+.ui-resizable-sw { cursor: se-resize; width: 9px; height: 9px; right: -5px; bottom: -5px; }
+.ui-resizable-nw { cursor: ne-resize; width: 9px; height: 9px; right: -5px; top: -5px; }
+.ui-resizable-ne { cursor: nw-resize; width: 9px; height: 9px; left: -5px; top: -5px;}
+
+#workSpace TH, .tableHeader {
+    border-right:unset !important;
+    border-left: 1px solid #eee;
+}
+.button {
+    -moz-box-shadow: -2px 2px 2px #999;
+    -webkit-box-shadow: -2px 2px 2px #999;
+    -o-box-shadow: -2px 2px 2px #999;
+    box-shadow: -2px 2px 2px #999;
+    margin-left: 10px;
+}
+
+.button.textual, .button.buttonImg {
+    text-align: right
+}
+.formElementExclamation {
+    margin-right: -20px;
+    margin-left: unset;
+    position: absolute;
+}
+span#FLD_LOGIN_NAMEerror, span#FLD_PWDerror {
+    margin-right: -23px;
+    margin-left: unset;
+}
+.gdfCell, .gdfColHeader {
+    border-left: 1px solid #eee;
+    border-right: unset;
+}
+.gdfHResizing {
+    cursor: e-resize;
+}
+.splitBox1{
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.splitBox2{
+    overflow-y: scroll;
+    overflow-x: auto;
+}
+.vSplitBar {
+    cursor: e-resize;
+}
+
+.taskBoxDiv .taskStatus {
+    left:unset;
+    right:5px;
+}
+.taskBoxDiv .layout .milestone.end{
+    left:0;
+    right:unset;
+}
+
+.taskLabel{
+    text-align:left;
+    padding-left:5px;
+    padding-right:unset;
+    left:unset;
+    right:-200px;
+}
+.ganttSVGBox{
+    left:unset;
+    right: 0;
+}

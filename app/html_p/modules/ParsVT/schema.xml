@@ -1,0 +1,99 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_parsvt_users</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_parsvt_users` (
+  `id` int(11) NOT NULL,
+  `country` varchar(25) NOT NULL,
+  `city` varchar(40) NOT NULL,
+  `latitude` double(10,7) NOT NULL,
+  `longitude` double(10,7) NOT NULL,
+  `custom` int(3) NOT NULL DEFAULT '0',
+  `adhanmethod` int(3) NOT NULL DEFAULT '7',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parsvt_settings</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_parsvt_settings` (
+  `settings_name` varchar(200) NOT NULL DEFAULT '',
+  `settings_value` text NOT NULL,
+  PRIMARY KEY (`settings_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parsvt_location</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_parsvt_location` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `country` varchar(25) NOT NULL,
+  `city` varchar(40) NOT NULL,
+  `latitude` double(10,7) NOT NULL,
+  `longitude` float(10,7) NOT NULL,
+  `altitude` float(5,1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=10568 DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parsvt_organizationdetails</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_parsvt_organizationdetails` (
+  `organization_id` int(11) NOT NULL,
+  `organizationname` varchar(60) DEFAULT NULL,
+  `address` varchar(150) DEFAULT NULL,
+  `city` varchar(100) DEFAULT NULL,
+  `state` varchar(100) DEFAULT NULL,
+  `country` varchar(100) DEFAULT NULL,
+  `code` varchar(30) DEFAULT NULL,
+  `phone` varchar(30) DEFAULT NULL,
+  `fax` varchar(30) DEFAULT NULL,
+  `website` varchar(100) DEFAULT NULL,
+  `logoname` varchar(50) DEFAULT NULL,
+  `logo` text,
+  `vatid` varchar(100) DEFAULT NULL,
+  `nationalid` varchar(100) DEFAULT NULL,
+  `regid` varchar(100) DEFAULT NULL,
+  `bankinfo` text,
+  PRIMARY KEY (`organization_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+		<table>
+			<name>parsvt_customfields</name>
+			<sql><![CDATA[CREATE TABLE `parsvt_customfields` (
+  `fieldid` int(11) NOT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `parameters` text
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parsvt_organizationdetails</name>
+			<sql><![CDATA[
+                INSERT INTO `vtiger_parsvt_organizationdetails` VALUES ('1', 'نام شرکت شما', 'اصفهان - خیابان میدان آرژانتین', 'تهران', 'تهران', 'ایران', '0000', '+989123456789', '02123456789', 'www.yourcompnay.com', 'vtiger-crm-logo.png', null, '123456789', '1111111111', '123456', 'IR123450130380011727872212');
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parsvt_cities</name>
+			<sql><![CDATA[
+                CREATE TABLE IF NOT EXISTS `vtiger_parsvt_cities` (
+  `LocationId` int(11) NOT NULL,
+  `Title` varchar(250) NOT NULL,
+  `Title_En` varchar(250) DEFAULT NULL,
+  `Code` varchar(50) DEFAULT NULL,
+  `Parent` int(11) DEFAULT NULL,
+  `Type` char(10) NOT NULL,
+  `Version` int(11) NOT NULL,
+  `MinistryofFinanceCode` varchar(50) DEFAULT NULL,
+  `TaxFileCode` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`LocationId`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            ]]></sql>
+		</table>
+	</tables>
+</schema>

@@ -1,0 +1,8 @@
+/* ********************************************************************************
+ * The content of this file is subject to the VTFarsi.ir Modules License("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTFarsi.ir
+ * Portions created by VTFarsi.ir. are Copyright(C) VTFarsi Team
+ * All Rights Reserved.
+ * ****************************************************************************** */
+jQuery.Class("ParsVT_Js",{},{registerActiveEvent:function(){jQuery("#InstallModule").on("click",".runtime",function(e){var t={};t.module=app.getModuleName(),t.parent=app.getParentModuleName(),t.action="Update",confirm(app.vtranslate("Are you sure you want to continue?"))&&AppConnector.request(t).then(function(e){var t={};t.text=e.result,jQuery("#installation_step3").show(),jQuery("#newinstall").hide(),jQuery("#installed").show(),Settings_Vtiger_Index_Js.showMessage(t)},function(e){var t={};t.text=e,Settings_Vtiger_Index_Js.showMessage(t)})})},showConfirmationBox:function(e){var t=jQuery.Deferred();return bootbox.confirm(e.message,app.vtranslate("JS_CANCEL"),app.vtranslate("JS_DELETE"),function(e){e?t.resolve():t.reject()}).on("hidden",function(e){jQuery("#globalmodal").length>0&&jQuery("body").addClass("modal-open")}),t.promise()},registerEvents:function(){this.registerActiveEvent()}}),jQuery(document).ready(function(){(new ParsVT_Js).registerEvents()});

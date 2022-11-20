@@ -1,0 +1,105 @@
+/* ********************************************************************************
+ * The content of this file is subject to the VTFarsi.ir Modules License("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTFarsi.ir
+ * Portions created by VTFarsi.ir. are Copyright(C) VTFarsi Team
+ * All Rights Reserved.
+ * ****************************************************************************** */
+@import "../fonts/fonts.php?font=IRANSans" screen, projection, print;
+
+* {
+font-family: 'VtigerFont', tahoma, arial !important;
+}
+
+div.col-sm-6:nth-child(2) {
+float: left;
+}
+div.col-sm-6:nth-child(1){
+float: right;
+}
+.welcome-image{
+    text-align: left;
+}
+.vLinks{
+    float: left;
+}
+.module_list{
+    border-radius: 0 3px;
+    left: 0;
+    right: unset;
+}
+.reveal_modules{
+    left: unset;
+    right:100%;
+}
+.reveal_modules > div{
+    padding-right: 30px;
+    padding-left: unset;
+}
+.reveal_modules > div > p{
+    margin: 0  0 10px 30px;
+}
+.config-table tr th:last-child{
+    border-radius: 3px 0 0 0;
+}
+.config-table tr th:first-child{
+    border-radius: 0 3px 0 0;
+    text-align: right;
+}
+.config-table tr td:first-child{
+    text-align: right;
+}
+.config-table td span img{
+    margin-right: 10px;
+    margin-left: unset;
+}
+.button-container a{
+    text-decoration: none;
+}
+.button-container{
+    float: left;
+}
+.button-container .btn{
+    margin-right: 15px;
+    margin-left: unset;
+}
+#page > div.container-fluid.page-container > form > div > div > div:nth-child(1) > div.col-sm-2, 
+#page > div.container-fluid.page-container > div.row.main-container > div > div > div.col-sm-2 {
+float: left !important;
+}
+#page > div.container-fluid.page-container > form > div > div > div:nth-child(1) > div.col-sm-10, 
+#page > div.container-fluid.page-container > div.row.main-container > div > div > div.col-sm-10 {	
+	float: right !important;
+
+}
+.config-table tr td, .config-table tr th {
+ text-align: right !important;
+}
+#page {
+direction:rtl;
+}
+.pull-right {
+    float: left !important;
+}
+body table{direction:rtl;}
+.pull-left {
+    float: right !important;
+}
+.license, .license * {
+    direction: ltr !important;
+    font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif !important;
+}
+.select2, .select2 *, .select2-results {
+    text-align: right;
+    direction: rtl !important;
+
+}
+
+.modal-dialog {
+    direction: rtl !important;
+}
+
+.licenseresults, .licenseresults * {
+    white-space: pre-wrap;
+    word-break: break-all;
+}

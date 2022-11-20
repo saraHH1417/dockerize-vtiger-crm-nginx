@@ -1,0 +1,14 @@
+.simple-rating{
+}
+
+.simple-rating i{
+	color: #f5ba00;
+	display: inline-block;
+	padding: 1px 2px;
+	cursor: pointer;
+	font-size: 20px;
+}
+
+.simple-rating .star-trash {
+color: #B94A48 !important;
+}

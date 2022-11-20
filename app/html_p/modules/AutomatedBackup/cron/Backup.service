@@ -1,0 +1,144 @@
+<?php
+/* ********************************************************************************
+* The content of this file is subject to the VTFarsi.ir Modules License("License");
+* You may not use this file except in compliance with the License
+* The Initial Developer of the Original Code is VTFarsi.ir
+* Portions created by VTFarsi.ir. are Copyright(C) VTFarsi Team
+* All Rights Reserved.
+* ****************************************************************************** */
+
+require_once("modules/AutomatedBackup/helpers/Backup.php");
+require_once("modules/AutomatedBackup/helpers/ZipArchive.php");
+require_once("includes/runtime/BaseModel.php");
+require_once("modules/Vtiger/models/Record.php");
+require_once("modules/Users/models/Record.php");
+require_once("includes/runtime/Globals.php");
+require_once("include/utils/utils.php");
+require_once("includes/runtime/LanguageHandler.php");
+require_once("includes/Loader.php");
+
+$domain = $_SERVER['HTTP_HOST'];
+if (strpos($domain, 'demo.parsvtiger.com') !== false || strpos($domain, 'demo.vtiger.ir') !== false) {
+    $result="SUCCESS";
+} else{
+$adb=PearDatabase::getInstance();
+
+global $dbconfig, $root_directory;
+$rootDirectory = str_replace('\\','/',$root_directory);
+$rootDirectory=rtrim($rootDirectory,"/");
+$date = date("Y-m-d-H-i-s");
+$createdTime = date("Y-m-d H:i:s");
+
+$dataOfDatabase = AutomatedBackup_Backup_Helper::getBackupSettings('localbackup_');
+
+if(!empty($dataOfDatabase) && $dataOfDatabase['localbackup_status']=='Active') {
+
+    $status =$dataOfDatabase['localbackup_status'];
+    $localBackupDatabase = $dataOfDatabase['localbackup_database'];
+    $localBackupFile = $dataOfDatabase['localbackup_files'];
+    $directory = $dataOfDatabase['localbackup_directory'];
+    $keepNumber = $dataOfDatabase['localbackup_number'];
+    $frequency = $dataOfDatabase['localbackup_frequency'];
+    $runnable = true;
+    $sql_get_last_record = "SELECT * FROM `automatedbackup_logs` WHERE type = 'localbackup' AND deleted = 0 ORDER BY id DESC LIMIT 0,1";
+    $result = $adb->pquery($sql_get_last_record,array());
+    if($adb->num_rows($result)) {
+        $row = $adb->fetchByAssoc($result);
+        $created_time = $row['createdtime'];
+        if(time() < (strtotime($created_time) + $frequency * 3600))
+            $runnable = false;
+    }
+
+    if($runnable) {
+        if ($localBackupDatabase == 'on') {
+            $datafile=AutomatedBackup_Backup_Helper::backupDatabase($date, $dbconfig, $rootDirectory);
+
+            if($datafile) {
+
+                // Move file to config backup directory
+                rename("$rootDirectory/test/".$datafile,rtrim($directory,"/")."/automatedbackup_".$datafile);
+                $fileSize = filesize($directory."/automatedbackup_".$datafile);
+                $fileSizeBeforeConvert = AutomatedBackup_Backup_Helper::fileSizeConvert($fileSize);
+                AutomatedBackup_Backup_Helper::addAutomatedBackupLog($datafile,'Database',$fileSizeBeforeConvert,'localbackup', str_replace($rootDirectory."/",'',$directory),$createdTime);
+            }
+        }
+        if ($localBackupFile == 'on') {
+            $sourceFile=AutomatedBackup_Backup_Helper::backupSourceFiles($date, $directory, $rootDirectory);
+            if($sourceFile) {
+                // Move file to config backup directory
+                rename("$rootDirectory/test/".$sourceFile,rtrim($directory,"/")."/automatedbackup_".$sourceFile);
+                $fileSize = filesize($directory."/automatedbackup_".$sourceFile);
+                $fileSizeBeforeConvert = AutomatedBackup_Backup_Helper::fileSizeConvert($fileSize);
+                AutomatedBackup_Backup_Helper::addAutomatedBackupLog($sourceFile,'Source Code',$fileSizeBeforeConvert,'localbackup', str_replace($rootDirectory."/",'',$directory),$createdTime);
+            }
+        }
+        AutomatedBackup_Backup_Helper::removeLocalOldFiles($directory,$keepNumber);
+        $dataEmailReport = AutomatedBackup_Backup_Helper::getBackupSettings('emailreport_');
+        if($dataEmailReport['emailreport_status']=='Active' && $dataEmailReport['emailreport_email']!=''){
+            AutomatedBackup_Backup_Helper::sendBackupEmail('localbackup');
+        }
+    }
+    $result="SUCCESS";
+}
+$dataOfDatabase = AutomatedBackup_Backup_Helper::getBackupSettings('ftpbackup_');
+if(!empty($dataOfDatabase) && $dataOfDatabase['ftpbackup_status']=='Active') {
+    // Get local backup directory to exclude when backup
+
+    $ftpBackupDatabase = $dataOfDatabase['ftpbackup_database'];
+    $ftpBackupFile = $dataOfDatabase['ftpbackup_files'];
+    $directory = $dataOfDatabase['ftpbackup_directory'];
+    $ftpbackup_server = $dataOfDatabase['ftpbackup_server'];
+    $ftpbackup_user = $dataOfDatabase['ftpbackup_user'];
+    $ftpbackup_password = $dataOfDatabase['ftpbackup_password'];
+    $ftpbackup_number = $dataOfDatabase['ftpbackup_number'];
+    $ftpbackup_frequency = $dataOfDatabase['ftpbackup_frequency'];
+
+    if(intval($ftpbackup_frequency) && intval($ftpbackup_number)) {
+        $runnable = true;
+        $sql_get_last_record = "SELECT * FROM `automatedbackup_logs` WHERE type = 'ftpbackup' AND deleted = 0 ORDER BY id DESC LIMIT 0,1";
+        $result = $adb->pquery($sql_get_last_record,array());
+        if($adb->num_rows($result)) {
+            $row = $adb->fetchByAssoc($result);
+            $created_time = $row['createdtime'];
+            if(time() < (strtotime($created_time) + $ftpbackup_frequency * 3600))
+                $runnable = false;
+        }
+
+        if($runnable) {
+            if ($ftpBackupDatabase == 'on') {
+                $datafile=AutomatedBackup_Backup_Helper::backupDatabase($date, $dbconfig, $rootDirectory);
+                if($datafile) {
+                    // Upload file to ftp directory
+                    $result = AutomatedBackup_Backup_Helper::uploadFilesToFTP($ftpbackup_server,$ftpbackup_user,$ftpbackup_password,"$rootDirectory/test/",rtrim($directory,"/"),$datafile);
+                    $fileSize = filesize("$rootDirectory/test/". $datafile);
+                    $fileSizeBeforeConvert = AutomatedBackup_Backup_Helper::fileSizeConvert($fileSize);
+                    if($result){
+                        AutomatedBackup_Backup_Helper::addAutomatedBackupLog($datafile, 'Database', $fileSizeBeforeConvert, 'ftpbackup', $directory, $createdTime);
+                    }
+                    unlink("$rootDirectory/test/".$datafile);
+                }
+            }
+            if ($ftpBackupFile == 'on') {
+                $localData = AutomatedBackup_Backup_Helper::getBackupSettings('localbackup_');
+                $directory_local = $localData['localbackup_directory'];
+                $sourceFile=AutomatedBackup_Backup_Helper::backupSourceFiles($date, $directory_local, $rootDirectory);
+                if($sourceFile) {
+                    // Upload file to ftp directory
+                    $result = AutomatedBackup_Backup_Helper::uploadFilesToFTP($ftpbackup_server,$ftpbackup_user,$ftpbackup_password,"$rootDirectory/test/",rtrim($directory,"/"),$sourceFile);
+                    $fileSize = filesize("$rootDirectory/test/". $sourceFile);
+                    $fileSizeBeforeConvert = AutomatedBackup_Backup_Helper::fileSizeConvert($fileSize);
+                    if($result){
+                        AutomatedBackup_Backup_Helper::addAutomatedBackupLog($sourceFile, 'Source Code', $fileSizeBeforeConvert, 'ftpbackup', $directory, $createdTime);
+                    }
+                    unlink("$rootDirectory/test/".$sourceFile);
+                }
+            }
+            AutomatedBackup_Backup_Helper::removeFTPOldFiles($ftpbackup_server,$ftpbackup_user,$ftpbackup_password,rtrim($directory,"/"),$ftpbackup_number);
+            $dataEmailReport = AutomatedBackup_Backup_Helper::getBackupSettings('emailreport_');
+            if($dataEmailReport['emailreport_status']=='Active' && $dataEmailReport['emailreport_email']!=''){
+                AutomatedBackup_Backup_Helper::sendBackupEmail('ftpbackup');
+            }
+        }
+    }
+}
+}

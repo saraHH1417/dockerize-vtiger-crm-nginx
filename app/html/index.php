@@ -15,11 +15,6 @@ include_once 'include/Webservices/Relation.php';
 
 include_once 'vtlib/Vtiger/Module.php';
 include_once 'includes/main/WebUI.php';
-// $_SERVER["SERVER_NAME"] = "localhost";
-// $_SERVER["SERVER_ADDR"] = "127.0.0.1";
-
-// echo "<pre>";
-// var_dump($_SERVER);
 
 $webUI = new Vtiger_WebUI();
 $webUI->process(new Vtiger_Request($_REQUEST, $_REQUEST));

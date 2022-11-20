@@ -1,0 +1,129 @@
+/* -------------------------------------------
+__     _______ _____              _   _      
+\ \   / /_   _|  ___|_ _ _ __ ___(_) (_)_ __ 
+ \ \ / /  | | | |_ / _` | '__/ __| | | | '__|
+  \ V /   | | |  _| (_| | |  \__ \ |_| | |   
+   \_/    |_| |_|  \__,_|_|  |___/_(_)_|_|   
+ Custom Stylesheet Code
+ Add Your Custom CSS To VtigerCRM
+------------------------------------------- */
+@import url('userdefined.css');
+.related-tabs.row .nav > li {
+    width: auto;
+}
+.pull-left > .dropdown-menu {
+    right: auto;
+    left: 0;
+}
+.summaryViewEntries .input-group.editElement {
+    width: unset;
+}
+.edit.ajaxEdited{
+    position: relative;
+    z-index: 999999;
+}
+.referencefield-wrapper .createReferenceRecord {
+    float: unset;
+    display: table-cell;
+    padding: 5px 8px;
+    line-height: 1.5;
+}
+.editViewContents .input-group {
+    float: right;
+}
+.input-group {
+    position: relative;
+    display: table;
+    border-collapse: separate;
+}
+.bx-wrapper{
+    direction: ltr !important;
+}
+ul.dropdown-menu {
+    z-index: 9999999;
+}
+div.relatedblockslists_records .inputElement {
+    min-width: 150px !important;
+}
+.cf_color_field{
+    color: #92d1ff;
+}
+.percentage_wrapper {
+    position: relative;
+    min-width: 150px;
+    width: 100%;
+    background: white;
+    border: 2px solid #65c393;
+    border-top-color: rgb(101, 195, 147);
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-right-color: rgb(101, 195, 147);
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-bottom-color: rgb(101, 195, 147);
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-left-color: rgb(101, 195, 147);
+    border-left-style: solid;
+    border-left-width: 2px;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    border-radius: 4px;
+    line-height: 16px;
+    overflow: hidden;
+    height: 20px;
+}
+
+.percentage_wrapper .percentage_value {
+    position: absolute;
+    left: 0;
+    background-color: #65c393;
+    top: 0;
+    bottom: 1px;
+    border-radius: 2px;
+    opacity: 0.6;
+    line-height: 16px;
+    height: auto;
+    max-width: Calc(100% - 0.5px);
+}
+
+.value .boolean-true {
+    color: #65c393;
+}
+
+.value .boolean-false {
+    color: #e36154;
+}
+.value .background {
+    #position: absolute;
+    top: 50%;
+    left: 7px;
+    border: 1px solid #aaa;
+    padding: 0;
+    text-align: center;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+}
+.value .background img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    #transform: translateY(-50%);
+    border: 0px;
+    vertical-align: middle;
+    border-radius: 50%;
+}
+.updates_timeline > li .update_info > .updateInfoContainer .update-name {
+    font-family: 'VtigerFont',Tahoma,Arial,sans-serif;
+}
+
+#multiEmailContainer > div > label {
+    text-indent: 20px !important;
+}
