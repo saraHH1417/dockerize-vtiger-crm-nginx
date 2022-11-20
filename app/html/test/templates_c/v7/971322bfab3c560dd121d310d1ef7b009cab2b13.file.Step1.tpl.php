@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2022-11-15 09:21:10
+<?php /* Smarty version Smarty-3.1.7, created on 2022-11-15 13:35:55
          compiled from "/var/www/html/includes/runtime/../../layouts/v7/modules/Install/Step1.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:200572217863735a06e4cf52-48173243%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:361344863736483536249-09213282%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '971322bfab3c560dd121d310d1ef7b009cab2b13' => 
     array (
       0 => '/var/www/html/includes/runtime/../../layouts/v7/modules/Install/Step1.tpl',
-      1 => 1668504066,
+      1 => 1668506741,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '200572217863735a06e4cf52-48173243',
+  'nocache_hash' => '361344863736483536249-09213282',
   'function' => 
   array (
   ),
@@ -23,9 +23,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_63735a06e5d5f',
+  'unifunc' => 'content_63736483540e5',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_63735a06e5d5f')) {function content_63735a06e5d5f($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_63736483540e5')) {function content_63736483540e5($_smarty_tpl) {?>
 
 <div class="row main-container">
 	<div class="inner-container">
@@ -35,7 +35,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </h4>
 			</div>
 			<div class="col-sm-2">
-				<a href="https://wiki.vtiger.com/vtiger6/" target="_blank" class="pull-right">
+				<a href="http://vtfarsi.ir/crm-wiki/" target="_blank" class="pull-right">
 					<img src="<?php echo vimage_path('help.png');?>
 " alt="Help-Icon"/>
 				</a>

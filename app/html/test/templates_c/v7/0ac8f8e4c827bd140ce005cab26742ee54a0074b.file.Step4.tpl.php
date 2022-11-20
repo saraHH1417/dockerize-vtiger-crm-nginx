@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2022-11-15 09:21:17
+<?php /* Smarty version Smarty-3.1.7, created on 2022-11-15 13:35:59
          compiled from "/var/www/html/includes/runtime/../../layouts/v7/modules/Install/Step4.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:57194863963735a0d067d12-63982918%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:99692334463736487cbb882-51519089%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '0ac8f8e4c827bd140ce005cab26742ee54a0074b' => 
     array (
       0 => '/var/www/html/includes/runtime/../../layouts/v7/modules/Install/Step4.tpl',
-      1 => 1668504066,
+      1 => 1668506741,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '57194863963735a0d067d12-63982918',
+  'nocache_hash' => '99692334463736487cbb882-51519089',
   'function' => 
   array (
   ),
@@ -33,9 +33,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_63735a0d0a35c',
+  'unifunc' => 'content_63736487cf1a5',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_63735a0d0a35c')) {function content_63735a0d0a35c($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_63736487cf1a5')) {function content_63736487cf1a5($_smarty_tpl) {?>
 
 <form class="form-horizontal" name="step4" method="post" action="index.php">
 	<input type=hidden name="module" value="Install" />
@@ -50,7 +50,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
  </h4>
 				</div>
 				<div class="col-sm-2">
-					<a href="https://wiki.vtiger.com/vtiger6/" target="_blank" class="pull-right">
+					<a href="http://vtfarsi.ir/crm-wiki/" target="_blank" class="pull-right">
 						<img src="<?php echo vimage_path('help.png');?>
 " alt="Help-Icon"/>
 					</a>
@@ -145,7 +145,7 @@ $_smarty_tpl->tpl_vars['CURRENCY_INFO']->_loop = true;
  $_smarty_tpl->tpl_vars['CURRENCY_NAME']->value = $_smarty_tpl->tpl_vars['CURRENCY_INFO']->key;
 ?>
 											<option value="<?php echo $_smarty_tpl->tpl_vars['CURRENCY_NAME']->value;?>
-" <?php if ($_smarty_tpl->tpl_vars['CURRENCY_NAME']->value=='USA, Dollars'){?> selected <?php }?>><?php echo $_smarty_tpl->tpl_vars['CURRENCY_NAME']->value;?>
+" <?php if ($_smarty_tpl->tpl_vars['CURRENCY_NAME']->value=='Iran, Rials'){?> selected <?php }?>><?php echo $_smarty_tpl->tpl_vars['CURRENCY_NAME']->value;?>
  (<?php echo $_smarty_tpl->tpl_vars['CURRENCY_INFO']->value[1];?>
 )</option>
 										<?php } ?>
@@ -203,7 +203,7 @@ $_smarty_tpl->tpl_vars['CURRENCY_INFO']->_loop = true;
 									<select class="select2" style="width:220px;" name="dateformat">
 										<option value="mm-dd-yyyy">mm-dd-yyyy</option>
 										<option value="dd-mm-yyyy">dd-mm-yyyy</option>
-										<option value="yyyy-mm-dd">yyyy-mm-dd</option>
+										<option value="yyyy-mm-dd" selected>yyyy-mm-dd</option>
 									</select>
 								</td>
 							</tr>
@@ -220,7 +220,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['TIMEZONE']->key => $_smarty_tpl->tpl_
 $_smarty_tpl->tpl_vars['TIMEZONE']->_loop = true;
 ?>
 											<option value="<?php echo $_smarty_tpl->tpl_vars['TIMEZONE']->value;?>
-" <?php if ($_smarty_tpl->tpl_vars['TIMEZONE']->value=='America/Los_Angeles'){?>selected<?php }?>><?php echo vtranslate($_smarty_tpl->tpl_vars['TIMEZONE']->value,'Users');?>
+" <?php if ($_smarty_tpl->tpl_vars['TIMEZONE']->value=='Asia/Tehran'){?>selected<?php }?>><?php echo vtranslate($_smarty_tpl->tpl_vars['TIMEZONE']->value,'Users');?>
 </option>
 										<?php } ?>
 									</select>

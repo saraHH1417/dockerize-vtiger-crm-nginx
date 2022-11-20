@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2022-11-15 09:21:13
+<?php /* Smarty version Smarty-3.1.7, created on 2022-11-15 13:35:58
          compiled from "/var/www/html/includes/runtime/../../layouts/v7/modules/Install/Step3.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:145082467263735a099e7725-52787279%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:165557434637364867deb09-72469410%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '62d0f4ed8b0911d3ef4fc47193095cb67655a7e8' => 
     array (
       0 => '/var/www/html/includes/runtime/../../layouts/v7/modules/Install/Step3.tpl',
-      1 => 1668504066,
+      1 => 1668506741,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '145082467263735a099e7725-52787279',
+  'nocache_hash' => '165557434637364867deb09-72469410',
   'function' => 
   array (
   ),
@@ -30,9 +30,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_63735a09a2338',
+  'unifunc' => 'content_63736486832df',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_63735a09a2338')) {function content_63735a09a2338($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_63736486832df')) {function content_63736486832df($_smarty_tpl) {?>
 
 <form class="form-horizontal" name="step3" method="get" action="index.php">
 	<input type=hidden name="module" value="Install" />
@@ -47,7 +47,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
 </h4>
 				</div>
 				<div class="col-sm-2">
-					<a href="https://wiki.vtiger.com/vtiger6/" target="_blank" class="pull-right">
+					<a href="http://vtfarsi.ir/crm-wiki/" target="_blank" class="pull-right">
 						<img src="<?php echo vimage_path('help.png');?>
 " alt="Help-Icon"/>
 					</a>
@@ -99,8 +99,8 @@ $_smarty_tpl->tpl_vars['INFO']->_loop = true;
  
 										<?php }?>
 									</td>
-									<td <?php if ($_smarty_tpl->tpl_vars['INFO']->value[2]==false){?> class="no" >
-											<?php if (!isset($_smarty_tpl->tpl_vars['CONFIG_NAME'])) $_smarty_tpl->tpl_vars['CONFIG_NAME'] = new Smarty_Variable(null);if ($_smarty_tpl->tpl_vars['CONFIG_NAME']->value = 'LBL_PHP_VERSION'){?>
+									<td <?php if ($_smarty_tpl->tpl_vars['INFO']->value[2]==false||!$_smarty_tpl->tpl_vars['INFO']->value[2]){?> class="no" >
+											<?php if ($_smarty_tpl->tpl_vars['CONFIG_NAME']->value=='LBL_PHP_VERSION'){?>
 												<?php echo $_smarty_tpl->tpl_vars['INFO']->value[0];?>
 
 											<?php }else{ ?>

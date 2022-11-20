@@ -11,12 +11,12 @@ services:
     networks:
       - mariadbb
       - phpp
-      - nginxx
+      - nginx_static
 
 networks:
   mariadbb:
     name: mariadbb
   phpp:
     name: phpp
-  nginxx:
-    name: nginxx
+  nginx_static:
+    name: nginx_static

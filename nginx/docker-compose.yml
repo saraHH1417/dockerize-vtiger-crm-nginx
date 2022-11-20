@@ -11,8 +11,15 @@ services:
     ports:
       - "8015:80"
     networks:
-      - nginxx
+        nginx_static:
+          ipv4_address: 192.168.78.10
       
 networks:
-  nginxx:
-    name: nginxx
+  # nginxx:
+  #   name: nginxx
+  nginx_static:
+     name: nginx_static
+     ipam:
+      driver: default
+      config:
+        - subnet: "192.168.78.1/24"

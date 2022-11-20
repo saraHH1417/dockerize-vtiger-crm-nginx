@@ -14,12 +14,13 @@ services:
     ports:
         - "3324:3306"
     volumes:
-        - "vtigerMariadb:/var/lib/mysql" 
+        - "parsvt_mariadb:/var/lib/mysql" 
     networks:
       - mariadbb
 
 volumes:
-  vtigerMariadb:
+  parsvt_mariadb:
+    name: parsvt_mariadb
 networks:
   mariadbb:
     name: mariadbb
