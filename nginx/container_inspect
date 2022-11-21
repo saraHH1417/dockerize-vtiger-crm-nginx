@@ -1,0 +1,267 @@
+[
+    {
+        "Id": "cbbf58bd6eba034d4917dc04f31bd52d26829f2ecce0c739a6ccdf86f4ab5b4f",
+        "Created": "2022-11-21T07:19:27.447019985Z",
+        "Path": "/docker-entrypoint.sh",
+        "Args": [
+            "nginx",
+            "-g",
+            "daemon off;"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 39839,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2022-11-21T07:19:27.97374171Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:e816112a1fabe705a92a98bd6a5bee5c92f25e5a9d738cad329f17f2fbd6e7f6",
+        "ResolvConfPath": "/var/lib/docker/containers/cbbf58bd6eba034d4917dc04f31bd52d26829f2ecce0c739a6ccdf86f4ab5b4f/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/cbbf58bd6eba034d4917dc04f31bd52d26829f2ecce0c739a6ccdf86f4ab5b4f/hostname",
+        "HostsPath": "/var/lib/docker/containers/cbbf58bd6eba034d4917dc04f31bd52d26829f2ecce0c739a6ccdf86f4ab5b4f/hosts",
+        "LogPath": "/var/lib/docker/containers/cbbf58bd6eba034d4917dc04f31bd52d26829f2ecce0c739a6ccdf86f4ab5b4f/cbbf58bd6eba034d4917dc04f31bd52d26829f2ecce0c739a6ccdf86f4ab5b4f-json.log",
+        "Name": "/nginx_web_1",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/home/esfahanahan/Documents/vtiger/dockerMain/docker-test-recreate-6/dockerize-vtiger-crm-nginx/app/html:/var/www/html:rw",
+                "/home/esfahanahan/Documents/vtiger/dockerMain/docker-test-recreate-6/dockerize-vtiger-crm-nginx/nginx/sites-available/site.conf:/etc/nginx/sites-available/site.conf:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "nginx_static",
+            "PortBindings": {
+                "80/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "8015"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": [],
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": null,
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/d43ff0bb17075a36b927bdd3b59d6532835fd25a6d179f7b0e9f000dffc67f4e-init/diff:/var/lib/docker/overlay2/9be77cd102350fca719272eb5d85cf6ed67df72c0d7184a09c93d418a3656966/diff:/var/lib/docker/overlay2/6dceedad67d9581fd9a9019ccd86e39361e84c118881f76b7af1a3847486eec8/diff:/var/lib/docker/overlay2/504138a925b1d96798d67f27792ced8af9289944fc08b9cf00d9e5931732980d/diff:/var/lib/docker/overlay2/b8e0616bf83756d82a3da3b4506a913e053b0a0179583cb4598d75a2a5b4767c/diff:/var/lib/docker/overlay2/aa1dc1e5a2e79debf316c1f9a149292ef1d333748be35f466a03a75b3df3fa9a/diff:/var/lib/docker/overlay2/9d487cd091c6d2edd26a4ebaa30d5988b266c33f167e99554539c9b218751fc9/diff:/var/lib/docker/overlay2/aab6d93cb3acda49ebc1ddd28733b069c50445a85c8e5f2969f1b41559aee5e3/diff:/var/lib/docker/overlay2/d0f72dbe5ba6a9ba43636efe7b02efeb29bf4f112f186e731c111e163ec9fa24/diff:/var/lib/docker/overlay2/5f6de884d2af84a34098d2481ecbc503775e71e87dff0fbad744a12bbf3ce332/diff:/var/lib/docker/overlay2/46029bd38fcf60c46f304ead028d645204db5a5fb5316ee2c34c0ead7a6d6543/diff",
+                "MergedDir": "/var/lib/docker/overlay2/d43ff0bb17075a36b927bdd3b59d6532835fd25a6d179f7b0e9f000dffc67f4e/merged",
+                "UpperDir": "/var/lib/docker/overlay2/d43ff0bb17075a36b927bdd3b59d6532835fd25a6d179f7b0e9f000dffc67f4e/diff",
+                "WorkDir": "/var/lib/docker/overlay2/d43ff0bb17075a36b927bdd3b59d6532835fd25a6d179f7b0e9f000dffc67f4e/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/home/esfahanahan/Documents/vtiger/dockerMain/docker-test-recreate-6/dockerize-vtiger-crm-nginx/app/html",
+                "Destination": "/var/www/html",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/home/esfahanahan/Documents/vtiger/dockerMain/docker-test-recreate-6/dockerize-vtiger-crm-nginx/nginx/sites-available/site.conf",
+                "Destination": "/etc/nginx/sites-available/site.conf",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "cbbf58bd6eba",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": false,
+            "AttachStderr": false,
+            "ExposedPorts": {
+                "80/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NGINX_VERSION=1.23.2",
+                "NJS_VERSION=0.7.7",
+                "PKG_RELEASE=1"
+            ],
+            "Cmd": [
+                "nginx",
+                "-g",
+                "daemon off;"
+            ],
+            "Image": "nginx_web",
+            "Volumes": {
+                "/etc/nginx/sites-available/site.conf": {},
+                "/var/www/html": {}
+            },
+            "WorkingDir": "",
+            "Entrypoint": [
+                "/docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "958622b0834b3afc10e78e38ea29d17fa3f9c4ea1d9ac28bdecbe472b07e6eff",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "nginx",
+                "com.docker.compose.project.config_files": "docker-compose.yml",
+                "com.docker.compose.project.working_dir": "/home/esfahanahan/Documents/vtiger/dockerMain/docker-test-recreate-6/dockerize-vtiger-crm-nginx/nginx",
+                "com.docker.compose.service": "web",
+                "com.docker.compose.version": "1.29.2",
+                "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>"
+            },
+            "StopSignal": "SIGQUIT"
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "56b5f254971b28390e65cd90aac61a04f485d4463e0f6c6b1ee3810b2f3add77",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "80/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "8015"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "8015"
+                    }
+                ]
+            },
+            "SandboxKey": "/var/run/docker/netns/56b5f254971b",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "nginx_static": {
+                    "IPAMConfig": {
+                        "IPv4Address": "155.220.1.1"
+                    },
+                    "Links": null,
+                    "Aliases": [
+                        "cbbf58bd6eba",
+                        "web"
+                    ],
+                    "NetworkID": "304149a23fde37b2fba77c02474b870fcc0ed4e0fb00644d04a47b68dd9bdb0b",
+                    "EndpointID": "1db4d0c9eeff6a5740ece147db8576d3fbd4a0b4bfd70ee39993ce9e558f2701",
+                    "Gateway": "155.220.0.1",
+                    "IPAddress": "155.220.1.1",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:9b:dc:01:01",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
