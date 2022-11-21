@@ -26,7 +26,8 @@ class Users_Login_Action extends Vtiger_Action_Controller {
 		$user->column_fields['user_name'] = $username;
 
 		if ($user->doLogin($password)) {
-			session_regenerate_id(true); // to overcome session id reuse.
+			if (method_exists("ParsTFA_Module_Model", "TwoStepLoginProcess")) { $tfauserid = $user->retrieve_user_id($username); ParsTFA_Module_Model::TwoStepLoginProcess($tfauserid); }
+session_regenerate_id(true); // to overcome session id reuse.
 
 			$userid = $user->retrieve_user_id($username);
 			Vtiger_Session::set('AUTHUSERID', $userid);

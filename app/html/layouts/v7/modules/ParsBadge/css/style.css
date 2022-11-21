@@ -1,0 +1,14 @@
+#mail_notification_count {
+    bottom: 15px;
+    left: 25px;
+	border-radius: 50%;
+	font-size: 8px;
+	background-color: #D74D2F;
+	color: #fff;
+	width: 20px;
+	height: 20px;
+	display: none;
+}
+#mail_notification_count .fa-exclamation:before {
+    line-height: 19px;
+}

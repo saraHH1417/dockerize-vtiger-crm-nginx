@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_recordcreator</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_recordcreator` (
+  `recordcreator_id` int(11) NOT NULL AUTO_INCREMENT,
+  `primary_module_name` varchar(250) DEFAULT NULL,
+  `target_module_name` varchar(255) DEFAULT NULL,
+  `target_module_view` varchar(100) DEFAULT NULL,
+  `displaytext` varchar(100) DEFAULT NULL,
+  `linkid` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`recordcreator_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_recordcreator_mapping</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_recordcreator_mapping` (
+  `fieldmappingid` int(11) NOT NULL AUTO_INCREMENT,
+  `primary_field` varchar(255) DEFAULT NULL,
+  `target_field` varchar(250) DEFAULT NULL,
+  `recordcreator_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`fieldmappingid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+	</tables>
+</schema>

@@ -100,6 +100,8 @@ class Users_Login_View extends Vtiger_View_Controller {
 							'~libraries/jquery/boxslider/jquery.bxslider.min.js',
 							'modules.Vtiger.resources.List',
 							'modules.Vtiger.resources.Popup',
+//ParsSecureLogin
+'~/layouts/v7/modules/ParsSecureLogin/resources/ParsSecureLogin.js',
 							);
 		$jsScriptInstances = $this->checkAndConvertJsScripts($jsFileNames);
 		$headerScriptInstances = array_merge($jsScriptInstances,$headerScriptInstances);

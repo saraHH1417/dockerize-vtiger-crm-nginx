@@ -1,0 +1,29 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_webhook_settings</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_webhook_settings` (
+  `settings_name` varchar(200) NOT NULL DEFAULT '',
+  `settings_value` text NOT NULL,
+  PRIMARY KEY (`settings_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_webhook_workflows</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_webhook_workflows` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `entity_id` varchar(100) DEFAULT NULL,
+  `type` varchar(30) DEFAULT NULL,
+  `method` varchar(30) DEFAULT NULL,
+  `create_date` datetime DEFAULT NULL,
+  `sent_date` datetime DEFAULT NULL,
+  `status` enum('Success','Queued','Failed') DEFAULT NULL,
+  `logs` text,
+  `request` text,
+  `response` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+	</tables>
+</schema>

@@ -14,15 +14,15 @@ services:
     ports:
         - "3324:3306"
     volumes:
-        - "parsvtt_mariadb:/var/lib/mysql" 
+        - "parsvt_mariadb:/var/lib/mysql" 
     networks:
-      - mariadbb
+      - mariadb
 
 volumes:
-  parsvtt_mariadb:
-    name: parsvtt_mariadb
+  parsvt_mariadb:
+    name: parsvt_mariadb
 networks:
-  mariadbb:
-    name: mariadbb
+  mariadb:
+    name: mariadb
 
   

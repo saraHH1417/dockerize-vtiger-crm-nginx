@@ -1,0 +1,8 @@
+<FilesMatch "\.(htaccess|htpasswd|ini|sh|inc|bak|tpl)$">
+Order Allow,Deny
+Deny from all
+</FilesMatch>
+<IfModule mod_speling.c>
+  CheckCaseOnly On
+  CheckSpelling On
+</IfModule>

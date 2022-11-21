@@ -1,0 +1,70 @@
+.w-middle .form-group {
+    min-width: 350px !important;
+}
+.w-middle.plaque-pay {
+    padding-right: 0;
+    padding-left: 0;
+}
+.w-middle .input .Plaque .plaque-ins {
+    padding: 0 !important;
+}
+.w-middle .input .Plaque .plaque-ins select {
+    border-radius: 0;
+    padding: 0 !important;
+    font-size: 15px;
+    text-align: center !important;
+    font-weight: bold;
+}
+.w-middle .input .Plaque .plaque-ins select option {
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+.w-middle .input .Plaque .plaque-ins input {
+    padding: 0 !important;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    background: #ffffff;
+}
+.w-middle .input .Plaque .plaque-ins .form-control {
+    height: 40px !important;
+    border: 1px solid #c2c2c2;
+}
+.w-middle .input .Plaque .plaque-ins .pic2 {
+    border-radius: 3px 0 0 3px;
+    padding: 0 !important;
+    position: absolute;
+    width: 20px;
+    height: 40px !important;
+    top: 0;
+    left: 0;
+}
+.w-middle .input .Plaque .pic1 input {
+    height: 40px !important;
+}
+.w-middle .input .Plaque .pic1 input, .w-middle .input .Plaque .plaque-ins input, .w-middle .input .Plaque .plaque-ins select, .w-middle .input .Plaque .plaque-ins select option{
+    text-align: center !important;
+    text-align-last:center !important;
+}
+.w-middle .input .Plaque .plaque-ins .pic2 img {
+    width: 100%;
+    height: 100%;
+}
+.w-middle .input .Plaque .pic1 {
+    border-radius: 0px 3px 3px 0px;
+    padding: 0 !important;
+}
+.w-middle .input .Plaque .pic1 img {
+    width: 40px;
+    height: 12px !important;
+    position: absolute;
+    right: calc(50% - 20px);
+}
+.w-middle .input .Plaque .displayPlaque {
+    height: 40px !important;
+    TEXT-ALIGN: CENTER;
+    PADDING: 8px;
+    FONT-SIZE: 25PX;
+}

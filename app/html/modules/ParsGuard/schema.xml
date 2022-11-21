@@ -1,0 +1,36 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_parsvt_hacker_attacks</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_parsvt_hacker_attacks` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(35) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `file` varchar(120) NOT NULL,
+  `type` varchar(35) NOT NULL,
+  `browseros` varchar(150) NOT NULL,
+  `oslanguage` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parsvt_bans</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_parsvt_bans` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `ip` varchar(35) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `reason` varchar(150) NOT NULL,
+  `redirect` varchar(5) NOT NULL,
+  `url` varchar(150) NOT NULL,
+  `autoban` varchar(5) NOT NULL,
+  `bannedby` varchar(35) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+	</tables>
+</schema>

@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2022-11-20 16:18:26
+<?php /* Smarty version Smarty-3.1.7, created on 2022-11-21 11:48:51
          compiled from "/var/www/html/includes/runtime/../../layouts/v7/modules/Install/Header.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1841528493637a221ac8a604-26896293%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1484678780637b346b675488-23574162%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'f4f681a09cd8b055728d973d9f260895181c0873' => 
     array (
       0 => '/var/www/html/includes/runtime/../../layouts/v7/modules/Install/Header.tpl',
-      1 => 1668948322,
+      1 => 1669018357,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1841528493637a221ac8a604-26896293',
+  'nocache_hash' => '1484678780637b346b675488-23574162',
   'function' => 
   array (
   ),
@@ -32,9 +32,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_637a221acc3f1',
+  'unifunc' => 'content_637b346b6c92d',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_637a221acc3f1')) {function content_637a221acc3f1($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_637b346b6c92d')) {function content_637b346b6c92d($_smarty_tpl) {?>
 
 <!DOCTYPE html><html><head><title><?php echo vtranslate($_smarty_tpl->tpl_vars['PAGETITLE']->value,$_smarty_tpl->tpl_vars['MODULE_NAME']->value);?>
 </title><link rel="SHORTCUT ICON" href="layouts/v7/skins/images/favicon.ico"><meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><link type='text/css' rel='stylesheet' href='layouts/v7/lib/todc/css/bootstrap.min.css'/><link type='text/css' rel='stylesheet' href='layouts/v7/lib/todc/css/todc-bootstrap.min.css'/><link type='text/css' rel='stylesheet' href='layouts/v7/lib/font-awesome/css/font-awesome.min.css'/><link type='text/css' rel='stylesheet' href='layouts/v7/lib/jquery/select2/select2.css'/><link type='text/css' rel='stylesheet' href='libraries/bootstrap/js/eternicode-bootstrap-datepicker/css/datepicker3.css'/><link type='text/css' rel='stylesheet' href='layouts/v7/lib/jquery/jquery-ui-1.11.3.custom/jquery-ui.css'/><link type='text/css' rel='stylesheet' href='layouts/v7/lib/vt-icons/style.css'/><?php if (strpos($_smarty_tpl->tpl_vars['V7_THEME_PATH']->value,".less")!==false){?><link type="text/css" rel="stylesheet/less" href="<?php echo vresource_url($_smarty_tpl->tpl_vars['V7_THEME_PATH']->value);?>

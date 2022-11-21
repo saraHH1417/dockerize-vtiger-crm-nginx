@@ -9,14 +9,18 @@ services:
       - .././app/html:/var/www/html
       - ./config/php.ini:/usr/local/etc/php/php.ini
     networks:
-      - mariadbb
-      - phpp
+      - mariadb
+      - php
       - nginx_static
 
 networks:
-  mariadbb:
-    name: mariadbb
-  phpp:
-    name: phpp
+  mariadb:
+    name: mariadb
+  php:
+    name: php
   nginx_static:
     name: nginx_static
+    ipam:
+      driver: default
+      config:
+        - subnet: "155.220.1.0/16"

@@ -18,7 +18,7 @@
 			<div class="col-lg-8 col-md-8">
 				<div class="navbar-right">
 					<ul class="nav navbar-nav">
-						<li>
+						<li><button class="btn module-buttons btn-success" type="button" onclick="location.href='http://vtfarsi.ir/%d9%85%d8%a7%da%98%d9%88%d9%84-%d9%88%db%8c%d8%aa%d8%a7%db%8c%da%af%d8%b1/';"  target=”_blank” style="background-image: linear-gradient(to bottom,#35aa47 0,#35aa47 100%);color: #fff;"><div class="fa fa-certificate" aria-hidden="true"></div>&nbsp;&nbsp;{vtranslate("View Persian Marketplace","ParsVT")}</button>
 							{if !($PASSWORD_STATUS)}
 								<button class="btn btn-default module-buttons" type="button" id="logintoMarketPlace">
 									<div class="fa fa-sign-in" aria-hidden="true"></div>

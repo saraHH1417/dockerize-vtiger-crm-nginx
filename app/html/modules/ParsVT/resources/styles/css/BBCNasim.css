@@ -1,0 +1,39 @@
+/* -------------------------------------------
+__     _______ _____              _   _      
+\ \   / /_   _|  ___|_ _ _ __ ___(_) (_)_ __ 
+ \ \ / /  | | | |_ / _` | '__/ __| | | | '__|
+  \ V /   | | |  _| (_| | |  \__ \ |_| | |   
+   \_/    |_| |_|  \__,_|_|  |___/_(_)_|_|   
+ Custom Stylesheet Code
+------------------------------------------- */
+* {
+    font-size: 100%;
+    font-weight: bold;
+}
+body {
+    font-size: 16px !important;
+}
+h4, .h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+h3, .h3 {
+    font-size: 21px;
+}
+.settingsgroup-accordion {
+    font-size: 16px !important;
+}
+.module-action-bar .module-title {
+    font-size: 16px;
+}
+.app-menu .app-name {
+    font-weight: unset;
+    font-size: 16px;
+}
+.app-menu .app-modules-dropdown {
+    font-size: 16px;
+}
+.btn {
+
+    font-size: 16px !important;
+}

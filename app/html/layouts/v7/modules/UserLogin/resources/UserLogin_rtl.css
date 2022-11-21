@@ -1,0 +1,24 @@
+/* ********************************************************************************
+ * The content of this file is subject to the VTFarsi.ir Modules License("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTFarsi.ir
+ * Portions created by VTFarsi.ir. are Copyright(C) VTFarsi Team
+ * All Rights Reserved.
+ * ****************************************************************************** */
+@font-face {
+	font-family: IRANSans;
+	font-style: normal;
+	font-weight: normal;
+	src: url('fonts/IRANSans.eot');
+	src: url('fonts/IRANSans.eot?#iefix') format('embedded-opentype'),  /* IE6-8 */
+		 url('fonts/IRANSans.woff') format('woff'),  /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+		 url('fonts/IRANSans.ttf') format('truetype');
+}
+
+.vte-login-container * {
+	font-family: IRANSans;
+}
+
+.site-info {
+direction: rtl !important;
+}

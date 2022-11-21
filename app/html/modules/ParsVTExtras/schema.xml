@@ -1,0 +1,15 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_parsvtextras_settings</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_parsvtextras_settings` (
+  `settings_name` varchar(200) NOT NULL DEFAULT '',
+  `settings_value` text NOT NULL,
+  PRIMARY KEY (`settings_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+	</tables>
+</schema>

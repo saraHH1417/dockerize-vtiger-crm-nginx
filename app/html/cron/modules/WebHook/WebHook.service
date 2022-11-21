@@ -1,0 +1,24 @@
+<?php
+/* ********************************************************************************
+ * The content of this file is subject to the WebHook ("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is AWEBICT.NET
+ * Portions created by AWEBICT.NET. are Copyright(C) AWEBICT.NET.
+ * All Rights Reserved.
+ * ****************************************************************************** */
+include_once 'include/Zend/Json.php';
+include_once 'vtlib/Vtiger/Module.php';
+include_once 'include/utils/VtlibUtils.php';
+include_once 'include/QueryGenerator/QueryGenerator.php';
+include_once 'modules/Users/Users.php';
+include_once 'includes/main/WebUI.php';
+include_once('data/Tracker.php');
+include_once('include/utils/utils.php');
+include_once 'include/Webservices/Create.php';
+include_once 'include/Webservices/Query.php';
+include_once 'includes/runtime/LanguageHandler.php';
+require_once('include/logging.php');
+error_reporting(0);
+@set_time_limit(0);
+@ini_set('max_execution_time', 0);
+require_once('modules/WebHook/Service.php');

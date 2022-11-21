@@ -1,0 +1,215 @@
+/* ********************************************************************************
+ * The content of this file is subject to the VTFarsi.ir Modules License("License");
+ * You may not use this file except in compliance with the License
+ * The Initial Developer of the Original Code is VTFarsi.ir
+ * Portions created by VTFarsi.ir. are Copyright(C) VTFarsi Team
+ * All Rights Reserved.
+ * ****************************************************************************** */
+@charset "utf-8";
+/* CSS Document */
+
+#parsvt-dictionary-button{
+	width: 100%;
+	text-align: center;
+	background: #2C3B49;
+	color: #EF5E29;
+	padding: 5px 0;
+	cursor: pointer;
+}
+
+#parsvt-dictionary-default-button {
+	width:50%;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	background: #010101;
+
+}
+
+#parsvt-dictionary-custom-button {
+	width:50%;
+	float: left;
+	text-align: center;
+	cursor: pointer;
+	color: #fff;
+	background: #2C3B49;
+}
+
+
+
+#parsvt-commands {
+	width:100%;
+	overflow:hidden;
+	#border-radius: 0 0 20px 20px;
+	border: solid 0px white;
+	background: #010101;
+	color: #fff;
+	padding: 0 5px;
+}
+
+
+#parsvt-words {
+	width: 100%;
+	height: auto;
+	float:left;
+}
+#parsvt-diControl{
+	display:none;
+padding: 5px 0;
+	clear:left;
+}
+
+.parsvt-diControl-button {
+	color:orange;
+	width:100%;
+	float:left;
+	text-align: center;
+	cursor: pointer;
+	font-size: 30px;
+}
+
+.parsvt-diControl-button:hover {
+	background: #2C3B49;
+
+}
+
+
+
+span#parsvt-speech-input {
+	position:absolute;
+    top: 50%;
+    left: 50%;
+   	right: 20px;
+	max-width: 40%;
+	max-height: 50%;
+	padding: 10px;
+	background-color: #2C3B49;
+	border-radius: 20px;
+	font-family: Gill Sans, Gill Sans MT, Myriad Pro, DejaVu Sans Condensed, Helvetica, Arial," sans-serif";
+	font-size: 16px;
+	color: white;
+	overflow-y: hidden;
+	z-index:200000;
+}
+
+
+#parsvt-rec {
+	float: right;
+	width: 35px;
+	height: 35px;
+	border: 0px;
+	margin: 2px 10px 0 0;
+}
+
+#speech-language .select2-choice {
+padding: 0 !important;
+}
+
+.parsvt_action {
+    background-color: #c22f2f;
+    border-radius: 50%;
+    color: white;
+    display: inline;
+    height: -webkit-fill-available;
+    position: absolute;
+    text-align: center;
+    width: 20px;
+    right: -2px;
+    top: 5px;
+    height: 20px;
+}
+#speechbar a {
+padding: 0 !important;
+display: contents !important;
+    white-space: pre-wrap;       /* Since CSS 2.1 */
+    white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+    white-space: -pre-wrap;      /* Opera 4-6 */
+    white-space: -o-pre-wrap;    /* Opera 7 */
+    word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+#speechContainer .qc-button{
+    font-size: 18px;
+}
+
+.dictworld input{ 
+width: 45%;
+}
+.dictworld {
+	cursor: pointer;
+}
+.dictworld .col-lg-1{
+  text-indent: 3px;
+}
+.parsdiccelltext {
+color: #000;
+}
+
+
+div#headerSpeechMenu {
+    padding: 10px;
+}
+#parsvt-dictionary-button {
+    background: #ef5e29;
+    color: #fff;
+}
+#parsvt-commands {
+    background: #f7f7f7;
+    color: #4c4c4c;
+}
+.parsvt-diControl-button:hover {
+    background: #ececec;
+}
+#parsvt-words {
+    padding: 20px 3px;
+}
+
+
+#parsvt-dictionary-button{
+-webkit-border-radius: 35px;
+-moz-border-radius: 35px;
+border-radius: 35px;
+    margin: 10px 0;
+}
+#parsvt-dictionary-custom-button{-webkit-border-top-right-radius: 10px;
+-moz-border-radius-topright: 10px;
+border-top-right-radius: 10px;}
+
+#parsvt-dictionary-default-button{
+	-webkit-border-top-left-radius: 10px;
+-moz-border-radius-topleft: 10x;
+border-top-left-radius: 10px;
+}
+#parsvt-commands{
+	-webkit-border-bottom-right-radius: 15px;
+-webkit-border-bottom-left-radius: 15px;
+-moz-border-radius-bottomright: 15px;
+-moz-border-radius-bottomleft: 15px;
+border-bottom-right-radius: 15px;
+border-bottom-left-radius: 15px;
+    padding-bottom: 20px;
+}
+.parsvt-diControl-button {
+float:unset;
+    width: 50%;
+-webkit-border-radius: 100px;
+-moz-border-radius: 100px;
+border-radius: 100px;
+    height: 35px;
+    margin: 0 auto;
+}
+.parsvt-diControl-button {
+    background: #e8e8e8;
+    box-shadow: 0px 2px 1px #a7a7a7;
+}
+.parsvt-diControl-button:hover{
+    background: #e8e8e8;
+    box-shadow: inset 0px 0px 3px #a7a7a7;
+}
+.dictworld input {
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+    padding: 3px 5px;
+}
+#parsvt-words .row{margin:0;    border-bottom: 1px solid #e4e4e4;}

@@ -1,19 +1,13 @@
 <?php
-/*********************************************************************************
-  ** The contents of this file are subject to the vtiger CRM Public License Version 1.0
-   * ("License"); You may not use this file except in compliance with the License
-   * The Original Code is:  vtiger CRM Open Source
-   * The Initial Developer of the Original Code is vtiger.
-   * Portions created by vtiger are Copyright (C) vtiger.
-   * All Rights Reserved.
-  *
- ********************************************************************************/
+
 
 //This file contains the commonly used variables 
 
 $parent_tab_info_array=array(1=>'My Home Page',2=>'Marketing',3=>'Sales',4=>'Support',5=>'Analytics',6=>'Inventory',7=>'Tools',8=>'Settings');
 
 
-$parent_child_tab_rel_array=array(1=>array(3,9,28,),2=>array(26,6,4,28,7,9,8,),3=>array(7,6,4,2,20,22,23,14,19,8,9,),4=>array(13,15,6,4,14,8,28,9,),5=>array(1,25,),6=>array(14,18,19,21,22,20,23,),7=>array(24,27,8,),8=>array(),);
+$parent_child_tab_rel_array=array(1=>array(3,9,28,),2=>array(26,6,4,28,7,9,8,),3=>array(7,6,4,2,20,22,23,19,8,9,39,39,),4=>array(13,15,6,4,8,28,9,32,32,40,40,41,41,42,42,59,),5=>array(25,1,),6=>array(14,18,19,21,22,20,23,34,34,43,43,),7=>array(24,27,8,31,31,33,33,45,45,48,48,51,51,59,59,63,63,65,65,73,73,24,27,48,45,51,63,65,73,),8=>array(49,49,),);
+
+
 
 ?>

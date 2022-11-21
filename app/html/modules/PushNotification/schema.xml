@@ -1,0 +1,31 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_push_notification_logs</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_push_notification_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `status` varchar(10) DEFAULT NULL,
+  `content_type` varchar(15) DEFAULT NULL,
+  `content` text,
+  `result` text,
+  `date` datetime DEFAULT NULL,
+  `module` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+		<table>
+			<name>vtiger_push_notification_settings</name>
+			<sql><![CDATA[
+                CREATE TABLE `vtiger_push_notification_settings` (
+  `settings_name` varchar(200) NOT NULL DEFAULT '',
+  `settings_value` text NOT NULL,
+  `settings_status` int(1) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`settings_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+            ]]></sql>
+		</table>
+	</tables>
+</schema>

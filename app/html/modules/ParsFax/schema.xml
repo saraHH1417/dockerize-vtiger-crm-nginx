@@ -1,0 +1,69 @@
+<?xml version='1.0'?>
+<schema>
+	<tables>
+		<table>
+			<name>vtiger_parsfax</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_parsfax` (
+  `parsfaxid` int(11) NOT NULL DEFAULT '0',
+  `fax_record_no` varchar(128) DEFAULT NULL,
+  `fax_sender_name` int(19) DEFAULT NULL,
+  `fax_zone_charge_per_page` varchar(128) DEFAULT NULL,
+  `fax_comment` text,
+  `fax_sender_phone` varchar(128) DEFAULT NULL,
+  `fax_resource` varchar(128) DEFAULT NULL,
+  `fax_sms_charge` varchar(128) DEFAULT NULL,
+  `fax_total_page_charge` varchar(128) DEFAULT NULL,
+  `fax_sender_type` varchar(128) DEFAULT NULL,
+  `fax_fax_type` varchar(128) DEFAULT NULL,
+  `fax_received_phone` varchar(128) DEFAULT NULL,
+  `fax_header` varchar(128) DEFAULT NULL,
+  `fax_total_pages` varchar(128) DEFAULT NULL,
+  `fax_status` varchar(128) DEFAULT NULL,
+  `fax_submitted_date` datetime DEFAULT NULL,
+  `fax_scheduled_date` datetime DEFAULT NULL,
+  `fax_communication_date` datetime DEFAULT NULL,
+  `fax_fax_file` int(19) DEFAULT NULL,
+  `fax_inventory_module` int(19) DEFAULT NULL,
+  `tags` varchar(1) DEFAULT NULL,
+  PRIMARY KEY (`parsfaxid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parsfaxcf</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_parsfaxcf` (
+  `parsfaxid` int(11) NOT NULL,
+  PRIMARY KEY (`parsfaxid`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parsfax_logs</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_parsfax_logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `provider` varchar(255) NOT NULL,
+  `filename` varchar(255) NOT NULL,
+  `numbers` varchar(255) NOT NULL,
+  `filepagecount` int(11) NOT NULL,
+  `status` varchar(500) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=utf8]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parsfax_providers</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_parsfax_providers` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `isactive` int(1) DEFAULT NULL,
+  `providertype` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `parameters` text COLLATE utf8_unicode_ci,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci]]></sql>
+		</table>
+		<table>
+			<name>vtiger_parsfax_settings</name>
+			<sql><![CDATA[CREATE TABLE `vtiger_parsfax_settings` (
+  `settings_name` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `settings_value` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`settings_name`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci]]></sql>
+		</table>
+	</tables>
+</schema>
