@@ -378,10 +378,13 @@ class ModTracker {
     static function trackRelation($sourceModule, $sourceId, $targetModule, $targetId, $type) {
         global $adb, $current_user;
         $currentTime = date('Y-m-d H:i:s');
-
+        if (isset($_SESSION['authenticated_user_id']))
+        	$userid = $_SESSION['authenticated_user_id'];
+        else
+        	$userid = $current_user->id;
         $id = $adb->getUniqueId('vtiger_modtracker_basic');
         $adb->pquery('INSERT INTO vtiger_modtracker_basic(id, crmid, module, whodid, changedon, status) VALUES(?,?,?,?,?,?)',
-                array($id , $sourceId, $sourceModule, $current_user->id, $currentTime, $type));
+                array($id , $sourceId, $sourceModule, $userid, $currentTime, $type));
 
         $adb->pquery('INSERT INTO vtiger_modtracker_relations(id, targetmodule, targetid, changedon)
             VALUES(?,?,?,?)', array($id, $targetModule, $targetId, $currentTime));

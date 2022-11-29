@@ -9,11 +9,9 @@
  * All Rights Reserved.
  * *********************************************************************************** */
 
-class PBXManager_PBXManager_Controller
-{
+class PBXManager_PBXManager_Controller {
 
-    function getConnector()
-    {
+    function getConnector() {
         return new PBXManager_PBXManager_Connector;
     }
 
@@ -22,8 +20,7 @@ class PBXManager_PBXManager_Controller
      * @params <array> call details
      * return Response object
      */
-    function process($request)
-    {
+    function process($request) {
         $mode = $request->get('callstatus');
 
         switch ($mode) {
@@ -41,14 +38,11 @@ class PBXManager_PBXManager_Controller
                 break;
             case "Hangup" :
                 $callCause = $request->get('causetxt');
-                if ($callCause == "null" || empty($callCause)) {
+                if ($callCause == "null") {
                     break;
                 }
                 $this->processHangupCall($request);
                 break;
-            case "DialBegin" :
-                $this->processDialBeginCall($request);
-                break;
         }
     }
 
@@ -57,57 +51,7 @@ class PBXManager_PBXManager_Controller
      * @params <array> incoming call details
      * return Response object
      */
-    function processDialBeginCall($request)
-    {
-        $callerNumber = $request->get('callerIdNumber');
-
-        /* Get dialed number by caller. It has unified format so we need check variants */
-        $destinationNumber = '';
-        if (strpos($request->get('dialString'), "/") !== false) {
-            $dialParts = explode("/", $request->get('dialString'));
-            $destinationNumber = end($dialParts);
-        } elseif (strpos($request->get('dialString'), "@") !== false) {
-            $dialParts = explode("@", $request->get('dialString'));
-            $destinationNumber = $dialParts[0];
-        } else {
-            $destinationNumber = $request->get('dialString');
-        }
-
-        /* If not Originate event - prepare begin of call */
-        if ($callerNumber != $destinationNumber && !empty($destinationNumber) && !empty($callerNumber)) {
-            $callerUserInfo = PBXManager_Record_Model::getUserInfoWithNumber($callerNumber);
-
-            /* If caller number binded with crm user - it outgoing number */
-            $connector = $this->getConnector();
-            if ($callerUserInfo) {
-                $request->set('Direction', 'outbound');
-                $request->set('to', $destinationNumber);
-                $customerInfo = PBXManager_Record_Model::lookUpRelatedWithNumber($destinationNumber, $callerUserInfo['id']);
-                $connector->handleStartupCall($request, $callerUserInfo, $customerInfo);
-            } else {
-
-                /* If no match of twon numbers for crm users - don't fix ring */
-                $crmUserInfo = PBXManager_Record_Model::getUserInfoWithNumber($destinationNumber);
-                if (!$crmUserInfo) {
-                    return;
-                }
-
-                $request->set('Direction', 'inbound');
-                $request->set('from', $request->get('callerIdNumber'));
-                $customerInfo = PBXManager_Record_Model::lookUpRelatedWithNumber($request->get('callerIdNumber'), $crmUserInfo['id']);
-                $connector->handleStartupCall($request, $crmUserInfo, $customerInfo);
-            }
-        }
-    }
-
-
-    /**
-     * Function to process Incoming call request
-     * @params <array> incoming call details
-     * return Response object
-     */
-    function processStartupCall($request)
-    {
+    function processStartupCall($request) {
         $connector = $this->getConnector();
 
         $temp = $request->get('channel');
@@ -153,8 +97,7 @@ class PBXManager_PBXManager_Controller
      * @params <array> Dial call details
      * return Response object
      */
-    function processDialCall($request)
-    {
+    function processDialCall($request) {
         $connector = $this->getConnector();
         $connector->handleDialCall($request);
     }
@@ -164,8 +107,7 @@ class PBXManager_PBXManager_Controller
      * @params <array> Dial call details
      * return Response object
      */
-    function processEndCall($request)
-    {
+    function processEndCall($request) {
         $connector = $this->getConnector();
         $connector->handleEndCall($request);
     }
@@ -175,8 +117,7 @@ class PBXManager_PBXManager_Controller
      * @params <array> Hangup call details
      * return Response object
      */
-    function processHangupCall($request)
-    {
+    function processHangupCall($request) {
         $connector = $this->getConnector();
         $connector->handleHangupCall($request);
     }
@@ -186,8 +127,7 @@ class PBXManager_PBXManager_Controller
      * @params <array> recording details
      * return Response object
      */
-    function processRecording($request)
-    {
+    function processRecording($request) {
         $connector = $this->getConnector();
         $connector->handleRecording($request);
     }

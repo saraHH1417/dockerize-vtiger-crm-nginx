@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2022-11-21 11:50:40
+<?php /* Smarty version Smarty-3.1.7, created on 2022-11-29 17:02:17
          compiled from "/var/www/html/includes/runtime/../../layouts/v7/modules/Vtiger/dashboards/DashBoardHeader.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:975512588637b34d8850fd0-51742435%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:973804578638609e188a3e5-19736672%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '03a55470f7d00d1f012d8c33dcaac790c7acacdc' => 
     array (
       0 => '/var/www/html/includes/runtime/../../layouts/v7/modules/Vtiger/dashboards/DashBoardHeader.tpl',
-      1 => 1669018357,
+      1 => 1669725088,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '975512588637b34d8850fd0-51742435',
+  'nocache_hash' => '973804578638609e188a3e5-19736672',
   'function' => 
   array (
   ),
@@ -26,9 +26,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_637b34d8868bb',
+  'unifunc' => 'content_638609e18a53d',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_637b34d8868bb')) {function content_637b34d8868bb($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_638609e18a53d')) {function content_638609e18a53d($_smarty_tpl) {?>
 
 <div class='dashboardHeading container-fluid'>
 	<div class="buttonGroups pull-right">

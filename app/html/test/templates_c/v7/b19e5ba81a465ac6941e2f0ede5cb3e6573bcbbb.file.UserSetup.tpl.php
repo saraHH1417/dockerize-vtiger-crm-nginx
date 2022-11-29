@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2022-11-21 11:50:38
+<?php /* Smarty version Smarty-3.1.7, created on 2022-11-29 17:02:15
          compiled from "/var/www/html/includes/runtime/../../layouts/v7/modules/Users/UserSetup.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1303865711637b34d6935d38-65968914%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1438324997638609df4b4df5-38312444%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'b19e5ba81a465ac6941e2f0ede5cb3e6573bcbbb' => 
     array (
       0 => '/var/www/html/includes/runtime/../../layouts/v7/modules/Users/UserSetup.tpl',
-      1 => 1669018357,
+      1 => 1669725088,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1303865711637b34d6935d38-65968914',
+  'nocache_hash' => '1438324997638609df4b4df5-38312444',
   'function' => 
   array (
   ),
@@ -30,9 +30,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_637b34d6995ff',
+  'unifunc' => 'content_638609df50951',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_637b34d6995ff')) {function content_637b34d6995ff($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_638609df50951')) {function content_638609df50951($_smarty_tpl) {?>
 
 <!DOCTYPE html><html><head><title>Vtiger</title><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link REL="SHORTCUT ICON" HREF="layouts/v7/skins/images/favicon.ico"><link rel="stylesheet" href="libraries/bootstrap/css/bootstrap.css" type="text/css" media="screen" /><link rel="stylesheet" href="resources/styles.css" type="text/css" media="screen" /><link rel="stylesheet" href="libraries/jquery/select2/select2.css" /><link rel="stylesheet" href="libraries/jquery/posabsolute-jQuery-Validation-Engine/css/validationEngine.jquery.css" /><script type="text/javascript" src="libraries/jquery/jquery.min.js"></script><script type="text/javascript" src="libraries/bootstrap/js/bootstrap-tooltip.js"></script><script type="text/javascript" src="libraries/jquery/select2/select2.min.js"></script><script type="text/javascript" src="libraries/jquery/posabsolute-jQuery-Validation-Engine/js/jquery.validationEngine.js" ></script><script type="text/javascript" src="libraries/jquery/posabsolute-jQuery-Validation-Engine/js/jquery.validationEngine-en.js" ></script><script type="text/javascript">
 				jQuery(function(){

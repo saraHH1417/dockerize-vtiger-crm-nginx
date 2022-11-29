@@ -33,13 +33,6 @@ class PBXManager_Detail_View extends Vtiger_Detail_View{
         if($recordModel->get('callstatus') != 'completed') { 
             $recordModel->set('recordingurl', ''); 
         }
-        // VTFarsi.ir begin
-        $rl = $recordModel->get('recordingurl');
-        if($recordModel->get('callstatus') == 'completed' && !empty($rl)) {
-            // $recordModel->set('recordingurl', '<a href="'.$recordModel->get('recordingurl').'" ><i class="icon-volume-up"></i>Download</a>');
-            $recordModel->set('recordingurl', '<audio preload="metadata" src="' . $recordModel->get('recordingurl') . '" controls></audio>');
-        }
-        // VTFarsi.ir end
         return parent::preProcess($request, true);
 	}
 }

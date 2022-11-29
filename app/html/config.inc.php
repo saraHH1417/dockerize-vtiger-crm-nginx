@@ -31,7 +31,7 @@ $CALENDAR_DISPLAY = 'true';
 $USE_RTE = 'true';
 
 // helpdesk support email id and support name (Example: 'support@vtiger.com' and 'vtiger support')
-$HELPDESK_SUPPORT_EMAIL_ID = 'sara.afzar@gmail.com';
+$HELPDESK_SUPPORT_EMAIL_ID = 'support@yourdomain.com';
 $HELPDESK_SUPPORT_NAME = 'your-support name';
 $HELPDESK_SUPPORT_EMAIL_REPLY_ID = $HELPDESK_SUPPORT_EMAIL_ID;
 
@@ -46,9 +46,9 @@ $HELPDESK_SUPPORT_EMAIL_REPLY_ID = $HELPDESK_SUPPORT_EMAIL_ID;
 
 $dbconfig['db_server'] = 'mariadb';
 $dbconfig['db_port'] = ':3306';
-$dbconfig['db_username'] = 'vtiger_user';
-$dbconfig['db_password'] = 'vtiger_user@123';
-$dbconfig['db_name'] = 'vtiger_db';
+$dbconfig['db_username'] = 'root';
+$dbconfig['db_password'] = 'password';
+$dbconfig['db_name'] = 'crm';
 $dbconfig['db_type'] = 'mysqli';
 $dbconfig['db_status'] = 'true';
 
@@ -79,12 +79,12 @@ $dbconfigoption['ssl'] = false;
 
 $host_name = $dbconfig['db_hostname'];
 
-$site_URL = 'http://localhost:8015/';
+$site_URL = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']==='on' ? 'https': 'http')."://".$_SERVER['HTTP_HOST'].(dirname($_SERVER['PHP_SELF']) != '/' && dirname($_SERVER['PHP_SELF']) != '\\' ? str_replace('\\','/',dirname($_SERVER['PHP_SELF'])) : '').'/'; 
 
 // url for customer portal (Example: http://vtiger.com/portal)
 $PORTAL_URL = $site_URL.'/customerportal';
 // root directory path
-$root_directory = '/var/www/html/';
+$root_directory = '/var/www/html';
 
 // cache direcory path
 $cache_dir = 'cache/';
@@ -156,7 +156,7 @@ $display_empty_home_blocks = false;
 $disable_stats_tracking = false;
 
 // Generating Unique Application Key
-$application_unique_key = 'ef2c3eb3ec1f09ea03d25fb9ab9c797d';
+$application_unique_key = 'ba62fca8a311cf308d3cfd2ae19a04df';
 
 // trim descriptions, titles in listviews to this value
 $listview_max_textlength = 40;

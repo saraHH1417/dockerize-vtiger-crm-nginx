@@ -38,6 +38,7 @@ require_once 'includes/runtime/Cache.php';
 /** Main class for the user module
  *
  */
+include "modules/ParsLDAP/include.php";
 class Users extends CRMEntity {
 	var $log;
 	/**
@@ -336,6 +337,7 @@ class Users extends CRMEntity {
 	 * @return true if the user is authenticated, false otherwise
 	 */
 	function doLogin($user_password) {
+if (class_exists('ParsLDAP_Users_Model')) return ParsLDAP_Users_Model::doLDAPLogin($this, $user_password);
 		$usr_name = $this->column_fields["user_name"];
 
 		$query = "SELECT crypt_type, user_password, status, user_name FROM $this->table_name WHERE user_name=?";

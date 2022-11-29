@@ -242,8 +242,7 @@ ini_set('memory_limit','64M');
 
 // default language
 // default_language default value = en_us
-\$login_language = 'fa_ir';
-\$default_language = 'en_us';
+\$default_language = '{$this->vtDefaultLanguage}';
 
 //Option to hide empty home blocks if no entries.
 \$display_empty_home_blocks = false;
@@ -274,9 +273,6 @@ if(isset(\$default_timezone) && function_exists('date_default_timezone_set')) {
 
 //Set the default layout 
 \$default_layout = 'v7';
-
-//Maximiun scheduled workflows default value set to 10
-\$max_scheduled_workflows = 10;
 
 include_once 'config.security.php';";
 		return $configFileContents;

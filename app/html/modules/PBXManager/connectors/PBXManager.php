@@ -15,7 +15,7 @@ require_once 'vtlib/Vtiger/Net/Client.php';
 class PBXManager_PBXManager_Connector {
 
     private static $SETTINGS_REQUIRED_PARAMETERS = array('webappurl' => 'text','outboundcontext' => 'text', 'outboundtrunk' => 'text' , 'vtigersecretkey' => 'text');
-    private static $RINGING_CALL_PARAMETERS = array('From' => 'callerIdNumber', 'SourceUUID' => 'callUUID', 'Direction' => 'Direction', 'IncomingLineName' => 'connectedLineName');
+    private static $RINGING_CALL_PARAMETERS = array('From' => 'callerIdNumber', 'SourceUUID' => 'callUUID', 'Direction' => 'Direction');
     private static $NUMBERS = array();
     private $webappurl;
     private $outboundcontext, $outboundtrunk;
@@ -107,26 +107,28 @@ class PBXManager_PBXManager_Connector {
      */
     public function handleDialCall($details) {
         $callid = $details->get('callUUID');
+
         $answeredby = $details->get('callerid2');
         $caller = $details->get('callerid1');
+
         // For Inbound call, answered by will be the user, we should fill the user field
-        // VTFarsi.ir begin
-        /* 
-         * We dont know who caller - crm user or another human. We need check this and also check inner call
-         * when caller and answer numbers in crm but only one matches on record model 
-         */
-        $user = PBXManager_Record_Model::getUserInfoWithNumber($caller);
-        if(!$user) {
+        $recordModel = PBXManager_Record_Model::getInstanceBySourceUUID($callid);
+        $direction = $recordModel->get('direction');
+        if ($direction == self::INCOMING_TYPE) {
+            // For Incoming call, we should fill the user field if he answered that call 
             $user = PBXManager_Record_Model::getUserInfoWithNumber($answeredby);
-            /* If no one crm user for anyone caller - no process ring */
-            if(!$user) {
-                return;
+            $params['user'] = $user['id'];
+            $recordModel->updateAssignedUser($user['id']);
+        } else {
+            $user = PBXManager_Record_Model::getUserInfoWithNumber($caller);
+            if ($user) {
+                $params['user'] = $user['id'];
+                $recordModel->updateAssignedUser($user['id']);
             }
         }
-        $recordModel = PBXManager_Record_Model::getInstanceBySourceUUID($callid, $user);
-        $params['user'] = $user['id'];
+
         $params['callstatus'] = "in-progress";
-        $recordModel->updateCallDetails($params, $user);
+        $recordModel->updateCallDetails($params);
     }
     
     /**
@@ -135,11 +137,14 @@ class PBXManager_PBXManager_Connector {
      */
     public function handleEndCall($details) {
         $callid = $details->get('callUUID');
+        $recordModel = PBXManager_Record_Model::getInstanceBySourceUUID($callid);
+        
         $params['starttime'] = $details->get('starttime');
         $params['endtime'] = $details->get('endtime');
         $params['totalduration'] = $details->get('duration');
         $params['billduration'] = $details->get('billableseconds');
-        PBXManager_Record_Model::updateCallDetailsBySourceUUID($callid, $params);
+
+        $recordModel->updateCallDetails($params);
     }
     
     /**
@@ -148,14 +153,7 @@ class PBXManager_PBXManager_Connector {
      */
     public function handleHangupCall($details) {
         $callid = $details->get('callUUID');
-        // VTFarsi.ir begin
-        $userNumber = $details->get('callerIdNum');
-        $user = PBXManager_Record_Model::getUserInfoWithNumber($userNumber);
-        if(!$user) {
-            return;
-        }
-        $recordModel = PBXManager_Record_Model::getInstanceBySourceUUID($callid, $user);
-        // VTFarsi.ir end
+        $recordModel = PBXManager_Record_Model::getInstanceBySourceUUID($callid);
         $hangupcause = $details->get('causetxt');
         
         switch ($hangupcause) {
@@ -177,28 +175,12 @@ class PBXManager_PBXManager_Connector {
                 break;
         }
         
-        $totalDuration = $recordModel->get('totalduration');
-        $endTime = $recordModel->get('endtime');
-        $startTime = $recordModel->get('starttime');
-        if(empty($totalDuration) && empty($endTime) && !empty($startTime)) {
-            $currentTime = time();
-            $params['endtime'] = date("Y-m-d H:i:s", $currentTime);
-            $startTime = strtotime($startTime);
-            if($startTime) {
-                $totalDuration = $currentTime - $startTime;
-                if($totalDuration > 0) {
-                    $params['totalduration'] = $totalDuration;
-                }
-            }
-        }
         if($details->get('EndTime') && $details->get('Duration')) {
             $params['endtime'] = $details->get('EndTime');
             $params['totalduration'] = $details->get('Duration');
         }
         
-        // VTFarsi.ir begin
-        $recordModel->updateCallDetails($params, $user);
-        // VTFarsi.ir end
+        $recordModel->updateCallDetails($params);
     }
     
     /**
@@ -207,9 +189,9 @@ class PBXManager_PBXManager_Connector {
      */
     public function handleRecording($details) {
         $callid = $details->get('callUUID');
-        // VTFarsi.ir begin
-        PBXManager_Record_Model::updateCallRecordBySourceUUID($callid, $details->get('recordinglink'));
-        // VTFarsi.ir end
+        $recordModel = PBXManager_Record_Model::getInstanceBySourceUUID($callid);
+        $params['recordingurl'] = $details->get('recordinglink');
+        $recordModel->updateCallDetails($params);
     }
     
     /**
@@ -235,22 +217,15 @@ class PBXManager_PBXManager_Connector {
         $params['starttime'] = $details->get('StartTime');
         $params['callstatus'] = "ringing";
         $user = CRMEntity::getInstance('Users');
-        $current_user = $user->retrieveCurrentUserInfoFromFile($userInfo['id']);
+        $current_user = $user->getActiveAdminUser();
         
-        //VTFarsi.ir begin fix multiplication on call transfer
-        $recordModel = PBXManager_Record_Model::getInstanceBySourceUUID($params['SourceUUID'], $userInfo);
-        if($recordModel->get('pbxmanagerid') == null) {
+        $recordModel = PBXManager_Record_Model::getCleanInstance();
         $recordModel->saveRecordWithArrray($params);
-        } else {
-            $updateParams = array();
-            $updateParams['user'] = $userInfo['id'];
-            $updateParams['callstatus'] = 'ringing';
-            $updateParams['customertype'] = $params['CustomerType'];
-            $updateParams['customernumber'] = $params['CustomerNumber'];
-            $updateParams['customer'] = $customerInfo['id'];
-            $recordModel->updateAssignedUser($userInfo['id']);
-            $recordModel->updateCallDetails($updateParams, $userInfo);
-        }
+        
+        if ($direction == self::INCOMING_TYPE)
+            $this->respondToIncomingCall($details);
+        else
+            $this->respondToOutgoingCall($params['CustomerNumber']);
     }
     
     /**
@@ -292,13 +267,8 @@ class PBXManager_PBXManager_Connector {
             $params['callstatus'] = 'no-answer';
             $params['starttime'] = $date;
             $params['endtime'] = $date;
-
-            // VTFarsi.ir begin
-            $userNumber = $details->get('dialString');
-            $user = PBXManager_Record_Model::getUserInfoWithNumber($userNumber);
-            $recordModel = PBXManager_Record_Model::getInstanceBySourceUUID($details->get('callUUID'), $user);
-            $recordModel->updateCallDetails($params, $user);
-            // VTFarsi.ir end
+            $recordModel = PBXManager_Record_Model::getInstanceBySourceUUID($details->get('callUUID'));
+            $recordModel->updateCallDetails($params);
         }
         $response .= '</Dial></Response>';
         echo $response;

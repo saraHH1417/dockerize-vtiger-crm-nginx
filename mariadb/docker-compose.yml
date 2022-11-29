@@ -7,10 +7,8 @@ services:
       dockerfile: Dockerfile
     restart: always
     environment:
-        - MYSQL_DATABASE=vtiger_db
+        - MYSQL_DATABASE=crm
         - MYSQL_ROOT_PASSWORD=password
-        - MYSQL_USER=vtiger_user
-        - MYSQL_PASSWORD=vtiger_user@123
     ports:
         - "3324:3306"
     volumes:

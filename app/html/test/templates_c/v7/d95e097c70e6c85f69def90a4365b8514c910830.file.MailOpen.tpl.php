@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2022-11-21 11:50:41
+<?php /* Smarty version Smarty-3.1.7, created on 2022-11-29 17:02:18
          compiled from "/var/www/html/includes/runtime/../../layouts/v7/modules/MailManager/MailOpen.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1562420539637b34d9ab7a91-99535417%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1555169957638609e2cc9273-26611187%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'd95e097c70e6c85f69def90a4365b8514c910830' => 
     array (
       0 => '/var/www/html/includes/runtime/../../layouts/v7/modules/MailManager/MailOpen.tpl',
-      1 => 1669018803,
+      1 => 1669725088,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1562420539637b34d9ab7a91-99535417',
+  'nocache_hash' => '1555169957638609e2cc9273-26611187',
   'function' => 
   array (
   ),
@@ -38,9 +38,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_637b34d9b2215',
+  'unifunc' => 'content_638609e2d3c66',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_637b34d9b2215')) {function content_637b34d9b2215($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/var/www/html/libraries/Smarty/libs/plugins/modifier.escape.php';
+<?php if ($_valid && !is_callable('content_638609e2d3c66')) {function content_638609e2d3c66($_smarty_tpl) {?><?php if (!is_callable('smarty_modifier_escape')) include '/var/www/html/libraries/Smarty/libs/plugins/modifier.escape.php';
 ?>
 <div class="container-fluid padding0px"><input type="hidden" id="mmFrom" value='<?php echo implode(',',$_smarty_tpl->tpl_vars['MAIL']->value->from());?>
 '><input type="hidden" id="mmSubject" value='<?php echo Vtiger_Functions::jsonEncode($_smarty_tpl->tpl_vars['MAIL']->value->subject());?>

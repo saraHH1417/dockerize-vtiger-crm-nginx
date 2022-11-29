@@ -37,16 +37,7 @@ class Install_Index_view extends Vtiger_View_Controller {
 	public function preProcess(Vtiger_Request $request, $display = true) {
 		$this->applyInstallFriendlyEnv();
 
-		date_default_timezone_set('Asia/Tehran'); // to overcome the pre configuration settings
-		// Added to redirect to default module if already installed
-		$configFileName = 'config.inc.php';
-		if(is_file($configFileName) && filesize($configFileName) > 0) {
-			$defaultModule = vglobal('default_module');
-			$defaultModuleInstance = Vtiger_Module_Model::getInstance($defaultModule);
-			$defaultView = $defaultModuleInstance->getDefaultViewName();
-			header('Location:index.php?module='.$defaultModule.'&view='.$defaultView);
-			exit;
-		}
+		date_default_timezone_set('Europe/London'); // to overcome the pre configuration settings
 
 		parent::preProcess($request);
 		$viewer = $this->getViewer($request);
@@ -54,7 +45,7 @@ class Install_Index_view extends Vtiger_View_Controller {
 		if ($chosenLanguage = $request->get('lang')) {
 			$_SESSION['config_file_info']['default_language'] = $chosenLanguage;
 		} elseif (empty($_SESSION['config_file_info']['default_language'])) {
-			$_SESSION['config_file_info']['default_language'] = 'fa_ir';
+			$_SESSION['config_file_info']['default_language'] = 'en_us';
 		}
 		vglobal('default_language', $_SESSION['config_file_info']['default_language']);
 
