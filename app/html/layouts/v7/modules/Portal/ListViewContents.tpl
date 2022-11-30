@@ -126,7 +126,16 @@
 							<td colspan="{$COLSPAN_WIDTH}">
 								<div class="emptyRecordsContent">
 									{assign var=SINGLE_MODULE value="SINGLE_$MODULE"}
-									{vtranslate('LBL_NO')} {vtranslate('LBL_BOOKMARKS', $MODULE)} {vtranslate('LBL_FOUND')}. {vtranslate('LBL_CREATE')}&nbsp;
+									{**PVTPATCHER-A089ED1091F8C1E914DDC52996207A91-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+								{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No record found', 'ParsVT')}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate('LBL_BOOKMARKS', $MODULE)} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-A089ED1091F8C1E914DDC52996207A91// {vtranslate('LBL_NO')} {vtranslate('LBL_BOOKMARKS', $MODULE)} {vtranslate('LBL_FOUND')}**}
+{**PVTPATCHER-A089ED1091F8C1E914DDC52996207A91-FINISH**}. {vtranslate('LBL_CREATE')}&nbsp;
 									<a class="addBookmark" style="color:blue;">{vtranslate('LBL_BOOKMARK', $MODULE)}</a>
 								</div>
 							</td>

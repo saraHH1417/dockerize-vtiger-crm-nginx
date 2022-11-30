@@ -15,7 +15,11 @@
 				<form id="detailView" class="form-horizontal" method="POST">
 					<div class="clearfix">
 						<h4 class="pull-left">
-							{$RECORD_MODEL->get('groupname')}
+							{**PVTPATCHER-0BBB9097A156DEA824F4F210F9C7B190-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($RECORD_MODEL->get('groupname'))}
+{** REPLACED-0BBB9097A156DEA824F4F210F9C7B190// {$RECORD_MODEL->get('groupname')}**}
+{**PVTPATCHER-0BBB9097A156DEA824F4F210F9C7B190-FINISH**}
 						</h4>
 						<div class="btn-group pull-right" >
 							<button class="btn btn-default" onclick="window.location.href='{$RECORD_MODEL->getEditViewUrl()}'" type="button">
@@ -29,7 +33,11 @@
 							{vtranslate('LBL_GROUP_NAME', $QUALIFIED_MODULE)}&nbsp;<span class="redColor">*</span>
 						</span>
 						<div class="fieldValue">
-							<b>{$RECORD_MODEL->getName()}</b>
+							<b>{**PVTPATCHER-5AFBE89055A656644FED3E0E0ED14078-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($RECORD_MODEL->getName())}
+{** REPLACED-5AFBE89055A656644FED3E0E0ED14078// {$RECORD_MODEL->getName()}**}
+{**PVTPATCHER-5AFBE89055A656644FED3E0E0ED14078-FINISH**}</b>
 						</div>
 					</div>
 					<div class="form-group">
@@ -37,7 +45,11 @@
 							{vtranslate('LBL_DESCRIPTION', $QUALIFIED_MODULE)}
 						</span>
 						<div class="fieldValue">
-							<b>{$RECORD_MODEL->getDescription()}</b>
+							<b>{**PVTPATCHER-3F7A9EFFDDBB1F24F1F26805B43E74C3-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($RECORD_MODEL->getDescription())}
+{** REPLACED-3F7A9EFFDDBB1F24F1F26805B43E74C3// {$RECORD_MODEL->getDescription()}**}
+{**PVTPATCHER-3F7A9EFFDDBB1F24F1F26805B43E74C3-FINISH**}</b>
 						</div>
 					</div>
 					<div class="form-group ">

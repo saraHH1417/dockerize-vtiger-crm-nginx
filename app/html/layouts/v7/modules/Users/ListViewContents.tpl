@@ -146,9 +146,27 @@
 									<center>
 										{if $SEARCH_VALUE eq 'Active'}
 											{assign var=SINGLE_MODULE value="SINGLE_$MODULE"}
-											{vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')},{if $IS_MODULE_EDITABLE} <a style="color:blue" href="{$MODULE_MODEL->getCreateRecordUrl()}"> {vtranslate('LBL_CREATE_USER',$MODULE)}</a>{/if}
+											{**PVTPATCHER-91EEE655169B982EE18EF7D9D9B31B3E-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No User Found.', 'ParsVT')}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-91EEE655169B982EE18EF7D9D9B31B3E// {vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}**}
+{**PVTPATCHER-91EEE655169B982EE18EF7D9D9B31B3E-FINISH**},{if $IS_MODULE_EDITABLE} <a style="color:blue" href="{$MODULE_MODEL->getCreateRecordUrl()}"> {vtranslate('LBL_CREATE_USER',$MODULE)}</a>{/if}
 										{else}
-											{vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}
+											{**PVTPATCHER-91EEE655169B982EE18EF7D9D9B31B3E-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No User Found.', 'ParsVT')}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-91EEE655169B982EE18EF7D9D9B31B3E// {vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}**}
+{**PVTPATCHER-91EEE655169B982EE18EF7D9D9B31B3E-FINISH**}
 										{/if}
 									</center>
 								</div>

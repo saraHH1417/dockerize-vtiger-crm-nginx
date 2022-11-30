@@ -17,7 +17,12 @@
 <input type="hidden" id="hideCompletedEventTodo" value="{$CURRENT_USER->get('hidecompletedevents')}">
 <input type="hidden" id="show_allhours" value="{$CURRENT_USER->get('showallhours')}" />
 <div id="mycalendar" class="calendarview col-lg-12">
-	{assign var=LEFTPANELHIDE value=$CURRENT_USER_MODEL->get('leftpanelhide')}
+	{**PVTPATCHER-2CB131912AA8F58A6FCD17AF9C4200D3-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+{assign var=LEFTPANELHIDE value=$CURRENT_USER_MODEL->get('leftpanelhide')}
+{** REPLACED-2CB131912AA8F58A6FCD17AF9C4200D3// {assign var=LEFTPANELHIDE value=$CURRENT_USER_MODEL->get('leftpanelhide')}**}
+{**PVTPATCHER-2CB131912AA8F58A6FCD17AF9C4200D3-FINISH**}
 	<div class="essentials-toggle" title="{vtranslate('LBL_LEFT_PANEL_SHOW_HIDE', 'Vtiger')}">
 		<span class="essentials-toggle-marker fa {if $LEFTPANELHIDE eq '1'}fa-chevron-right{else}fa-chevron-left{/if} cursorPointer"></span>
 	</div>

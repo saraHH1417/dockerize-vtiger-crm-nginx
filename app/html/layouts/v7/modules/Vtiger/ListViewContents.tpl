@@ -196,7 +196,11 @@
 												{/if}
 											{/if}
 											<span {if !empty($LISTVIEW_ENTRY_VALUE)} class="picklist-color picklist-{$PICKLIST_FIELD_ID}-{Vtiger_Util_Helper::convertSpaceToHyphen($LISTVIEW_ENTRY_RAWVALUE)}" {/if}> {$LISTVIEW_ENTRY_VALUE} </span>
-										{else if $LISTVIEW_HEADER->getFieldDataType() eq 'multipicklist'}
+										{**PVTPATCHER-15840264ED862F16F5444DC908CAAF58-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{else if $LISTVIEW_HEADER->getFieldDataType() eq 'customdatetime'} {$LISTVIEW_ENTRY->getDisplayValue($LISTVIEW_HEADERNAME)}{else if $LISTVIEW_HEADER->getFieldDataType() eq 'citiesfield'  || $LISTVIEW_HEADER->getFieldDataType() eq 'userslist'} {$LISTVIEW_ENTRY->getDisplayValue($LISTVIEW_HEADERNAME)}{else if $LISTVIEW_HEADER->getFieldDataType() eq 'dsign'}  {if $LISTVIEW_ENTRY_RAWVALUE != ''}<img src="{$LISTVIEW_ENTRY_RAWVALUE}" width="150" height="80">{/if}{else if $LISTVIEW_HEADER->getFieldDataType() eq 'futronic' || $LISTVIEW_HEADER->getFieldDataType() eq 'signotec'}  {if $LISTVIEW_ENTRY_RAWVALUE != ''}<img src="{$LISTVIEW_ENTRY_RAWVALUE}" style="max-width:150px; max-height:100px">{/if}{else if $LISTVIEW_HEADER->getFieldDataType() eq 'multipicklist'}
+{** REPLACED-15840264ED862F16F5444DC908CAAF58// {else if $LISTVIEW_HEADER->getFieldDataType() eq 'multipicklist'}**}
+{**PVTPATCHER-15840264ED862F16F5444DC908CAAF58-FINISH**}
 											{assign var=MULTI_RAW_PICKLIST_VALUES value=explode('|##|',$LISTVIEW_ENTRY->getRaw($LISTVIEW_HEADERNAME))}
 											{assign var=MULTI_PICKLIST_VALUES value=explode(',',$LISTVIEW_ENTRY_VALUE)}
 											{assign var=ALL_MULTI_PICKLIST_VALUES value=array_flip($LISTVIEW_HEADER->getPicklistValues())}
@@ -232,12 +236,25 @@
 						<td colspan="{$COLSPAN_WIDTH}">
 							<div class="emptyRecordsContent">
 								{assign var=SINGLE_MODULE value="SINGLE_$MODULE"}
+								{**PVTPATCHER-E9074C61329A1D34A221AB20B089E234-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+								{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No %s found.', 'ParsVT',vtranslate($MODULE, $MODULE))}
+								{else}
 								{vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-E9074C61329A1D34A221AB20B089E234// {vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}.**}
+{**PVTPATCHER-E9074C61329A1D34A221AB20B089E234-FINISH**}
 								{if $IS_CREATE_PERMITTED}
 									<a style="color:blue" href="{$MODULE_MODEL->getCreateRecordUrl()}"> {vtranslate('LBL_CREATE')}</a>
 									{if Users_Privileges_Model::isPermitted($MODULE, 'Import') && $LIST_VIEW_MODEL->isImportEnabled()}
 										{vtranslate('LBL_OR', $MODULE)}
-										<a style="color:blue" href="#" onclick="return Vtiger_Import_Js.triggerImportAction()">{vtranslate('LBL_IMPORT', $MODULE)}</a>
+										{**PVTPATCHER-32E0841A7CF40473BA1AD13734EBE8FD-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<a style="color:blue" href="#" onclick="return Vtiger_Import_Js.triggerImportAction()">{vtranslate('LBL_IMPORT', $MODULE)}</a> {vtranslate('in', 'ParsVT')}
+{** REPLACED-32E0841A7CF40473BA1AD13734EBE8FD// <a style="color:blue" href="#" onclick="return Vtiger_Import_Js.triggerImportAction()">{vtranslate('LBL_IMPORT', $MODULE)}</a>**}
+{**PVTPATCHER-32E0841A7CF40473BA1AD13734EBE8FD-FINISH**}
 										{vtranslate($MODULE, $MODULE)}
 									{else}
 										{vtranslate($SINGLE_MODULE, $MODULE)}

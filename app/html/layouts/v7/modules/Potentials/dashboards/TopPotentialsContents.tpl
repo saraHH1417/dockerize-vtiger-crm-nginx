@@ -40,7 +40,16 @@
 	</div>
 {else}
 	<span class="noDataMsg">
-		{vtranslate('LBL_NO')} {vtranslate($MODULE_NAME, $MODULE_NAME)} {vtranslate('LBL_MATCHED_THIS_CRITERIA')}
+		{**PVTPATCHER-838040990E1780E4F3CDBB5235D80251-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+		{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+		      {vtranslate('No %s records matched this criteria to view', 'ParsVT',vtranslate($MODULE_NAME, $MODULE_NAME))}
+		{else}
+		      {vtranslate('LBL_NO')} {vtranslate($MODULE_NAME, $MODULE_NAME)} {vtranslate('LBL_MATCHED_THIS_CRITERIA')}
+		{/if}
+{** REPLACED-838040990E1780E4F3CDBB5235D80251// {vtranslate('LBL_NO')} {vtranslate($MODULE_NAME, $MODULE_NAME)} {vtranslate('LBL_MATCHED_THIS_CRITERIA')}**}
+{**PVTPATCHER-838040990E1780E4F3CDBB5235D80251-FINISH**}
 	</span>
 {/if}
 </div>

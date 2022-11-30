@@ -18,8 +18,24 @@
         </label>
         <div class="col-sm-6 controls">
             {assign var=SINGLE_SELECTED_MODULE value="SINGLE_$SELECTED_MODULE"}
-            <span><input type="radio" name="workflow_trigger" value="1" {if $EXECUTION_CONDITION eq '1'} checked="" {/if}> <span id="workflowTriggerCreate">{vtranslate($SINGLE_SELECTED_MODULE, $SELECTED_MODULE)} {vtranslate('LBL_CREATION', $QUALIFIED_MODULE)}</span></span><br>
-            <span><input type="radio" name="workflow_trigger" value="3" {if $EXECUTION_CONDITION eq '3' or $EXECUTION_CONDITION eq '2'} checked="" {/if}> <span id="workflowTriggerUpdate">{vtranslate($SINGLE_SELECTED_MODULE, $SELECTED_MODULE)} {vtranslate('LBL_UPDATED', $QUALIFIED_MODULE)}</span> &nbsp;({vtranslate('LBL_INCLUDES_CREATION', $QUALIFIED_MODULE)})</span><br>
+            <span><input type="radio" name="workflow_trigger" value="1" {if $EXECUTION_CONDITION eq '1'} checked="" {/if}> <span id="workflowTriggerCreate">{**PVTPATCHER-7338B8BA3E11E98C49CA714C6C93C5CE-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE eq 'fa_ir' or  $LANGUAGE eq 'fa_af'}
+                        {vtranslate('LBL_CREATION', $QUALIFIED_MODULE)} {vtranslate($SINGLE_SELECTED_MODULE, $SELECTED_MODULE)}
+                        {else}
+                        {vtranslate($SINGLE_SELECTED_MODULE, $SELECTED_MODULE)} {vtranslate('LBL_CREATION', $QUALIFIED_MODULE)}
+                        {/if}
+{** REPLACED-7338B8BA3E11E98C49CA714C6C93C5CE// {vtranslate($SINGLE_SELECTED_MODULE, $SELECTED_MODULE)} {vtranslate('LBL_CREATION', $QUALIFIED_MODULE)}**}
+{**PVTPATCHER-7338B8BA3E11E98C49CA714C6C93C5CE-FINISH**}</span></span><br>
+            <span><input type="radio" name="workflow_trigger" value="3" {if $EXECUTION_CONDITION eq '3' or $EXECUTION_CONDITION eq '2'} checked="" {/if}> <span id="workflowTriggerUpdate">{**PVTPATCHER-77D55BBB9D2E63895B2DBA076D4951E1-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE eq 'fa_ir' or  $LANGUAGE eq 'fa_af'}
+                        {vtranslate('LBL_UPDATE', 'Settings:Vtiger')} {vtranslate($SINGLE_SELECTED_MODULE, $SELECTED_MODULE)}
+                        {else}
+                        {vtranslate($SINGLE_SELECTED_MODULE, $SELECTED_MODULE)} {vtranslate('LBL_UPDATED', $QUALIFIED_MODULE)}
+                        {/if}
+{** REPLACED-77D55BBB9D2E63895B2DBA076D4951E1// {vtranslate($SINGLE_SELECTED_MODULE, $SELECTED_MODULE)} {vtranslate('LBL_UPDATED', $QUALIFIED_MODULE)}**}
+{**PVTPATCHER-77D55BBB9D2E63895B2DBA076D4951E1-FINISH**}</span> &nbsp;({vtranslate('LBL_INCLUDES_CREATION', $QUALIFIED_MODULE)})</span><br>
 			<span><input type="radio" name="workflow_trigger" value="6" {if $EXECUTION_CONDITION eq '6'} checked="" {else if $SCHEDULED_WORKFLOW_COUNT >= $MAX_ALLOWED_SCHEDULED_WORKFLOWS} disabled="disabled" {/if}> {vtranslate('LBL_TIME_INTERVAL', $QUALIFIED_MODULE)}
 				{if $SCHEDULED_WORKFLOW_COUNT >= $MAX_ALLOWED_SCHEDULED_WORKFLOWS}
 					&nbsp;&nbsp;<span class="alert-info textAlignCenter"><i class="fa fa-info-circle"></i>&nbsp;&nbsp;({vtranslate('LBL_MAX_SCHEDULED_WORKFLOWS_EXCEEDED', $QUALIFIED_MODULE, $MAX_ALLOWED_SCHEDULED_WORKFLOWS)})</span>
@@ -67,13 +83,26 @@
                             <div class='col-sm-10 controls' style="padding-top: 15px; padding-bottom: 15px;">
                                 {assign var=dayOfWeek value=Zend_Json::decode($WORKFLOW_MODEL_OBJ->schdayofweek)}
                                 <div class="weekDaySelect">
-                                    <span class="ui-state-default {if is_array($dayOfWeek) && in_array("7",$dayOfWeek)}ui-selected{/if}" data-value="7"> {vtranslate('LBL_DAY0', 'Calendar')} </span>
+                                    {**PVTPATCHER-9CA12863DD9CE4FCAEECC343A95AE2DF-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE eq 'fa_ir' or  $LANGUAGE eq 'fa_af'}
+                        <span class="ui-state-default {if is_array($dayOfWeek) && in_array("6",$dayOfWeek)}ui-selected{/if}" data-value="6"> {vtranslate('LBL_DAY6', 'Calendar')} </span>
+                        {/if}
+                        <span class="ui-state-default {if is_array($dayOfWeek) && in_array("7",$dayOfWeek)}ui-selected{/if}" data-value="7"> {vtranslate('LBL_DAY0', 'Calendar')} </span>
+{** REPLACED-9CA12863DD9CE4FCAEECC343A95AE2DF// <span class="ui-state-default {if is_array($dayOfWeek) && in_array("7",$dayOfWeek)}ui-selected{/if}" data-value="7"> {vtranslate('LBL_DAY0', 'Calendar')} </span>**}
+{**PVTPATCHER-9CA12863DD9CE4FCAEECC343A95AE2DF-FINISH**}
                                     <span class="ui-state-default {if is_array($dayOfWeek) && in_array("1",$dayOfWeek)}ui-selected{/if}" data-value="1"> {vtranslate('LBL_DAY1', 'Calendar')} </span>
                                     <span class="ui-state-default {if is_array($dayOfWeek) && in_array("2",$dayOfWeek)}ui-selected{/if}" data-value="2"> {vtranslate('LBL_DAY2', 'Calendar')} </span>
                                     <span class="ui-state-default {if is_array($dayOfWeek) && in_array("3",$dayOfWeek)}ui-selected{/if}" data-value="3"> {vtranslate('LBL_DAY3', 'Calendar')} </span>
                                     <span class="ui-state-default {if is_array($dayOfWeek) && in_array("4",$dayOfWeek)}ui-selected{/if}" data-value="4"> {vtranslate('LBL_DAY4', 'Calendar')} </span>
                                     <span class="ui-state-default {if is_array($dayOfWeek) && in_array("5",$dayOfWeek)}ui-selected{/if}" data-value="5"> {vtranslate('LBL_DAY5', 'Calendar')} </span>
-                                    <span class="ui-state-default {if is_array($dayOfWeek) && in_array("6",$dayOfWeek)}ui-selected{/if}" data-value="6"> {vtranslate('LBL_DAY6', 'Calendar')} </span>
+                                    {**PVTPATCHER-7C810C3D8E824E372BC284D2BD1B81B8-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE neq 'fa_ir' and  $LANGUAGE neq 'fa_af'}
+                        <span class="ui-state-default {if is_array($dayOfWeek) && in_array("6",$dayOfWeek)}ui-selected{/if}" data-value="6"> {vtranslate('LBL_DAY6', 'Calendar')} </span>
+                        {/if}
+{** REPLACED-7C810C3D8E824E372BC284D2BD1B81B8// <span class="ui-state-default {if is_array($dayOfWeek) && in_array("6",$dayOfWeek)}ui-selected{/if}" data-value="6"> {vtranslate('LBL_DAY6', 'Calendar')} </span>**}
+{**PVTPATCHER-7C810C3D8E824E372BC284D2BD1B81B8-FINISH**}
                                     <input type="hidden" data-rule-required="true" name='schdayofweek' id='schdayofweek' {if is_array($dayOfWeek)} value="{implode(',',$dayOfWeek)}" {else} value=""{/if}/>
                                 </div>
                             </div>
@@ -146,7 +175,11 @@
                                 <div class='col-sm-4 controls'>
                                     {if $WORKFLOW_MODEL_OBJ->schtypeid neq 4}
                                         {DateTimeField::convertToUserFormat($WORKFLOW_MODEL_OBJ->nexttrigger_time)}
-                                        <span>&nbsp;({$ACTIVE_ADMIN->time_zone})</span>
+                                        <span>&nbsp;{**PVTPATCHER-89D1007660320A7461DCD270CA759E88-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+({vtranslate($ACTIVE_ADMIN->time_zone,'Users')})
+{** REPLACED-89D1007660320A7461DCD270CA759E88// ({$ACTIVE_ADMIN->time_zone})**}
+{**PVTPATCHER-89D1007660320A7461DCD270CA759E88-FINISH**}</span>
                                     {/if}
                                 </div>
                             </div>

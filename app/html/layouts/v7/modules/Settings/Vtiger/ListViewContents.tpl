@@ -81,7 +81,11 @@
 											{assign var=LISTVIEW_HEADERNAME value=$LISTVIEW_HEADER->get('name')}
 											{assign var=LAST_COLUMN value=$LISTVIEW_HEADER@last}
 											<td class="listViewEntryValue textOverflowEllipsis {$WIDTHTYPE}" width="{$WIDTH}%" nowrap>
-												{$LISTVIEW_ENTRY->getDisplayValue($LISTVIEW_HEADERNAME)}
+												{**PVTPATCHER-780D12916DF76B904527EDED3CE30BCC-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($LISTVIEW_ENTRY->getDisplayValue($LISTVIEW_HEADERNAME) , $QUALIFIED_MODULE)}
+{** REPLACED-780D12916DF76B904527EDED3CE30BCC// {$LISTVIEW_ENTRY->getDisplayValue($LISTVIEW_HEADERNAME)}**}
+{**PVTPATCHER-780D12916DF76B904527EDED3CE30BCC-FINISH**}
 												{if $LAST_COLUMN && $LISTVIEW_ENTRY->getRecordLinks()}
 													</td>
 												{/if}
@@ -93,7 +97,16 @@
 									<tr class="emptyRecordsDiv">
 										{assign var=COLSPAN_WIDTH value={count($LISTVIEW_HEADERS)+1}}
 										<td colspan="{$COLSPAN_WIDTH}" style="vertical-align:inherit !important;">
-											<center>{vtranslate('LBL_NO')} {vtranslate($MODULE, $QUALIFIED_MODULE)} {vtranslate('LBL_FOUND')}</center>
+											<center>{**PVTPATCHER-D8803AD398AF68DCCAD629A40342D587-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('LBL_NO_RECORDS_FOUND', 'ParsVT')}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate($MODULE, $QUALIFIED_MODULE)} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-D8803AD398AF68DCCAD629A40342D587// {vtranslate('LBL_NO')} {vtranslate($MODULE, $QUALIFIED_MODULE)} {vtranslate('LBL_FOUND')}**}
+{**PVTPATCHER-D8803AD398AF68DCCAD629A40342D587-FINISH**}</center>
 										</td>
 									</tr>
 								{/if}

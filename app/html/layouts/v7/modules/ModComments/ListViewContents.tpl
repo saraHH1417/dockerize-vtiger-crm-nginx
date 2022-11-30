@@ -163,12 +163,25 @@
                             <td colspan="{$COLSPAN_WIDTH}">
                                 <div class="emptyRecordsContent">
                                     {assign var=SINGLE_MODULE value="SINGLE_$MODULE"}
-                                    {vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}.
+                                    {**PVTPATCHER-32BD789E33AFB520AFE8120C406B78C3-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No %s found.', 'ParsVT',vtranslate($MODULE, $MODULE))}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-32BD789E33AFB520AFE8120C406B78C3// {vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}.**}
+{**PVTPATCHER-32BD789E33AFB520AFE8120C406B78C3-FINISH**}
                                     {if $IS_CREATE_PERMITTED}
                                         <a style="color:blue" href="{$MODULE_MODEL->getCreateRecordUrl()}"> {vtranslate('LBL_CREATE')}</a>
                                         {if Users_Privileges_Model::isPermitted($MODULE, 'Import') && $LIST_VIEW_MODEL->isImportEnabled()}
                                             {vtranslate('LBL_OR', $MODULE)}
-                                            <a style="color:blue" href="#" onclick="return Vtiger_Import_Js.triggerImportAction()">{vtranslate('LBL_IMPORT', $MODULE)}</a>
+                                            {**PVTPATCHER-508CF4D332FB2957981EAE18D262F6D3-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<a style="color:blue" href="#" onclick="return Vtiger_Import_Js.triggerImportAction()">{vtranslate('LBL_IMPORT', $MODULE)}</a> {vtranslate('in', 'ParsVT')}
+{** REPLACED-508CF4D332FB2957981EAE18D262F6D3// <a style="color:blue" href="#" onclick="return Vtiger_Import_Js.triggerImportAction()">{vtranslate('LBL_IMPORT', $MODULE)}</a>**}
+{**PVTPATCHER-508CF4D332FB2957981EAE18D262F6D3-FINISH**}
                                             {vtranslate($MODULE, $MODULE)}
                                         {else}
                                             {vtranslate($SINGLE_MODULE, $MODULE)}

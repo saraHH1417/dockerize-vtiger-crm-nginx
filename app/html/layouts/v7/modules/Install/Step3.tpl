@@ -19,7 +19,7 @@
 					<h4>{vtranslate('LBL_INSTALL_PREREQUISITES', 'Install')}</h4>
 				</div>
 				<div class="col-sm-2">
-					<a href="https://wiki.vtiger.com/vtiger6/" target="_blank" class="pull-right">
+					<a href="http://vtfarsi.ir/crm-wiki/" target="_blank" class="pull-right">
 						<img src="{'help.png'|vimage_path}" alt="Help-Icon"/>
 					</a>
 				</div>
@@ -57,8 +57,8 @@
 											{$INFO.1} 
 										{/if}
 									</td>
-									<td {if $INFO.2 eq false} class="no" >
-											{if $CONFIG_NAME = 'LBL_PHP_VERSION'}
+									<td {if $INFO.2 eq false || !$INFO.2} class="no" >
+											{if $CONFIG_NAME eq 'LBL_PHP_VERSION'}
 												{$INFO.0}
 											{else}
 												{vtranslate('LBL_NO', 'Install')}

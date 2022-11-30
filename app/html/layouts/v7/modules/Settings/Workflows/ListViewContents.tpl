@@ -29,9 +29,17 @@
 						{foreach item=MODULE_MODEL key=TAB_ID from=$SUPPORTED_MODULE_MODELS}
 							<option {if $SOURCE_MODULE eq $MODULE_MODEL->getName()} selected="" {/if} value="{$MODULE_MODEL->getName()}" data-count='{if $MODULES_COUNT[$TAB_ID]}{$MODULES_COUNT[$TAB_ID]}{else}0{/if}'>
 								{if $MODULE_MODEL->getName() eq 'Calendar'}
-									{vtranslate('LBL_TASK', $MODULE_MODEL->getName())}&nbsp;{vtranslate('LBL_WORKFLOWS')}
+									{**PVTPATCHER-76CF2729B5AA2B818B0F909042F820C8-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}{vtranslate('WorkFlows','ParsVT')}&nbsp;{vtranslate('LBL_TASK', $MODULE_MODEL->getName())}{else}{vtranslate('LBL_TASK', $MODULE_MODEL->getName())}&nbsp;{vtranslate('LBL_WORKFLOWS')}{/if}
+{** REPLACED-76CF2729B5AA2B818B0F909042F820C8// {vtranslate('LBL_TASK', $MODULE_MODEL->getName())}&nbsp;{vtranslate('LBL_WORKFLOWS')}**}
+{**PVTPATCHER-76CF2729B5AA2B818B0F909042F820C8-FINISH**}
 								{else}
-									{vtranslate($MODULE_MODEL->getName(),$MODULE_MODEL->getName())}&nbsp;{vtranslate('LBL_WORKFLOWS')}
+									{**PVTPATCHER-4D96162A78CDB057AA1B40B8F41CFD4D-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}{vtranslate('WorkFlows','ParsVT')}&nbsp;{vtranslate($MODULE_MODEL->getName(),$MODULE_MODEL->getName())}{else}{vtranslate($MODULE_MODEL->getName(),$MODULE_MODEL->getName())}&nbsp;{vtranslate('LBL_WORKFLOWS')}{/if}
+{** REPLACED-4D96162A78CDB057AA1B40B8F41CFD4D// {vtranslate($MODULE_MODEL->getName(),$MODULE_MODEL->getName())}&nbsp;{vtranslate('LBL_WORKFLOWS')}**}
+{**PVTPATCHER-4D96162A78CDB057AA1B40B8F41CFD4D-FINISH**}
 								{/if}
 							</option>
 						{/foreach}
@@ -99,7 +107,11 @@
 															{if $smarty.foreach.allCounter.iteration neq 1}
 																<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>
 															{/if}
-															<span>{$ALL_CONDITION}</span>
+															<span>{**PVTPATCHER-CECEDA2CB527C0BC968A23D32732E4A6-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($ALL_CONDITION)}
+{** REPLACED-CECEDA2CB527C0BC968A23D32732E4A6// {$ALL_CONDITION}**}
+{**PVTPATCHER-CECEDA2CB527C0BC968A23D32732E4A6-FINISH**}</span>
 															<br>
 														{/foreach}
 													{else}
@@ -121,7 +133,11 @@
 												{elseif $LISTVIEW_HEADERNAME eq 'execution_condition'}
 													{$LISTVIEW_ENTRY->getDisplayValue('v7_execution_condition')}
 												{else}
-													{$LISTVIEW_ENTRY->getDisplayValue($LISTVIEW_HEADERNAME)}
+													{**PVTPATCHER-9F888B2B949B1D744533E7DC3C3EABFA-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($LISTVIEW_ENTRY->getDisplayValue($LISTVIEW_HEADERNAME), $QUALIFIED_MODULE)}
+{** REPLACED-9F888B2B949B1D744533E7DC3C3EABFA// {$LISTVIEW_ENTRY->getDisplayValue($LISTVIEW_HEADERNAME)}**}
+{**PVTPATCHER-9F888B2B949B1D744533E7DC3C3EABFA-FINISH**}
 												{/if}
 											</td>
 										{elseif $LISTVIEW_HEADERNAME eq 'module_name' && empty($SOURCE_MODULE)}
@@ -146,7 +162,16 @@
 								<tr class="emptyRecordsDiv">
 									{assign var=COLSPAN_WIDTH value={count($LISTVIEW_HEADERS)+1}}
 									<td colspan="{$COLSPAN_WIDTH}" style="vertical-align:inherit !important;">
-										<center>{vtranslate('LBL_NO')} {vtranslate($MODULE, $QUALIFIED_MODULE)} {vtranslate('LBL_FOUND')}</center>
+										<center>{**PVTPATCHER-92040D4C539545966B55AC42D6F65183-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('LBL_NO_RECORDS_FOUND', 'ParsVT')}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate($MODULE, $QUALIFIED_MODULE)} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-92040D4C539545966B55AC42D6F65183// {vtranslate('LBL_NO')} {vtranslate($MODULE, $QUALIFIED_MODULE)} {vtranslate('LBL_FOUND')}**}
+{**PVTPATCHER-92040D4C539545966B55AC42D6F65183-FINISH**}</center>
 									</td>
 								</tr>
 							{/if}

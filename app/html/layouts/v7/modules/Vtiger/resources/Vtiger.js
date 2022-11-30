@@ -6,6 +6,13 @@
  * Portions created by vtiger are Copyright (C) vtiger.
  * All Rights Reserved.
  *************************************************************************************/
+/**PVTPATCHER-47F0020B458F58D6A4E2BE3EFCB0924C-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+var crmlanguage = app.getUserLanguage().slice(0,2); var leftalignment = 'left'; var rightalignment = 'right';
+if (typeof(crmlanguage) !== 'undefined' && crmlanguage === 'fa') {
+	var leftalignment = 'right'; var rightalignment = 'left';
+}
+/**PVTPATCHER-47F0020B458F58D6A4E2BE3EFCB0924C-FINISH**/
 Vtiger.Class('Vtiger_Index_Js', {
 	files: [],
 	hideNC: true,
@@ -343,8 +350,16 @@ Vtiger.Class('Vtiger_Index_Js', {
 	registerModuleQtips : function() {
 		jQuery('.module-qtip').qtip({
 			position: {
-				my: 'left center',
-				at: 'center right',
+/**PVTPATCHER-A5CC65185BA731EA968EF837515E7E4A-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+my: leftalignment+' center',
+/** REPLACED-A5CC65185BA731EA968EF837515E7E4A// my: 'left center',**/
+/**PVTPATCHER-A5CC65185BA731EA968EF837515E7E4A-FINISH**/
+/**PVTPATCHER-A0FCB14D2D6652948418787E34C2ECCB-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+at: 'center '+rightalignment,
+/** REPLACED-A0FCB14D2D6652948418787E34C2ECCB// at: 'center right',**/
+/**PVTPATCHER-A0FCB14D2D6652948418787E34C2ECCB-FINISH**/
 				adjust: {
 					y: 1
 				}
@@ -423,8 +438,16 @@ Vtiger.Class('Vtiger_Index_Js', {
 						$('#overlayPage').find(".arrow").css("left",taskManagementPageOffset.left+13);
 						$('#overlayPage').find(".arrow").addClass("show");
 
-						vtUtils.showSelect2ElementView($('#overlayPage .data-header').find('select[name="assigned_user_id"]'),{placeholder:"User : All"});
-						vtUtils.showSelect2ElementView($('#overlayPage .data-header').find('select[name="taskstatus"]'),{placeholder:"Status : All"});
+/**PVTPATCHER-5A9BCC246BFA3F6805EB2BA02464DE3A-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+vtUtils.showSelect2ElementView($('#overlayPage .data-header').find('select[name="assigned_user_id"]'),{placeholder:app.vtranslate("User : All")});
+/** REPLACED-5A9BCC246BFA3F6805EB2BA02464DE3A// vtUtils.showSelect2ElementView($('#overlayPage .data-header').find('select[name="assigned_user_id"]'),{placeholder:"User : All"});**/
+/**PVTPATCHER-5A9BCC246BFA3F6805EB2BA02464DE3A-FINISH**/
+/**PVTPATCHER-2EECB39B3627F9D6A72CECCB6F133412-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+vtUtils.showSelect2ElementView($('#overlayPage .data-header').find('select[name="taskstatus"]'),{placeholder:app.vtranslate("Status : All")});
+/** REPLACED-2EECB39B3627F9D6A72CECCB6F133412// vtUtils.showSelect2ElementView($('#overlayPage .data-header').find('select[name="taskstatus"]'),{placeholder:"Status : All"});**/
+/**PVTPATCHER-2EECB39B3627F9D6A72CECCB6F133412-FINISH**/
 						var js = new Vtiger_TaskManagement_Js();
 						js.registerEvents();
 					});

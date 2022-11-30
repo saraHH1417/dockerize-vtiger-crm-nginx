@@ -11,7 +11,11 @@
 	<!DOCTYPE html>
 	<html>
 		<head>
-			<title>Vtiger</title>
+			{**PVTPATCHER-292AA8A2E6B6312B58D588AEE4B7B689-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<title>{vtranslate('Vtiger','ParsVT')}</title>
+{** REPLACED-292AA8A2E6B6312B58D588AEE4B7B689// <title>Vtiger</title>**}
+{**PVTPATCHER-292AA8A2E6B6312B58D588AEE4B7B689-FINISH**}
 			<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 			<link REL="SHORTCUT ICON" HREF="layouts/v7/skins/images/favicon.ico">
@@ -55,7 +59,24 @@
 					input, select, textarea { font-size: 14px; }
 				{/literal}
 			</style>
-		</head>
+		{**PVTPATCHER-53C70B397387C95AE1D3316D81D8864E-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if vglobal('current_language') eq 'fa_ir'}
+               <link type="text/css" rel="stylesheet" href="modules/ParsVT/resources/styles/rtl.php" media="screen" />
+<style>
+body { background: #ffffff url('layouts/v7/modules/ParsVT/images/usersetupbg.png') no-repeat center top; background-size: 100%; }
+body > div > form > div > div.modal-body > div > div {
+float: right !important;
+margin-right: 20px !important;
+margin-right: unset !important;
+}
+body > div > form > div > div.modal-footer > button {
+    font-family: inherit;
+}
+</style>
+              {/if}</head>
+{** REPLACED-53C70B397387C95AE1D3316D81D8864E// </head>**}
+{**PVTPATCHER-53C70B397387C95AE1D3316D81D8864E-FINISH**}
 		<body>
 			<div class="container">
 				<div class="modal-backdrop"></div>

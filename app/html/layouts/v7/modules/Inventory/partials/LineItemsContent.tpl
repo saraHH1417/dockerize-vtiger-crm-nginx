@@ -169,7 +169,11 @@
 				&nbsp;
 				{assign var=PRICEBOOK_MODULE_MODEL value=Vtiger_Module_Model::getInstance('PriceBooks')}
 				{if $PRICEBOOK_MODULE_MODEL->isPermitted('DetailView') && $MODULE != 'PurchaseOrder'}
-					<span class="priceBookPopup cursorPointer" data-popup="Popup"  title="{vtranslate('PriceBooks', $MODULE)}" data-module-name="PriceBooks" style="float:left">{Vtiger_Module_Model::getModuleIconPath('PriceBooks')}</span>
+					<span class="priceBookPopup cursorPointer" data-popup="Popup"  title="{vtranslate('PriceBooks', $MODULE)}" data-module-name="PriceBooks" {**PVTPATCHER-D9D01D5E579AB34592C2F1F5999FB236-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+style="float:{$LEFTALIGNMENT}"
+{** REPLACED-D9D01D5E579AB34592C2F1F5999FB236// style="float:left"**}
+{**PVTPATCHER-D9D01D5E579AB34592C2F1F5999FB236-FINISH**}>{Vtiger_Module_Model::getModuleIconPath('PriceBooks')}</span>
 				{/if}
 			</div>
 			<div style="clear:both"></div>

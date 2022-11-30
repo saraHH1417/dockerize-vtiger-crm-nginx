@@ -142,7 +142,11 @@
 								<label class="checkbox">
 									<input type="checkbox" class ='cursorPointer bootstrap-switch' id="fieldPresence" name="presence" {if $FIELD_MODEL->isViewable()} checked {/if}
 										{if $FIELD_MODEL->isActiveOptionDisabled()} readonly="readonly" {/if} {if $FIELD_MODEL->isMandatory()} readonly="readonly" {/if}
-										data-on-text="Yes" data-off-text="No" value="{$FIELD_MODEL->get('presence')}"/>
+										{**PVTPATCHER-CBBEB6DC0F0AFD2696ED2B19C2BF4190-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+data-on-text="{vtranslate('LBL_YES')}" data-off-text="{vtranslate('LBL_NO')}"
+{** REPLACED-CBBEB6DC0F0AFD2696ED2B19C2BF4190// data-on-text="Yes" data-off-text="No"**}
+{**PVTPATCHER-CBBEB6DC0F0AFD2696ED2B19C2BF4190-FINISH**} value="{$FIELD_MODEL->get('presence')}"/>
 								</label>
 							</div>
 						</div>

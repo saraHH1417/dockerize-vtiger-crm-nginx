@@ -52,7 +52,11 @@ class Events_Save_Action extends Calendar_Save_Action {
 			$record->set('eventstatus', 'Planned');
 			//recurring events status should not be held for future events
 			$recordModel->set('eventstatus', 'Planned');
-			$record->set('subject','[Followup] '.$subject);
+/**PVTPATCHER-4D7812E7F034AC6B339D10124A1A2C41-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+$record->set('subject',vtranslate('[Followup] ','ParsVT').$subject);
+/** REPLACED-4D7812E7F034AC6B339D10124A1A2C41// $record->set('subject','[Followup] '.$subject);**/
+/**PVTPATCHER-4D7812E7F034AC6B339D10124A1A2C41-FINISH**/
 			$record->set('date_start',$startDate);
 			$record->set('time_start',$startTime);
 

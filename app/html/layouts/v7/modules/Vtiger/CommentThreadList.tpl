@@ -14,7 +14,11 @@
 {assign var=IS_EDITABLE value=$COMMENTS_MODULE_MODEL->isPermitted('EditView')}
 
 <div class="commentDiv cursorPointer">
-	<div class="singleComment">
+	{**PVTPATCHER-B00A62A3E3B129A660B5A5C765E75BA3-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<div class="singleComment" {if $COMMENT->get('is_private')}style="background: #ffffbe;"{elseif !empty($COMMENT->get('customer'))}style="background: #bee1ff;"{/if}>
+{** REPLACED-B00A62A3E3B129A660B5A5C765E75BA3// <div class="singleComment">**}
+{**PVTPATCHER-B00A62A3E3B129A660B5A5C765E75BA3-FINISH**}
 		<input type="hidden" name="is_private" value="{$COMMENT->get('is_private')}">
 		<div class="commentInfoHeader" data-commentid="{$COMMENT->getId()}" data-parentcommentid="{$COMMENT->get('parent_comments')}">
 			{assign var=PARENT_COMMENT_MODEL value=$COMMENT->getParentCommentModel()}

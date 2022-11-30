@@ -81,13 +81,21 @@ class Settings_LayoutEditor_Block_Action extends Settings_Vtiger_Index_Action {
         $blockId = $request->get('blockid');
         $checkIfFieldsExists = Vtiger_Block_Model::checkFieldsExists($blockId);
         if($checkIfFieldsExists) {
-            $response->setError('502','Fields exist for the block');
+/**PVTPATCHER-A4DEA468EEE87729E9130CA0582DB225-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+$response->setError('502',vtranslate('Fields exist for the block','ParsVT'));
+/** REPLACED-A4DEA468EEE87729E9130CA0582DB225// $response->setError('502','Fields exist for the block');**/
+/**PVTPATCHER-A4DEA468EEE87729E9130CA0582DB225-FINISH**/
             $response->emit();
             return;
         }
         $blockInstance = Vtiger_Block_Model::getInstance($blockId);
         if(!$blockInstance->isCustomized()) {
-            $response->setError('502','Cannot delete non custom blocks');
+/**PVTPATCHER-83DF5EAB46A173F975EAAA0B9B09B2E8-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+$response->setError('502',vtranslate('Cannot delete non custom blocks','ParsVT'));
+/** REPLACED-83DF5EAB46A173F975EAAA0B9B09B2E8// $response->setError('502','Cannot delete non custom blocks');**/
+/**PVTPATCHER-83DF5EAB46A173F975EAAA0B9B09B2E8-FINISH**/
             $response->emit();
             return;
         }

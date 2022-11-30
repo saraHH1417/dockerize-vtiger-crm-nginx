@@ -63,7 +63,11 @@
                                      {assign var=LISTVIEW_HEADERNAME value=$LISTVIEW_HEADER->get('name')}
                                      {assign var=LAST_COLUMN value=$LISTVIEW_HEADER@last}
                                      <td class="listViewEntryValue {$WIDTHTYPE}"  width="{$WIDTH}%" nowrap style='cursor:text;'>
-                                        {$LISTVIEW_ENTRY->getDisplayValue($LISTVIEW_HEADERNAME)}
+                                        {**PVTPATCHER-291EBD00DCB245CCFE862A1F3813B973-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($LISTVIEW_ENTRY->getDisplayValue($LISTVIEW_HEADERNAME), 'Vtiger')}
+{** REPLACED-291EBD00DCB245CCFE862A1F3813B973// {$LISTVIEW_ENTRY->getDisplayValue($LISTVIEW_HEADERNAME)}**}
+{**PVTPATCHER-291EBD00DCB245CCFE862A1F3813B973-FINISH**}
                                         {if $LAST_COLUMN && $LISTVIEW_ENTRY->getRecordLinks()}
                                         </td>
                                      {/if}
@@ -80,7 +84,16 @@
                           <tbody>
                              <tr>
                                 <td>
-                                   {vtranslate('LBL_NO')} {vtranslate($MODULE, $QUALIFIED_MODULE)} {vtranslate('LBL_FOUND')}
+                                   {**PVTPATCHER-EEA4E42B1EC025189BCD135959AAE516-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No record found', 'ParsVT')}.
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate($MODULE, $QUALIFIED_MODULE)} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-EEA4E42B1EC025189BCD135959AAE516// {vtranslate('LBL_NO')} {vtranslate($MODULE, $QUALIFIED_MODULE)} {vtranslate('LBL_FOUND')}**}
+{**PVTPATCHER-EEA4E42B1EC025189BCD135959AAE516-FINISH**}
                                 </td>
                              </tr>
                           </tbody>

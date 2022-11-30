@@ -111,7 +111,11 @@
                                     </option>
                             </optgroup>
                             {foreach from=$MEMBER_GROUPS key=GROUP_LABEL item=ALL_GROUP_MEMBERS}
-                                <optgroup label="{$GROUP_LABEL}">
+                                {**PVTPATCHER-AF8BB034F71E05E492F8EFE77D339A76-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<optgroup label="{vtranslate($GROUP_LABEL)}">
+{** REPLACED-AF8BB034F71E05E492F8EFE77D339A76// <optgroup label="{$GROUP_LABEL}">**}
+{**PVTPATCHER-AF8BB034F71E05E492F8EFE77D339A76-FINISH**}
                                     {foreach from=$ALL_GROUP_MEMBERS item=MEMBER}
                                         {if $GROUP_LABEL neq 'Users' || $MEMBER->getId() neq 'Users:'|cat:$CURRENT_USER->getId()}
                                             <option value="{$MEMBER->getId()}"  data-member-type="{$GROUP_LABEL}" {if isset($SELECTED_MEMBERS_GROUP[$GROUP_LABEL][$MEMBER->getId()])}selected="true"{/if}>{$MEMBER->getName()}</option>

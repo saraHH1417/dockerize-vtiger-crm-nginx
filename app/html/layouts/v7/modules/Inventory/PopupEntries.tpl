@@ -124,7 +124,16 @@
                 {if $IS_MODULE_DISABLED eq 'true'}
                     <div class="emptyRecordsDiv">{vtranslate('LBL_PRODUCTSMOD_DISABLED', $RELATED_MODULE)}.</div>
                 {else}
-                    <div class="emptyRecordsDiv">{vtranslate('LBL_NO', $MODULE)} {vtranslate($RELATED_MODULE, $RELATED_MODULE)} {vtranslate('LBL_FOUND', $MODULE)}.</div>
+                    <div class="emptyRecordsDiv">{**PVTPATCHER-DE570C4E59948411593625528AA5073C-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								     {vtranslate('No %s found.', 'ParsVT',vtranslate($RELATED_MODULE, $RELATED_MODULE))}
+								{else}
+								     {vtranslate('LBL_NO', $MODULE)} {vtranslate($RELATED_MODULE, $RELATED_MODULE)} {vtranslate('LBL_FOUND', $MODULE)}.
+								{/if}
+{** REPLACED-DE570C4E59948411593625528AA5073C// {vtranslate('LBL_NO', $MODULE)} {vtranslate($RELATED_MODULE, $RELATED_MODULE)} {vtranslate('LBL_FOUND', $MODULE)}.**}
+{**PVTPATCHER-DE570C4E59948411593625528AA5073C-FINISH**}</div>
                 {/if}
             {/if}
         </div>

@@ -15,7 +15,11 @@
     <input type="hidden" name="targetModule" value="{$SOURCE_MODULE}"/>
     <div class="fieldBlockContainer-webform" style="margin-bottom: 0;">
         <div class="fieldBlockHeader">
-            <h4>{vtranslate($SOURCE_MODULE, $SOURCE_MODULE)} {vtranslate('LBL_FIELD_INFORMATION', $MODULE)}</h4>
+            <h4>{**PVTPATCHER-D4B19000F16E5D4815A0B2B3BD552E6A-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}{vtranslate('LBL_FIELD_INFORMATION', $MODULE)} {vtranslate($SOURCE_MODULE, $SOURCE_MODULE)}{else}{vtranslate($SOURCE_MODULE, $SOURCE_MODULE)} {vtranslate('LBL_FIELD_INFORMATION', $MODULE)}{/if}
+{** REPLACED-D4B19000F16E5D4815A0B2B3BD552E6A// {vtranslate($SOURCE_MODULE, $SOURCE_MODULE)} {vtranslate('LBL_FIELD_INFORMATION', $MODULE)}**}
+{**PVTPATCHER-D4B19000F16E5D4815A0B2B3BD552E6A-FINISH**}</h4>
         </div>
         <hr>
         <table class="table table-bordered" width="100%" name="targetModuleFields">

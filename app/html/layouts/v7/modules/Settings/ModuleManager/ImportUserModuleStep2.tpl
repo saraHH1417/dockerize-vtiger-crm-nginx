@@ -65,7 +65,14 @@
 											<p>{vtranslate('LBL_LICENSE', $QUALIFIED_MODULE)}</p>
 										</div>
 										<div class="col-lg-12">
-											<textarea readonly="" rows="15" style="width: 100%;font-family: monospace;">{$MODULEIMPORT_LICENSE}</textarea>
+											{**PVTPATCHER-AD3BA9BB389AAF1ECA9D0D6A5B4354FD-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<div style="background: #eee;padding: 20px;box-sizing: border-box;height: 150px;overflow-y: scroll;">
+        										<p>{$MODULEIMPORT_LICENSE|nl2br}</p>
+        									</div>
+        									<textarea class='hide'
+{** REPLACED-AD3BA9BB389AAF1ECA9D0D6A5B4354FD// <textarea**}
+{**PVTPATCHER-AD3BA9BB389AAF1ECA9D0D6A5B4354FD-FINISH**} readonly="" rows="15" style="width: 100%;font-family: monospace;">{$MODULEIMPORT_LICENSE}</textarea>
 										</div>
 									{/if}
 									{if $need_license_agreement eq 'true'}

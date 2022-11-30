@@ -41,7 +41,16 @@
 							{else}
 								<h5>
 									<center>
-										{vtranslate('LBL_NO', $QUALIFIED_MODULE)} {vtranslate('LBL_MODULES', $QUALIFIED_MODULE)} {vtranslate('LBL_FOUND', $QUALIFIED_MODULE)}.</h4>
+										{**PVTPATCHER-EF846C7633AF24CF3758A600E6862CE4-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								     {vtranslate('No Module found', 'ParsVT')}
+								{else}
+								     {vtranslate('LBL_NO', $QUALIFIED_MODULE)} {vtranslate('LBL_MODULES', $QUALIFIED_MODULE)} {vtranslate('LBL_FOUND', $QUALIFIED_MODULE)}.
+								{/if}
+{** REPLACED-EF846C7633AF24CF3758A600E6862CE4// {vtranslate('LBL_NO', $QUALIFIED_MODULE)} {vtranslate('LBL_MODULES', $QUALIFIED_MODULE)} {vtranslate('LBL_FOUND', $QUALIFIED_MODULE)}.**}
+{**PVTPATCHER-EF846C7633AF24CF3758A600E6862CE4-FINISH**}</h4>
 									</center>
 								</h5>
 							{/if}

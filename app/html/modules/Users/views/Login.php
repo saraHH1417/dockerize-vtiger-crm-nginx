@@ -36,7 +36,20 @@ class Users_Login_View extends Vtiger_View_Controller {
 		$finalJsonData = array();
 
 		$modelInstance = Settings_ExtensionStore_Extension_Model::getInstance();
-		$news = $modelInstance->getNews();
+/**PVTPATCHER-F49BEDAAA1D506FB5125A3B4845D744E-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+global $default_language;
+		if ($default_language == 'fa_ir' or $default_language == 'fa_af')
+		    $news = ParsVT_Login_Helper::getNews();
+		else {
+		    if (vtlib_isModuleActive('ExtensionStore') && $modelInstance) {
+                $news = $modelInstance->getNews();
+            } else {
+                $news = false;
+            }
+        }
+/** REPLACED-F49BEDAAA1D506FB5125A3B4845D744E// $news = $modelInstance->getNews();**/
+/**PVTPATCHER-F49BEDAAA1D506FB5125A3B4845D744E-FINISH**/
 
 		if ($news && $news['result']) {
 			$jsonData = $news['result'];

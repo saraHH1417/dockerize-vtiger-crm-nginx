@@ -45,14 +45,14 @@ var vtJqPlotInterface = function() {
                       tickRenderer: jQuery.jqplot.CanvasAxisTickRenderer,
                       renderer: jQuery.jqplot.CategoryAxisRenderer,
                       ticks: this.data['labels'],
-                      tickOptions: {
+                      tickOptions: { fontFamily: 'VtigerFont',
                         angle: -45
                       }
                 },
                 yaxis: {
                     min:0,
                     max: this.data['yMaxValue'],
-                    tickOptions: {
+                    tickOptions: { fontFamily: 'VtigerFont',
                         formatString: '%d'
                     },
                     pad : 1.2
@@ -129,7 +129,7 @@ var vtJqPlotInterface = function() {
                 xaxis: {
                     renderer: $.jqplot.CategoryAxisRenderer,
                     tickRenderer: $.jqplot.CanvasAxisTickRenderer,
-                    tickOptions: {
+                    tickOptions: { fontFamily: 'VtigerFont',
                         angle: -45
                     },
                     ticks: ticks
@@ -170,7 +170,7 @@ var vtJqPlotInterface = function() {
                     tickRenderer: jQuery.jqplot.CanvasAxisTickRenderer,
                     renderer: jQuery.jqplot.CategoryAxisRenderer,
                     ticks: this.data['labels'],
-                    tickOptions: {
+                    tickOptions: { fontFamily: 'VtigerFont',
                       angle: -45
                     }
                 }
@@ -209,7 +209,7 @@ var vtJqPlotInterface = function() {
                     tickRenderer: jQuery.jqplot.CanvasAxisTickRenderer,
                     renderer: $.jqplot.CategoryAxisRenderer,
                     ticks:this.data['labels'],
-                    tickOptions: {
+                    tickOptions: { fontFamily: 'VtigerFont',
                         formatString: '%b %#d',
                         angle: -30
                     }
@@ -248,7 +248,7 @@ var vtJqPlotInterface = function() {
                 xaxis: {
                     renderer: $.jqplot.CategoryAxisRenderer,
                     tickRenderer: $.jqplot.CanvasAxisTickRenderer,
-                    tickOptions: {
+                    tickOptions: { fontFamily: 'VtigerFont',
                         angle: -45
                     },
                     ticks: ticks

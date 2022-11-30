@@ -113,7 +113,16 @@
                 {if $LISTVIEW_ENTRIES_COUNT eq '0'}
                     <div class="row">
                         <div class="emptyRecordsDiv">
-                                {vtranslate('LBL_NO', $MODULE_NAME)} {vtranslate($MODULE_NAME, $MODULE_NAME)} {vtranslate('LBL_FOUND', $MODULE_NAME)}.
+                                {**PVTPATCHER-60665E1A54DDEBC0346FBCC943C7CD49-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								     {vtranslate('No %s found.', 'ParsVT',vtranslate($MODULE_NAME, $MODULE_NAME))}
+								{else}
+								     {vtranslate('LBL_NO', $MODULE_NAME)} {vtranslate($MODULE_NAME, $MODULE_NAME)} {vtranslate('LBL_FOUND', $MODULE_NAME)}.
+								{/if}
+{** REPLACED-60665E1A54DDEBC0346FBCC943C7CD49// {vtranslate('LBL_NO', $MODULE_NAME)} {vtranslate($MODULE_NAME, $MODULE_NAME)} {vtranslate('LBL_FOUND', $MODULE_NAME)}.**}
+{**PVTPATCHER-60665E1A54DDEBC0346FBCC943C7CD49-FINISH**}
                         </div>
                     </div>
                 {/if}

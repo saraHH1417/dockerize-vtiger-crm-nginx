@@ -59,10 +59,8 @@ class Install_Utils_Model {
 		$directiveValues = array();
 		if (ini_get('safe_mode') == '1' || stripos(ini_get('safe_mode'), 'On') > -1)
 			$directiveValues['safe_mode'] = 'On';
-		/* if (ini_get('display_errors') != '1' || stripos(ini_get('display_errors'), 'Off') > -1)
-			$directiveValues['display_errors'] = 'Off'; */
-		if (ini_get('display_errors') == '1' || stripos(ini_get('display_errors'), 'On') > -1)
-            $directiveValues['display_errors'] = 'On';
+		if (ini_get('display_errors') != '1' || stripos(ini_get('display_errors'), 'Off') > -1)
+			$directiveValues['display_errors'] = 'Off';
 		if (ini_get('file_uploads') != '1' || stripos(ini_get('file_uploads'), 'Off') > -1)
 			$directiveValues['file_uploads'] = 'Off';
 		if (ini_get('register_globals') == '1' || stripos(ini_get('register_globals'), 'On') > -1)
@@ -84,8 +82,8 @@ class Install_Utils_Model {
 			$directiveValues['error_reporting'] = 'NOT RECOMMENDED';
 		if (ini_get('log_errors') == '1' || stripos(ini_get('log_errors'), 'On') > -1)
 			$directiveValues['log_errors'] = 'On';
-		if (ini_get('short_open_tag') == '1' || stripos(ini_get('short_open_tag'), 'On') > -1)
-			$directiveValues['short_open_tag'] = 'On';
+		if (ini_get('short_open_tag') != '1' || stripos(ini_get('short_open_tag'), 'Off') > -1)
+			$directiveValues['short_open_tag'] = 'Off';
 
 		return $directiveValues;
 	}
@@ -96,7 +94,7 @@ class Install_Utils_Model {
 	 */
 	public static $recommendedDirectives = array (
 		'safe_mode' => 'Off',
-		'display_errors' => 'Off',
+		'display_errors' => 'On',
 		'file_uploads' => 'On',
 		'register_globals' => 'On',
 		'output_buffering' => 'On',
@@ -104,7 +102,7 @@ class Install_Utils_Model {
 		'memory_limit' => '32',
 		'error_reporting' => 'E_WARNING & ~E_NOTICE',
 		'log_errors' => 'Off',
-		'short_open_tag' => 'Off'
+		'short_open_tag' => 'On'
 	);
 
 	/**
@@ -129,6 +127,7 @@ class Install_Utils_Model {
 		$preInstallConfig = array();
 		// Name => array( System Value, Recommended value, supported or not(true/false) );
 		$preInstallConfig['LBL_PHP_VERSION']	= array(phpversion(), '5.4.0+, 7.0', (version_compare(phpversion(), '5.4.0', '>=')));
+		$preInstallConfig['IonCube support']			= array(extension_loaded('ionCube Loader'), true, extension_loaded('ionCube Loader'));
 		//$preInstallConfig['LBL_IMAP_SUPPORT']	= array(function_exists('imap_open'), true, (function_exists('imap_open') == true));
 		$preInstallConfig['LBL_ZLIB_SUPPORT']	= array(function_exists('gzinflate'), true, (function_exists('gzinflate') == true));
 
@@ -426,7 +425,12 @@ class Install_Utils_Model {
 
 		$error_msg = '';
 		$error_msg_info = '';
-
+		if (!extension_loaded('ionCube Loader')) {
+			$dbCheckResult['flag'] = false;
+			$dbCheckResult['error_msg'] = getTranslatedString('Ioncube loader is not installed on server', 'Install');
+			$dbCheckResult['error_msg_info'] = $error_msg_info;
+			return $dbCheckResult;
+		}
 		if(!$db_type_status || !$db_server_status) {
 			$error_msg = getTranslatedString('ERR_DATABASE_CONNECTION_FAILED', 'Install').'. '.getTranslatedString('ERR_INVALID_MYSQL_PARAMETERS', 'Install');
 			$error_msg_info = getTranslatedString('MSG_LIST_REASONS', 'Install').':<br>

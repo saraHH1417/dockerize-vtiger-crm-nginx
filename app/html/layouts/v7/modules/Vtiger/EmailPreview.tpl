@@ -13,7 +13,11 @@
 			<input type="hidden" name="parentRecord" value="{$PARENT_RECORD}"/>
 			<input type="hidden" name="recordId" value="{$RECORD_ID}"/>
 			<form class="form-horizontal" id="massEmailForm" method="post" action="index.php" enctype="multipart/form-data" name="massEmailForm">
-				{assign var=HEADER_TITLE value={vtranslate('SINGLE_Emails', $MODULE)}|cat:" "|cat:{vtranslate('LBL_INFO', $MODULE)}}
+				{**PVTPATCHER-A59D6F43612D946858AEACA628736047-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE eq 'fa_ir' or  $LANGUAGE eq 'fa_af'}{assign var=HEADER_TITLE value={vtranslate('LBL_INFO', $MODULE)}|cat:" "|cat:{vtranslate('SINGLE_Emails', $MODULE)}}{else}{assign var=HEADER_TITLE value={vtranslate('SINGLE_Emails', $MODULE)}|cat:" "|cat:{vtranslate('LBL_INFO', $MODULE)}}{/if}
+{** REPLACED-A59D6F43612D946858AEACA628736047// {assign var=HEADER_TITLE value={vtranslate('SINGLE_Emails', $MODULE)}|cat:" "|cat:{vtranslate('LBL_INFO', $MODULE)}}**}
+{**PVTPATCHER-A59D6F43612D946858AEACA628736047-FINISH**}
 				{include file="ModalHeader.tpl"|vtemplate_path:$MODULE TITLE=$HEADER_TITLE}
 				<div class="modal-body" id='emailPreviewScroll'>
 					<div class="row">

@@ -19,6 +19,7 @@
  */
 
 include('config.inc.php');
+if (file_exists("modules/Par"."sVT/helpers/Loader.php")) require_once("modules/Par"."sVT/helpers/Loader.php");
 
 $THIS_DIR = dirname(__FILE__);
 
@@ -26,6 +27,7 @@ if (file_exists($THIS_DIR.'/config_override.php')) {
 	include_once $THIS_DIR.'/config_override.php';
 }
 
+if (!class_exists("VtigerConfig")) {
 class VtigerConfig {
 
 	static function get($key, $defvalue='') {
@@ -48,4 +50,5 @@ class VtigerConfig {
 	static function hasOD($key) {
 		return false;
 	}
+}
 }

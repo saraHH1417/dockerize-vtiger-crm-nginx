@@ -3,7 +3,7 @@
 # docker network create vtiger_network
 
 # the order of creating services with up command:
-# 1- mariadb 2- php 3- nginx // if we up the nginx service before the php service, it will fail
+# 1- mysql 2- php 3- nginx // if we up the nginx service before the php service, it will fail
 sudo rm -rf dbdata
 
 mkdir dbdata

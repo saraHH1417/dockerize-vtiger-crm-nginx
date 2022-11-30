@@ -1,17 +1,17 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2022-11-29 17:02:21
+<?php /* Smarty version Smarty-3.1.7, created on 2022-11-30 10:49:52
          compiled from "/var/www/html/includes/runtime/../../layouts/v7/modules/Settings/Vtiger/SettingsShortCut.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1496789876638609e558a559-85108435%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:6731174956387041862b9a0-10828604%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '225705917d9c9c6895e14a436226ebfe1c3bea49' => 
     array (
       0 => '/var/www/html/includes/runtime/../../layouts/v7/modules/Settings/Vtiger/SettingsShortCut.tpl',
-      1 => 1669725088,
+      1 => 1669792158,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1496789876638609e558a559-85108435',
+  'nocache_hash' => '6731174956387041862b9a0-10828604',
   'function' => 
   array (
   ),
@@ -22,9 +22,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_638609e559776',
+  'unifunc' => 'content_6387041863695',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_638609e559776')) {function content_638609e559776($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_6387041863695')) {function content_6387041863695($_smarty_tpl) {?>
 <span id="shortcut_<?php echo $_smarty_tpl->tpl_vars['SETTINGS_SHORTCUT']->value->getId();?>
 " data-actionurl="<?php echo $_smarty_tpl->tpl_vars['SETTINGS_SHORTCUT']->value->getPinUnpinActionUrl();?>
 " class="col-lg-3 contentsBackground well cursorPointer moduleBlock" data-url="<?php echo $_smarty_tpl->tpl_vars['SETTINGS_SHORTCUT']->value->getUrl();?>

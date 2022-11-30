@@ -9,13 +9,13 @@ services:
       - .././app/html:/var/www/html
       - ./config/php.ini:/usr/local/etc/php/php.ini
     networks:
-      - mariadb
+      - mysql
       - php
       - nginx_static
 
 networks:
-  mariadb:
-    name: mariadb
+  mysql:
+    name: mysql
   php:
     name: php
   nginx_static:

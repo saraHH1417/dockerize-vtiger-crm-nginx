@@ -186,11 +186,19 @@ jQuery.Class("Vtiger_Helper_Js",{
                 }else{
                     buttonsInfo = {
 				cancel: {
-					label: 'No',
+/**PVTPATCHER-B60E5E8B99D2CE911B6B0985E6EDA34A-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+label: app.vtranslate('No'),
+/** REPLACED-B60E5E8B99D2CE911B6B0985E6EDA34A// label: 'No',**/
+/**PVTPATCHER-B60E5E8B99D2CE911B6B0985E6EDA34A-FINISH**/
 					className : 'btn-default confirm-box-btn-pad pull-right'
 				},
 				confirm: {
-					label: 'Yes',
+/**PVTPATCHER-C51F215090CF0992D6A1F9ED874CAF52-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+label: app.vtranslate('Yes'),
+/** REPLACED-C51F215090CF0992D6A1F9ED874CAF52// label: 'Yes',**/
+/**PVTPATCHER-C51F215090CF0992D6A1F9ED874CAF52-FINISH**/
 					className : 'confirm-box-ok confirm-box-btn-pad btn-primary'
 				}
                                 }

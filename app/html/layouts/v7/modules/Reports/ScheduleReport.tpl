@@ -38,13 +38,26 @@
                 <div class='col-lg-4'>
                     {assign var=dayOfWeek value=Zend_Json::decode($SCHEDULEDREPORTS->get('schdayoftheweek'))}
                     <select style='width:280px;' multiple class='select2'  name='schdayoftheweek' data-rule-required="true" id='schdayoftheweek'>
+                        {**PVTPATCHER-48A126189849D0DE0F116F835269B86E-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE eq 'fa_ir' or  $LANGUAGE eq 'fa_af'}
+                        <option value="6" {if is_array($dayOfWeek) && in_array('6', $dayOfWeek)} selected {/if}>{vtranslate('LBL_DAY6', 'Calendar')}</option>
+                        {/if}
                         <option value="7" {if is_array($dayOfWeek) && in_array('7', $dayOfWeek)} selected {/if}>{vtranslate('LBL_DAY0', 'Calendar')}</option>
+{** REPLACED-48A126189849D0DE0F116F835269B86E// <option value="7" {if is_array($dayOfWeek) && in_array('7', $dayOfWeek)} selected {/if}>{vtranslate('LBL_DAY0', 'Calendar')}</option>**}
+{**PVTPATCHER-48A126189849D0DE0F116F835269B86E-FINISH**}
                         <option value="1" {if is_array($dayOfWeek) && in_array('1', $dayOfWeek)} selected {/if}>{vtranslate('LBL_DAY1', 'Calendar')}</option>
                         <option value="2" {if is_array($dayOfWeek) && in_array('2', $dayOfWeek)} selected {/if}>{vtranslate('LBL_DAY2', 'Calendar')}</option>
                         <option value="3" {if is_array($dayOfWeek) && in_array('3', $dayOfWeek)} selected {/if}>{vtranslate('LBL_DAY3', 'Calendar')}</option>
                         <option value="4" {if is_array($dayOfWeek) && in_array('4', $dayOfWeek)} selected {/if}>{vtranslate('LBL_DAY4', 'Calendar')}</option>
                         <option value="5" {if is_array($dayOfWeek) && in_array('5', $dayOfWeek)} selected {/if}>{vtranslate('LBL_DAY5', 'Calendar')}</option>
+                        {**PVTPATCHER-8056AE9958343352CB7E17E035DD4B13-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE neq 'fa_ir' and  $LANGUAGE neq 'fa_af'}
                         <option value="6" {if is_array($dayOfWeek) && in_array('6', $dayOfWeek)} selected {/if}>{vtranslate('LBL_DAY6', 'Calendar')}</option>
+                        {/if}
+{** REPLACED-8056AE9958343352CB7E17E035DD4B13// <option value="6" {if is_array($dayOfWeek) && in_array('6', $dayOfWeek)} selected {/if}>{vtranslate('LBL_DAY6', 'Calendar')}</option>**}
+{**PVTPATCHER-8056AE9958343352CB7E17E035DD4B13-FINISH**}
                     </select>
                 </div>
             </div>

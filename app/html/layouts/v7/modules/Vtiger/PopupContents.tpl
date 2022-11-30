@@ -128,7 +128,17 @@
                         {vtranslate($RELATED_MODULE, $RELATED_MODULE)}
                         {vtranslate('LBL_MODULE_DISABLED', $RELATED_MODULE)}
                     {else}
-                        {vtranslate('LBL_NO', $MODULE)} {vtranslate($RELATED_MODULE, $RELATED_MODULE)} {vtranslate('LBL_FOUND', $MODULE)}.
+                        {**PVTPATCHER-1E3B174F9159C5916DE77A0C788F410F-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+                                                                     {if $RELATED_MODULE}{$RELMODULE = $RELATED_MODULE}{else}{$RELMODULE = $MODULE}{/if}
+								     {vtranslate('No %s found.', 'ParsVT',vtranslate($RELMODULE, $RELMODULE))}
+								{else}
+								     {vtranslate('LBL_NO', $MODULE)} {vtranslate($RELATED_MODULE, $RELATED_MODULE)} {vtranslate('LBL_FOUND', $MODULE)}.
+								{/if}
+{** REPLACED-1E3B174F9159C5916DE77A0C788F410F// {vtranslate('LBL_NO', $MODULE)} {vtranslate($RELATED_MODULE, $RELATED_MODULE)} {vtranslate('LBL_FOUND', $MODULE)}.**}
+{**PVTPATCHER-1E3B174F9159C5916DE77A0C788F410F-FINISH**}
                     {/if}
                 </div>
             </div>

@@ -11,6 +11,14 @@
 /**
  * Class to handler language translations
  */
+
+/**PVTPATCHER-9BF73F56D88ACE4FE2AF6AF4DCA15DE2-START-lnghandler**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:58 **/
+if (class_exists("ParsVT_Loader")) {
+    ParsVT_Loader::ParsAutoload('Vtiger_Language_Handler');
+}
+if (!class_exists("Vtiger_Language_Handler")) {
+/**PVTPATCHER-9BF73F56D88ACE4FE2AF6AF4DCA15DE2-FINISH**/
 class Vtiger_Language_Handler {
 
 	//Contains module language translations
@@ -23,7 +31,11 @@ class Vtiger_Language_Handler {
 	 * @return <String> - translated string
 	 */
 	public static function getTranslatedString($key, $module = '', $currentLanguage = '') {
-		if (empty($currentLanguage)) {
+/**PVTPATCHER-EA9213E9DD013A3DDEA504F412794C8A-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+if (empty($currentLanguage)  || strlen($currentLanguage) != 5 || strpos($currentLanguage, '_') !== true ) {
+/** REPLACED-EA9213E9DD013A3DDEA504F412794C8A// if (empty($currentLanguage)) {**/
+/**PVTPATCHER-EA9213E9DD013A3DDEA504F412794C8A-FINISH**/
 			$currentLanguage = self::getLanguage();
 		}
 		//decoding for Start Date & Time and End Date & Time 
@@ -242,6 +254,11 @@ class Vtiger_Language_Handler {
 
 }
 
+
+/**PVTPATCHER-57018A377DE1FC430776F0265FF9B34B-START-lnghandler**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:58 **/
+}
+/**PVTPATCHER-57018A377DE1FC430776F0265FF9B34B-FINISH**/
 function vtranslate($key, $moduleName = '') {
 	$unformattedArgs = func_get_args();
 	if(count($unformattedArgs) > 2){ 

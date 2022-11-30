@@ -18,7 +18,11 @@
                 </button>
             </div>
             <h4 class="pull-left">
-                {$TITLE}
+                {**PVTPATCHER-5EE49ECB60FA268AC1B54B70046E6C63-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($TITLE, $MODULE)}
+{** REPLACED-5EE49ECB60FA268AC1B54B70046E6C63// {$TITLE}**}
+{**PVTPATCHER-5EE49ECB60FA268AC1B54B70046E6C63-FINISH**}
             </h4>
         </div>
     </div>

@@ -10,14 +10,22 @@
     <div class="module-filters" id="module-filters">
         <div class="sidebar-container lists-menu-container">
             <div class="sidebar-header clearfix">
-                <h5 class="pull-left">Lists </h5>
+                {**PVTPATCHER-0BF70B40D6CDE03A651735BBD3DC62AC-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<h5 class="pull-left">{vtranslate('Lists' , 'ParsVT')} </h5>
+{** REPLACED-0BF70B40D6CDE03A651735BBD3DC62AC// <h5 class="pull-left">Lists </h5>**}
+{**PVTPATCHER-0BF70B40D6CDE03A651735BBD3DC62AC-FINISH**}
                 <button id="createFilter" data-url="{CustomView_Record_Model::getCreateViewUrl($MODULE)}" class="btn btn-default pull-right sidebar-btn">
                     <span class="fa fa-plus" aria-hidden="true"></span>
                 </button> 
             </div>
             <hr>
             <div>
-                <input class="search-list" type="text" placeholder="Search for List">
+                <input class="search-list" type="text" placeholder="{**PVTPATCHER-A4963E44606933A92E283C58FE04F878-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Search for List' , 'ParsVT')}
+{** REPLACED-A4963E44606933A92E283C58FE04F878// Search for List**}
+{**PVTPATCHER-A4963E44606933A92E283C58FE04F878-FINISH**}">
             </div>
             <div class="menu-scroller scrollContainer" style="position:relative; top:0; left:0;">
                         <div class="list-menu-content">
@@ -86,7 +94,16 @@
                                     </div>
                                 {/if}
                                 <div class="list-group hide noLists">
-                                    <h6 class="lists-header"><center> {vtranslate('LBL_NO')} {vtranslate('Lists')} {vtranslate('LBL_FOUND')} ... </center></h6>
+                                    <h6 class="lists-header"><center> {**PVTPATCHER-3D9EDD13AECCE1480A9D3814BFD372EB-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+								{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No record found', 'ParsVT')}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate('LBL_FOLDERS', $MODULE)} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-3D9EDD13AECCE1480A9D3814BFD372EB// {vtranslate('LBL_NO')} {vtranslate('Lists')} {vtranslate('LBL_FOUND')}**}
+{**PVTPATCHER-3D9EDD13AECCE1480A9D3814BFD372EB-FINISH**} ... </center></h6>
                                 </div>
                         </div>
             </div><div class="sidebar-header clearfix">
@@ -97,7 +114,11 @@
                     </div>
                     <hr>
                     <div>
-                        <input class="search-folders" type="text" placeholder="Search for Folders">
+                        <input class="search-folders" type="text" placeholder="{**PVTPATCHER-46ECF6D3C8F83553F5AC1B253D401816-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Search for Folders' , 'ParsVT')}
+{** REPLACED-46ECF6D3C8F83553F5AC1B253D401816// Search for Folders**}
+{**PVTPATCHER-46ECF6D3C8F83553F5AC1B253D401816-FINISH**}">
                     </div>
            <div class="menu-scroller scrollContainer" style="position:relative; top:0; left:0;">                     
             <div class="list-menu-content">
@@ -127,7 +148,15 @@
                     {/foreach}
                     <li class="noFolderText" style="display: none;">
                         <h6 class="lists-header"><center> 
-                            {vtranslate('LBL_NO')} {vtranslate('LBL_FOLDERS', $MODULE)} {vtranslate('LBL_FOUND')} ... 
+                            {**PVTPATCHER-47B9A56ADAFDC92E5C500B68D42F62F0-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE eq 'fa_ir' or  $LANGUAGE eq 'fa_af'}
+								{vtranslate('No record found', 'ParsVT')}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate('LBL_FOLDERS', $MODULE)} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-47B9A56ADAFDC92E5C500B68D42F62F0// {vtranslate('LBL_NO')} {vtranslate('LBL_FOLDERS', $MODULE)} {vtranslate('LBL_FOUND')}**}
+{**PVTPATCHER-47B9A56ADAFDC92E5C500B68D42F62F0-FINISH**} ... 
                         </center></h6>    
                     </li>
                     </ul>

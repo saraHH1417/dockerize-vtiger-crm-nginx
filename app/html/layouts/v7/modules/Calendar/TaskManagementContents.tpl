@@ -36,7 +36,11 @@
 					{foreach key=PICKLIST_KEY item=PICKLIST_VALUE from=$SELECTED_PICKLISTFIELD_ALL_VALUES}
 						{if $PICKLIST_VALUE == $RECORD_MODEL->get('status')}
 							<div class="more pull-right taskStatus picklist-{$SELECTED_PICKLIST_FIELDMODEL->getId()}-{$PICKLIST_KEY}">
-								{$RECORD_MODEL->get('status')}
+								{**PVTPATCHER-F5280B389AD86DF843F1D64069B172EC-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($RECORD_MODEL->get('status'),'Calendar')}
+{** REPLACED-F5280B389AD86DF843F1D64069B172EC// {$RECORD_MODEL->get('status')}**}
+{**PVTPATCHER-F5280B389AD86DF843F1D64069B172EC-FINISH**}
 							</div>
 						{/if}
 					{/foreach}

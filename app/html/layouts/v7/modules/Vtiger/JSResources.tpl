@@ -11,13 +11,23 @@
 -->*}
 {strip}
     <script type="text/javascript" src="layouts/v7/lib/jquery/purl.js"></script>
-    <script type="text/javascript" src="layouts/v7/lib/jquery/select2/select2.min.js"></script>
+    {**PVTPATCHER-45376A3D621324C4037CF8AD885DC5BA-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<script type="text/javascript" src="layouts/v7/lib/jquery/select2/select2.min.js"></script>
+    <script type="text/javascript" src="layouts/v7/lib/jquery/select2/select2_locale_{$LANGUAGE|substr:0:2}.js"></script>
+{** REPLACED-45376A3D621324C4037CF8AD885DC5BA// <script type="text/javascript" src="layouts/v7/lib/jquery/select2/select2.min.js"></script>**}
+{**PVTPATCHER-45376A3D621324C4037CF8AD885DC5BA-FINISH**}
     <script type="text/javascript" src="layouts/v7/lib/jquery/jquery.class.min.js"></script>
     <script type="text/javascript" src="layouts/v7/lib/jquery/jquery-ui-1.11.3.custom/jquery-ui.js"></script>
     <script type="text/javascript" src="layouts/v7/lib/todc/js/popper.min.js"></script>
     <script type="text/javascript" src="layouts/v7/lib/todc/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="libraries/jquery/jstorage.min.js"></script>
-    <script type="text/javascript" src="layouts/v7/lib/jquery/jquery-validation/jquery.validate.min.js"></script>
+    {**PVTPATCHER-4F05DCE78292B0A4DEB51A48CFB23BED-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<script type="text/javascript" src="layouts/v7/lib/jquery/jquery-validation/jquery.validate.min.js"></script>
+       <script type="text/javascript" src="layouts/v7/lib/jquery/jquery-validation/localization/messages_{$LANGUAGE|substr:0:2}.js"></script>
+{** REPLACED-4F05DCE78292B0A4DEB51A48CFB23BED// <script type="text/javascript" src="layouts/v7/lib/jquery/jquery-validation/jquery.validate.min.js"></script>**}
+{**PVTPATCHER-4F05DCE78292B0A4DEB51A48CFB23BED-FINISH**}
     <script type="text/javascript" src="layouts/v7/lib/jquery/jquery.slimscroll.min.js"></script>
     <script type="text/javascript" src="libraries/jquery/jquery.ba-outside-events.min.js"></script>
 	<script type="text/javascript" src="libraries/jquery/defunkt-jquery-pjax/jquery.pjax.js"></script>

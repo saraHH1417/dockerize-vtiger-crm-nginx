@@ -51,13 +51,26 @@
 					<span class="medium" style="padding-left:23px">{ucwords(vtranslate('LBL_ON', $MODULE))}</span>
 				</span>
 				<span class="col-lg-10">
+					{**PVTPATCHER-51B64108174F424BEA39003923879186-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE eq 'fa_ir' or  $LANGUAGE eq 'fa_af'}
+					<label class="checkbox" style="margin-left: 30px;display: inline;"><input name="sat_flag" value="saturday" {$RECURRING_INFORMATION['week6']} type="checkbox">{vtranslate('LBL_SM_SAT', $MODULE)}</label>
+					{/if}
 					<label class="checkbox" style="margin-left: 30px;display: inline;"><input name="sun_flag" value="sunday" {$RECURRING_INFORMATION['week0']} type="checkbox"/>{vtranslate('LBL_SM_SUN', $MODULE)}</label>
+{** REPLACED-51B64108174F424BEA39003923879186// <label class="checkbox" style="margin-left: 30px;display: inline;"><input name="sun_flag" value="sunday" {$RECURRING_INFORMATION['week0']} type="checkbox"/>{vtranslate('LBL_SM_SUN', $MODULE)}</label>**}
+{**PVTPATCHER-51B64108174F424BEA39003923879186-FINISH**}
 					<label class="checkbox" style="margin-left: 30px;display: inline;"><input name="mon_flag" value="monday" {$RECURRING_INFORMATION['week1']} type="checkbox">{vtranslate('LBL_SM_MON', $MODULE)}</label>
 					<label class="checkbox" style="margin-left: 30px;display: inline;"><input name="tue_flag" value="tuesday" {$RECURRING_INFORMATION['week2']} type="checkbox">{vtranslate('LBL_SM_TUE', $MODULE)}</label>
 					<label class="checkbox" style="margin-left: 30px;display: inline;"><input name="wed_flag" value="wednesday" {$RECURRING_INFORMATION['week3']} type="checkbox">{vtranslate('LBL_SM_WED', $MODULE)}</label>
 					<label class="checkbox" style="margin-left: 30px;display: inline;"><input name="thu_flag" value="thursday" {$RECURRING_INFORMATION['week4']} type="checkbox">{vtranslate('LBL_SM_THU', $MODULE)}</label>
 					<label class="checkbox" style="margin-left: 30px;display: inline;"><input name="fri_flag" value="friday" {$RECURRING_INFORMATION['week5']} type="checkbox">{vtranslate('LBL_SM_FRI', $MODULE)}</label>
+					{**PVTPATCHER-51DC28F21DD5D96B46F86E902BC08FFB-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE neq 'fa_ir' and  $LANGUAGE neq 'fa_af'}
 					<label class="checkbox" style="margin-left: 30px;display: inline;"><input name="sat_flag" value="saturday" {$RECURRING_INFORMATION['week6']} type="checkbox">{vtranslate('LBL_SM_SAT', $MODULE)}</label>
+					{/if}
+{** REPLACED-51DC28F21DD5D96B46F86E902BC08FFB// <label class="checkbox" style="margin-left: 30px;display: inline;"><input name="sat_flag" value="saturday" {$RECURRING_INFORMATION['week6']} type="checkbox">{vtranslate('LBL_SM_SAT', $MODULE)}</label>**}
+{**PVTPATCHER-51DC28F21DD5D96B46F86E902BC08FFB-FINISH**}
 				</span>
 			</div>
 			<div class="{if $RECURRING_INFORMATION['eventrecurringtype'] eq 'Monthly'}show{else}hide{/if}" id="repeatMonthUI" style="margin-top:10px;"RCa>

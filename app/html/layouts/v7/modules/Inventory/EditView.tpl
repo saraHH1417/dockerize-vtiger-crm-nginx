@@ -73,7 +73,11 @@
                     <div class="modal-overlay-footer">
                         <div class="row clearfix">
                             <div class='textAlignCenter col-lg-12 col-md-12 col-sm-12 '>
-                                <button class="btn btn-success saveButton" type="submit">Save</button>
+                                {**PVTPATCHER-2637DCEDABC2007FF8ADF705AA881D78-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<button class="btn btn-success saveButton" type="submit">{vtranslate('LBL_SAVE', $MODULE)}</button>
+{** REPLACED-2637DCEDABC2007FF8ADF705AA881D78// <button class="btn btn-success saveButton" type="submit">Save</button>**}
+{**PVTPATCHER-2637DCEDABC2007FF8ADF705AA881D78-FINISH**}
                                 <a class="cancelLink" href="javascript:history.{if $DUPLICATE_RECORDS}go(-2){else}back(){/if}" type="reset">{vtranslate('LBL_CANCEL', $MODULE)}</a>
                             </div>
                         </div>

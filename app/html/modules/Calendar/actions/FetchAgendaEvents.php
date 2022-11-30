@@ -53,9 +53,21 @@ class Calendar_FetchAgendaEvents_Action extends Vtiger_BasicAjax_Action {
 			$item = array();
 			$item['id']				= $record['activityid'];
 			$item['visibility']		= $record['visibility'];
-			$item['activitytype']	= $record['activitytype'];
-			$item['status']			= $record['eventstatus'];
-			$item['priority']		= $record['priority'];
+/**PVTPATCHER-B18969D07932FC5B8DB0DB85D87DD5A5-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+$item['activitytype']	= vtranslate($record['activitytype'],'Calendar');
+/** REPLACED-B18969D07932FC5B8DB0DB85D87DD5A5// $item['activitytype']	= $record['activitytype'];**/
+/**PVTPATCHER-B18969D07932FC5B8DB0DB85D87DD5A5-FINISH**/
+/**PVTPATCHER-CFBBADB49CD0748E2CD66C675A939095-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+$item['status']			= vtranslate($record['eventstatus'],'Calendar');
+/** REPLACED-CFBBADB49CD0748E2CD66C675A939095// $item['status']			= $record['eventstatus'];**/
+/**PVTPATCHER-CFBBADB49CD0748E2CD66C675A939095-FINISH**/
+/**PVTPATCHER-CCDA56FCCAC3C829D981799818BC833A-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+$item['priority']		= vtranslate($record['priority'],'Calendar');
+/** REPLACED-CCDA56FCCAC3C829D981799818BC833A// $item['priority']		= $record['priority'];**/
+/**PVTPATCHER-CCDA56FCCAC3C829D981799818BC833A-FINISH**/
 			$item['userfullname']	= getUserFullName($record['smownerid']);
 			$item['title']			= decode_html($record['subject']);
 

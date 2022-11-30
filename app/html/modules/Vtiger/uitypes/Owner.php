@@ -41,7 +41,11 @@ class Vtiger_Owner_UIType extends Vtiger_Base_UIType {
             $recordModel->set('groupid',$value);
 			$detailViewUrl = $recordModel->getDetailViewUrl();
 		}
-		return "<a href=" .$detailViewUrl. ">" .getOwnerName($value). "</a>";
+/**PVTPATCHER-5FE46C121402BBAD0494070A9086F590-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+return "<a href=" .$detailViewUrl. ">" .vtranslate(getOwnerName($value)). "</a>";
+/** REPLACED-5FE46C121402BBAD0494070A9086F590// return "<a href=" .$detailViewUrl. ">" .getOwnerName($value). "</a>";**/
+/**PVTPATCHER-5FE46C121402BBAD0494070A9086F590-FINISH**/
 	}
 
 	/**

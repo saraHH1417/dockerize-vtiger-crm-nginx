@@ -19,7 +19,11 @@
                     {foreach key=index item=COMMENT from=$COMMENTS}
                         {assign var=CREATOR_NAME value=$COMMENT->getCommentedByName()}
                         <div class="commentDetails">
-                            <div class="singleComment">
+                            {**PVTPATCHER-5994C07000F5E4BCCB04BA2F8AE1B99E-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<div class="singleComment" {if $COMMENT->get('is_private')}style="background: #ffffbe;"{elseif !empty($COMMENT->get('customer'))}style="background: #bee1ff;"{/if}>
+{** REPLACED-5994C07000F5E4BCCB04BA2F8AE1B99E// <div class="singleComment">**}
+{**PVTPATCHER-5994C07000F5E4BCCB04BA2F8AE1B99E-FINISH**}
                                 {assign var=PARENT_COMMENT_MODEL value=$COMMENT->getParentCommentModel()}
                                 {assign var=CHILD_COMMENTS_MODEL value=$COMMENT->getChildComments()}
                                 <div class="container-fluid">

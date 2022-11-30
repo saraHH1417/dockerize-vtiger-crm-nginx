@@ -33,7 +33,11 @@
                                             {foreach from=$ALL_GROUP_MEMBERS item=MEMBER}
                                                 <option value="{$MEMBER->getId()}"
                                                 {if $RULE_MODEL_EXISTS} {if $RULE_MODEL->getSourceMember()->getId() == $MEMBER->getId()}selected{/if}{/if}>
-                                                {$MEMBER->getName()}
+                                                {**PVTPATCHER-6325CAD7A84BB67F810C0144E4048863-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($MEMBER->getName())}
+{** REPLACED-6325CAD7A84BB67F810C0144E4048863// {$MEMBER->getName()}**}
+{**PVTPATCHER-6325CAD7A84BB67F810C0144E4048863-FINISH**}
                                             </option>
                                         {/foreach}
                                     </optgroup>
@@ -50,7 +54,11 @@
                                         {foreach from=$ALL_GROUP_MEMBERS item=MEMBER}
                                             <option value="{$MEMBER->getId()}"
                                             {if $RULE_MODEL_EXISTS}{if $RULE_MODEL->getTargetMember()->getId() == $MEMBER->getId()}selected{/if}{/if}>
-                                            {$MEMBER->getName()}
+                                            {**PVTPATCHER-6325CAD7A84BB67F810C0144E4048863-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($MEMBER->getName())}
+{** REPLACED-6325CAD7A84BB67F810C0144E4048863// {$MEMBER->getName()}**}
+{**PVTPATCHER-6325CAD7A84BB67F810C0144E4048863-FINISH**}
                                         </option>
                                     {/foreach}
                                 </optgroup>

@@ -1,38 +1,55 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2022-11-29 16:06:03
+<?php /* Smarty version Smarty-3.1.7, created on 2022-11-30 10:51:04
          compiled from "/var/www/html/includes/runtime/../../layouts/v7/modules/Vtiger/Footer.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:19125538726385fcb3586f88-36879284%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1321737363638703ecde9cf8-46894378%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '85e103170394bc244af110ebe8d929062e387965' => 
     array (
       0 => '/var/www/html/includes/runtime/../../layouts/v7/modules/Vtiger/Footer.tpl',
-      1 => 1669725088,
+      1 => 1669792861,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '19125538726385fcb3586f88-36879284',
+  'nocache_hash' => '1321737363638703ecde9cf8-46894378',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.7',
+  'unifunc' => 'content_638703ecdee7c',
   'variables' => 
   array (
     'VTIGER_VERSION' => 0,
     'LANGUAGE_STRINGS' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_6385fcb358bd8',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_6385fcb358bd8')) {function content_6385fcb358bd8($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_638703ecdee7c')) {function content_638703ecdee7c($_smarty_tpl) {?>
 
 <footer class="app-footer">
 	<p>
-		Powered by vtiger CRM - <?php echo $_smarty_tpl->tpl_vars['VTIGER_VERSION']->value;?>
+		
+
+<?php echo vtranslate('Powered by vtiger CRM','ParsVT');?>
+
+
+ - <?php echo $_smarty_tpl->tpl_vars['VTIGER_VERSION']->value;?>
 &nbsp;&nbsp;© 2004 - <?php echo date('Y');?>
 &nbsp;&nbsp;
-		<a href="//www.vtiger.com" target="_blank">Vtiger</a>&nbsp;|&nbsp;
-		<a href="https://www.vtiger.com/privacy-policy" target="_blank">Privacy Policy</a>
+		
+
+<a href="//www.vtiger.com" target="_blank"><?php echo vtranslate('Vtiger','ParsVT');?>
+</a>&nbsp;&nbsp;|&nbsp;
+		<a href="//www.vtiger.ir" target="_blank"><?php echo vtranslate('VTFarsi','ParsVT');?>
+</a>&nbsp;&nbsp;|&nbsp;
+
+
+		<a href="https://www.vtiger.com/privacy-policy" target="_blank">
+
+<?php echo vtranslate('Privacy Policy','ParsVT');?>
+
+
+</a>
 	</p>
 </footer>
 </div>

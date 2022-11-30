@@ -76,7 +76,11 @@ class Vtiger_MiniList_Model extends Vtiger_Widget_Model {
 		$customviewrs = $db->pquery('SELECT viewname FROM vtiger_customview WHERE cvid=?', array($this->widgetModel->get('filterid')));
 		if ($db->num_rows($customviewrs)) {
 			$customview = $db->fetch_array($customviewrs);
-			$suffix = ' - ' . $customview['viewname'];
+/**PVTPATCHER-42D9FE01D781BAE05F21D72C0A1B6847-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+$suffix = ' - ' . vtranslate($customview['viewname'],$this->getTargetModule());
+/** REPLACED-42D9FE01D781BAE05F21D72C0A1B6847// $suffix = ' - ' . $customview['viewname'];**/
+/**PVTPATCHER-42D9FE01D781BAE05F21D72C0A1B6847-FINISH**/
 		}
 		return $prefix . vtranslate($this->getTargetModuleModel()->label, $this->getTargetModule()). $suffix;
 	}

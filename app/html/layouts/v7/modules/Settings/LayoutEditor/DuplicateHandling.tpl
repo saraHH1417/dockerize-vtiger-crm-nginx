@@ -19,7 +19,11 @@
 
 			<div>
 				<div class="vt-default-callout vt-info-callout"> 
-					<h4 class="vt-callout-header"><span class="fa fa-info-circle"></span>&nbsp; Info </h4>
+					<h4 class="vt-callout-header"><span class="fa fa-info-circle"></span>&nbsp; {**PVTPATCHER-54624DE4AE013481BB970DAA1EDD55D0-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Info', $QUALIFIED_MODULE)} </h4>
+{** REPLACED-54624DE4AE013481BB970DAA1EDD55D0// Info </h4>**}
+{**PVTPATCHER-54624DE4AE013481BB970DAA1EDD55D0-FINISH**}
 					<div class="duplicationInfoMessage">{vtranslate('LBL_DUPLICATION_INFO_MESSAGE', $QUALIFIED_MODULE)}</div>
 				</div>
 			</div><br>

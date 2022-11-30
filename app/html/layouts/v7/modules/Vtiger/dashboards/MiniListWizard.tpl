@@ -65,7 +65,11 @@
 	{foreach from=$ALLFILTERS item=FILTERS key=FILTERGROUP}
 		<optgroup label="{$FILTERGROUP}">
 			{foreach from=$FILTERS item=FILTER key=FILTERNAME}
-				<option value="{$FILTER->getId()}">{$FILTER->get('viewname')}</option>
+				<option value="{$FILTER->getId()}">{**PVTPATCHER-F6EDBCE457BC22E5B59A8C86C3208B21-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($FILTER->get('viewname'))}
+{** REPLACED-F6EDBCE457BC22E5B59A8C86C3208B21// {$FILTER->get('viewname')}**}
+{**PVTPATCHER-F6EDBCE457BC22E5B59A8C86C3208B21-FINISH**}</option>
 			{/foreach}
 		</optgroup>
 	{/foreach}

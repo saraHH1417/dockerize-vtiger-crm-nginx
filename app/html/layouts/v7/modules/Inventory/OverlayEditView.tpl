@@ -61,8 +61,16 @@
             <div class='modal-footer overlayFooter'>
                 <center>
                     <footer>
-                        <button class="btn btn-success saveButton" type="submit">Save</button>
-                        <a class="cancelLink" data-dismiss="modal" type="reset">Cancel</a>
+                        {**PVTPATCHER-3B2E9D8EBDA180603DEB966E1BD1CA53-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<button class="btn btn-success saveButton" type="submit">{vtranslate('LBL_SAVE', $MODULE)}</button>
+{** REPLACED-3B2E9D8EBDA180603DEB966E1BD1CA53// <button class="btn btn-success saveButton" type="submit">Save</button>**}
+{**PVTPATCHER-3B2E9D8EBDA180603DEB966E1BD1CA53-FINISH**}
+                        {**PVTPATCHER-8644980DBEAC62B654721E1D81A1F4EC-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<a class="cancelLink" data-dismiss="modal" type="reset">{vtranslate('LBL_CANCEL', $MODULE)}</a>
+{** REPLACED-8644980DBEAC62B654721E1D81A1F4EC// <a class="cancelLink" data-dismiss="modal" type="reset">Cancel</a>**}
+{**PVTPATCHER-8644980DBEAC62B654721E1D81A1F4EC-FINISH**}
                     </footer>
                 </center>
             </div>

@@ -14,12 +14,24 @@
             {if $smarty.request.type == 'Transfer'}
                 {assign var="SOURCE_ROLE_SUBPATTERN" value='::'|cat:$SOURCE_ROLE->getId()}
                 {if strpos($CHILD_ROLE->getParentRoleString(), $SOURCE_ROLE_SUBPATTERN) !== false}
-                    <a style="white-space: nowrap" data-url="{$CHILD_ROLE->getEditViewUrl()}" class="btn btn-default" disabled data-toggle="tooltip" data-placement="top" ><span class="muted">{$CHILD_ROLE->getName()}</span></a>
+                    <a style="white-space: nowrap" data-url="{$CHILD_ROLE->getEditViewUrl()}" class="btn btn-default" disabled data-toggle="tooltip" data-placement="top" >{**PVTPATCHER-C56190EDF838D24E754684C02D5BCA1E-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<span class="muted">{vtranslate($CHILD_ROLE->getName())}
+{** REPLACED-C56190EDF838D24E754684C02D5BCA1E// <span class="muted">{$CHILD_ROLE->getName()}</span>**}
+{**PVTPATCHER-C56190EDF838D24E754684C02D5BCA1E-FINISH**}</a>
                 {else}
-                    <a style="white-space: nowrap" href="" data-url="{$CHILD_ROLE->getEditViewUrl()}" class="btn btn-default roleEle" data-toggle="tooltip" data-placement="top" >{$CHILD_ROLE->getName()}</a>
+                    <a style="white-space: nowrap" href="" data-url="{$CHILD_ROLE->getEditViewUrl()}" class="btn btn-default roleEle" data-toggle="tooltip" {**PVTPATCHER-C094FE08E92C61EEDC85CB558223CDD8-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+data-placement="top" >{vtranslate($CHILD_ROLE->getName())}</a>
+{** REPLACED-C094FE08E92C61EEDC85CB558223CDD8// data-placement="top" >{$CHILD_ROLE->getName()}</a>**}
+{**PVTPATCHER-C094FE08E92C61EEDC85CB558223CDD8-FINISH**}
                 {/if}
             {else}
-                <a style="white-space: nowrap" href="{$CHILD_ROLE->getEditViewUrl()}" data-url="{$CHILD_ROLE->getEditViewUrl()}" class="btn btn-default draggable droppable" data-toggle="tooltip" data-placement="top" data-animation="true" title="{vtranslate('LBL_CLICK_TO_EDIT_OR_DRAG_TO_MOVE',$QUALIFIED_MODULE)}">{$CHILD_ROLE->getName()}</a>
+                <a style="white-space: nowrap" href="{$CHILD_ROLE->getEditViewUrl()}" data-url="{$CHILD_ROLE->getEditViewUrl()}" class="btn btn-default draggable droppable" data-toggle="tooltip" data-placement="top" data-animation="true" {**PVTPATCHER-4A3157F28A754D6C8D29D6250829D6A7-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+title="{vtranslate('LBL_CLICK_TO_EDIT_OR_DRAG_TO_MOVE',$QUALIFIED_MODULE)}">{vtranslate($CHILD_ROLE->getName())}</a>
+{** REPLACED-4A3157F28A754D6C8D29D6250829D6A7// title="{vtranslate('LBL_CLICK_TO_EDIT_OR_DRAG_TO_MOVE',$QUALIFIED_MODULE)}">{$CHILD_ROLE->getName()}</a>**}
+{**PVTPATCHER-4A3157F28A754D6C8D29D6250829D6A7-FINISH**}
             {/if}
             {if $smarty.request.view != 'Popup'}
                 <div class="toolbar">

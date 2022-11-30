@@ -10,4 +10,3 @@
 
 //Maximum number of Mailboxes in mail converter
 $max_mailboxes = 3;
-

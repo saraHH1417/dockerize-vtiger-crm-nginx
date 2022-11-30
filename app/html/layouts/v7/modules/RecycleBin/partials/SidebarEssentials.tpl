@@ -12,7 +12,11 @@
             <h5 class="sidebar-header"> {vtranslate('LBL_MODULES', 'Settings:$MODULE')} </h5>
             <hr>
             <div>
-                <input class="search-list" type="text" placeholder="Search for Modules">
+                <input class="search-list" type="text" placeholder="{**PVTPATCHER-91D75C3B71C60AF4E8BDAF25D2610BD4-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Search for Modules', 'ParsVT')}
+{** REPLACED-91D75C3B71C60AF4E8BDAF25D2610BD4// Search for Modules**}
+{**PVTPATCHER-91D75C3B71C60AF4E8BDAF25D2610BD4-FINISH**}">
             </div>
             <div class="list-menu-content">
                 <div class="list-group">   
@@ -27,7 +31,16 @@
                     </ul>
                  </div>
                 <div class="list-group hide noLists">
-                    <h6 class="lists-header"><center> {vtranslate('LBL_NO')} {vtranslate('LBL_MODULES', 'Settings:$MODULE')} {vtranslate('LBL_FOUND')} ... </center></h6>
+                    <h6 class="lists-header"><center> {**PVTPATCHER-6357BC58625F035E0C9686D8608FB173-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+								{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No record found', 'ParsVT')}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate('LBL_MODULES', 'Settings:$MODULE')} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-6357BC58625F035E0C9686D8608FB173// {vtranslate('LBL_NO')} {vtranslate('LBL_MODULES', 'Settings:$MODULE')} {vtranslate('LBL_FOUND')}**}
+{**PVTPATCHER-6357BC58625F035E0C9686D8608FB173-FINISH**} ... </center></h6>
                 </div>
             </div>
         </div>

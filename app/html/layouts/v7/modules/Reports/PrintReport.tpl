@@ -15,7 +15,29 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>{'LBL_PRINT_REPORT'|@vtranslate:$MODULE}</title>
-        <style type="text/css" media="print,screen">
+        {**PVTPATCHER-DE4449BA70AFA3257868B14570CA7FB4-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<style type="text/css" media="print,screen">
+	{literal}
+            {assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir'}
+                  @import 'modules/ParsVT/resources/styles/rtl.php';
+                  body {
+                      direction: rtl !important;
+                  }
+                  .printReport tbody td{
+                      text-align:right !important;
+                  }
+                  h2 {
+                      text-align:right !important;
+                  }
+                  h3 {
+                      text-align:left !important;
+                  }
+                {/if}
+		{/literal}
+{** REPLACED-DE4449BA70AFA3257868B14570CA7FB4// <style type="text/css" media="print,screen">**}
+{**PVTPATCHER-DE4449BA70AFA3257868B14570CA7FB4-FINISH**}
             {literal}
                 .printReport{
                     width:100%;

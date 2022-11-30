@@ -1,20 +1,22 @@
-<?php /* Smarty version Smarty-3.1.7, created on 2022-11-29 17:02:17
+<?php /* Smarty version Smarty-3.1.7, created on 2022-11-30 10:51:07
          compiled from "/var/www/html/includes/runtime/../../layouts/v7/modules/Vtiger/ModuleHeader.tpl" */ ?>
-<?php /*%%SmartyHeaderCode:1663762429638609e17ef9e5-57215583%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:66880304363870401399e81-61394816%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     '623c3555ff7328f3608b0d2ebf5765274779526d' => 
     array (
       0 => '/var/www/html/includes/runtime/../../layouts/v7/modules/Vtiger/ModuleHeader.tpl',
-      1 => 1669725088,
+      1 => 1669792861,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1663762429638609e17ef9e5-57215583',
+  'nocache_hash' => '66880304363870401399e81-61394816',
   'function' => 
   array (
   ),
+  'version' => 'Smarty-3.1.7',
+  'unifunc' => 'content_638704013da35',
   'variables' => 
   array (
     'MODULE' => 0,
@@ -37,10 +39,8 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'FIELDS_INFO' => 0,
   ),
   'has_nocache_code' => false,
-  'version' => 'Smarty-3.1.7',
-  'unifunc' => 'content_638609e183351',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_638609e183351')) {function content_638609e183351($_smarty_tpl) {?>
+<?php if ($_valid && !is_callable('content_638704013da35')) {function content_638704013da35($_smarty_tpl) {?>
 
 <div class="col-sm-11 col-xs-10 padding0 module-action-bar clearfix coloredBorderTop"><div class="module-action-content clearfix <?php echo $_smarty_tpl->tpl_vars['MODULE']->value;?>
 -module-action-content"><div class="col-lg-7 col-md-6 col-sm-5 col-xs-11 padding0 module-breadcrumb module-breadcrumb-<?php echo $_REQUEST['view'];?>
@@ -56,11 +56,11 @@ $_smarty_tpl->tpl_vars['FILTER_TYPES']->_loop = true;
  $_from = $_smarty_tpl->tpl_vars['FILTER_TYPES']->value; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array');}
 foreach ($_from as $_smarty_tpl->tpl_vars['FILTERS']->key => $_smarty_tpl->tpl_vars['FILTERS']->value){
 $_smarty_tpl->tpl_vars['FILTERS']->_loop = true;
-?><?php if ($_smarty_tpl->tpl_vars['FILTERS']->value->get('cvid')==$_smarty_tpl->tpl_vars['VIEWID']->value){?><?php $_smarty_tpl->tpl_vars['CVNAME'] = new Smarty_variable($_smarty_tpl->tpl_vars['FILTERS']->value->get('viewname'), null, 0);?><?php break 1?><?php }?><?php } ?><?php } ?><p class="current-filter-name filter-name pull-left cursorPointer" title="<?php echo $_smarty_tpl->tpl_vars['CVNAME']->value;?>
+?><?php if ($_smarty_tpl->tpl_vars['FILTERS']->value->get('cvid')==$_smarty_tpl->tpl_vars['VIEWID']->value){?><?php $_smarty_tpl->tpl_vars['CVNAME'] = new Smarty_variable($_smarty_tpl->tpl_vars['FILTERS']->value->get('viewname'), null, 0);?><?php break 1?><?php }?><?php } ?><?php } ?><p class="current-filter-name filter-name pull-left cursorPointer" title="<?php echo vtranslate($_smarty_tpl->tpl_vars['CVNAME']->value,$_smarty_tpl->tpl_vars['MODULE']->value);?>
 "><span class="fa fa-angle-right pull-left" aria-hidden="true"></span><a href='<?php echo $_smarty_tpl->tpl_vars['MODULE_MODEL']->value->getListViewUrl();?>
 &viewname=<?php echo $_smarty_tpl->tpl_vars['VIEWID']->value;?>
 &app=<?php echo $_smarty_tpl->tpl_vars['SELECTED_MENU_CATEGORY']->value;?>
-'>&nbsp;&nbsp;<?php echo $_smarty_tpl->tpl_vars['CVNAME']->value;?>
+'>&nbsp;&nbsp;<?php echo vtranslate($_smarty_tpl->tpl_vars['CVNAME']->value,$_smarty_tpl->tpl_vars['MODULE']->value);?>
 &nbsp;&nbsp;</a> </p><?php }?><?php $_smarty_tpl->tpl_vars['SINGLE_MODULE_NAME'] = new Smarty_variable(('SINGLE_').($_smarty_tpl->tpl_vars['MODULE']->value), null, 0);?><?php if ($_smarty_tpl->tpl_vars['RECORD']->value&&$_REQUEST['view']=='Edit'){?><p class="current-filter-name filter-name pull-left "><span class="fa fa-angle-right pull-left" aria-hidden="true"></span><a title="<?php echo $_smarty_tpl->tpl_vars['RECORD']->value->get('label');?>
 ">&nbsp;&nbsp;<?php echo vtranslate('LBL_EDITING',$_smarty_tpl->tpl_vars['MODULE']->value);?>
  : <?php echo $_smarty_tpl->tpl_vars['RECORD']->value->get('label');?>

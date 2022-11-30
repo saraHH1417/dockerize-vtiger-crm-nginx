@@ -92,7 +92,16 @@
                         <td colspan="{$COLSPAN_WIDTH}">
                             <div class="emptyRecordsContent">
                                 <center> 
-                                    {vtranslate('LBL_NO')} {vtranslate('LBL_SYNC_LOG', $MODULE)} {vtranslate('LBL_FOUND')}. 
+                                    {**PVTPATCHER-1ACDC4AF561E28B447889CA6A8D7C300-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+								{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No record found', 'ParsVT')}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate('LBL_SYNC_LOG', $MODULE)} {vtranslate('LBL_FOUND')}
+								{/if}
+{** REPLACED-1ACDC4AF561E28B447889CA6A8D7C300// {vtranslate('LBL_NO')} {vtranslate('LBL_SYNC_LOG', $MODULE)} {vtranslate('LBL_FOUND')}**}
+{**PVTPATCHER-1ACDC4AF561E28B447889CA6A8D7C300-FINISH**}. 
                                     {if $IS_SYNC_READY}
                                         <a href="#" class="syncNow"> <span class="blueColor"> {vtranslate('LBL_SYNC_NOW', $MODULE)} </span></a>
                                     {else}

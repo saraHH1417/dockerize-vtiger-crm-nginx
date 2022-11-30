@@ -15,7 +15,16 @@
 		{include file=$FILENAME|vtemplate_path:$MODULE RELATED_RECORDS=$RELATED_RECORDS}
 	{else}
 		<div class="summaryWidgetContainer noContent">
-			<p class="textAlignCenter">{vtranslate('LBL_NO_RELATED',$MODULE)} {$RELATED_MODULE}</p>
+			<p class="textAlignCenter">{**PVTPATCHER-C06B4DF3C803D08584C52401CA7484DD-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                   {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+							  {vtranslate('No related record found in %s', 'ParsVT',vtranslate($RELATED_MODULE, $RELATED_MODULE))}
+                                                   {else}
+							  {vtranslate('LBL_NO_RELATED',$MODULE)} {$RELATED_MODULE}
+                                                   {/if}
+{** REPLACED-C06B4DF3C803D08584C52401CA7484DD// {vtranslate('LBL_NO_RELATED',$MODULE)} {$RELATED_MODULE}**}
+{**PVTPATCHER-C06B4DF3C803D08584C52401CA7484DD-FINISH**}</p>
 		</div>
 	{/if}
 {/strip}

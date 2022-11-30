@@ -11,7 +11,11 @@
 
 {strip}
 	{assign var=IS_SORTABLE value=$SELECTED_MODULE_MODEL->isSortableAllowed()}
-	{assign var=ALL_BLOCK_LABELS value=[]}
+	{**PVTPATCHER-057EA1C5D84507B997E02A55CED21C9A-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=ALL_BLOCK_LABELS value=[]}{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}{if $CURRENT_USER_MODEL->get('language') neq 'fa_ir' and  $CURRENT_USER_MODEL->get('language') neq 'fa_af'}{$right='right'}{else}{$right='left'}{/if}
+{** REPLACED-057EA1C5D84507B997E02A55CED21C9A// {assign var=ALL_BLOCK_LABELS value=[]}**}
+{**PVTPATCHER-057EA1C5D84507B997E02A55CED21C9A-FINISH**}
 
 	<div class="row fieldsListContainer" style="padding:1% 0">
 		<div class="col-sm-6">
@@ -51,7 +55,11 @@
 									<strong class="translatedBlockLabel">{vtranslate($BLOCK_LABEL_KEY, $SELECTED_MODULE_NAME)}</strong>
 								</div>
 								<div class="col-sm-9 padding10 marginLeftZero">
-									<div class="blockActions" style="float:right !important;">
+									<div class="blockActions" style="{**PVTPATCHER-CF5A96E5DFCFB1D1E708DF013BB95E61-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+float:{$right}
+{** REPLACED-CF5A96E5DFCFB1D1E708DF013BB95E61// float:right**}
+{**PVTPATCHER-CF5A96E5DFCFB1D1E708DF013BB95E61-FINISH**} !important;">
 										<span>
 											<i class="fa fa-info-circle" title="{vtranslate('LBL_COLLAPSE_BLOCK_DETAIL_VIEW', $QUALIFIED_MODULE)}"></i>&nbsp; {vtranslate('LBL_COLLAPSE_BLOCK', $QUALIFIED_MODULE)}&nbsp;
 											<input style="opacity: 0;" type="checkbox" 
@@ -450,7 +458,11 @@
 				<img class="alignMiddle" src="{vimage_path('drag.png')}" />&nbsp;&nbsp;
 			</div>
 			<div class="col-sm-9 padding10 marginLeftZero">
-				<div class="blockActions" style="float: right !important;">
+				<div class="blockActions" style="{**PVTPATCHER-644A213A4DFD9712048C51AF5022A96C-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+float:{$right} !important;
+{** REPLACED-644A213A4DFD9712048C51AF5022A96C// float: right !important;**}
+{**PVTPATCHER-644A213A4DFD9712048C51AF5022A96C-FINISH**}">
 					<span>
 						<i class="fa fa-info-circle" title="{vtranslate('LBL_COLLAPSE_BLOCK_DETAIL_VIEW', $QUALIFIED_MODULE)}"></i>&nbsp; {vtranslate('LBL_COLLAPSE_BLOCK', $QUALIFIED_MODULE)}&nbsp;
 						<input style="opacity: 0;" type="checkbox" 

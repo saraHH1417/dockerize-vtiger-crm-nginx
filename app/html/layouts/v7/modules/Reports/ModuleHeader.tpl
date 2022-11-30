@@ -29,9 +29,17 @@
 						&nbsp;<span class="fa fa-angle-right" aria-hidden="true"></span>
 						&nbsp;
 						{if $VIEW eq 'Detail' or $VIEW eq 'ChartDetail'}
-							{$REPORT_NAME}
+							{**PVTPATCHER-16BCA2EF13B2F13DF08018E0B2B91967-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($REPORT_NAME,$MODULE)}
+{** REPLACED-16BCA2EF13B2F13DF08018E0B2B91967// {$REPORT_NAME}**}
+{**PVTPATCHER-16BCA2EF13B2F13DF08018E0B2B91967-FINISH**}
 						{else}
-							{$VIEW}
+							{**PVTPATCHER-E31A1B10A16ABE4687E9F06F4DD5E461-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($VIEW,$MODULE)}
+{** REPLACED-E31A1B10A16ABE4687E9F06F4DD5E461// {$VIEW}**}
+{**PVTPATCHER-E31A1B10A16ABE4687E9F06F4DD5E461-FINISH**}
 						{/if}
 						&nbsp;
 					</p>

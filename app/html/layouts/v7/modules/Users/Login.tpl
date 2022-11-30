@@ -200,16 +200,92 @@
 				opacity: 0;
 			}
 		}
-	</style>
+	{**PVTPATCHER-09D17FAB39D7163876B00971EDB6C3D8-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+</style>
+{if vglobal('current_language') eq 'fa_ir'}
+<link type='text/css' rel='stylesheet' href='modules/ParsVT/resources/styles/fonts/fonts.php?font=IRANSans'>
+<style>
+@media (max-width:1024px) {
+.separatorDiv,.marketingDiv{
+display:none !important;
+}
+}
+* {
+font-family: 'VtigerFont', Tahoma;
+}
+b {
+    font-weight: bold;
+    font-size: 13px;
+}
+h4 {
+    font-size: 15px;
+    font-weight: bold;
+}
+label {
+    direction: rtl;
+    left: unset;
+    right: 10px;
+}
+.marketingDiv * {
+    direction: rtl;
+    font-family: 'VtigerFont', 'OpenSans-Semibold', 'ProximaNova-Semibold', sans-serif;
+}
+.group {
+    direction: rtl;
+}
+.mCSB_inside li.slide .col-lg-9 div *
+{
+direction:rtl;
+text-align:right
+}
+.bx-wrapper .bxslider li {
+    direction: rtl;
+    text-align: right !important;
+    width: 500px !important;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    direction: rtl;
+}
+div.bx-viewport ul.bxslider li.slide.bx-clone div.col-lg-9 div a{
+text-align:left;
+}
+
+.app-footer {
+    direction: rtl;
+}
+.col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
+    float: right;
+}
+.bx-viewport {
+    direction: ltr !important;
+}
+</style>
+{/if}
+{** REPLACED-09D17FAB39D7163876B00971EDB6C3D8// </style>**}
+{**PVTPATCHER-09D17FAB39D7163876B00971EDB6C3D8-FINISH**}
 
 	<span class="app-nav"></span>
 	<div class="container-fluid loginPageContainer">
 		<div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
 			<div class="loginDiv widgetHeight">
-				<img class="img-responsive user-logo" src="layouts/v7/resources/Images/vtiger.png">
+				{**PVTPATCHER-892D9584023B011A16909E3CF722C056-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var="CompanyDetails" value=getCompanyDetails()}
+        				<a href="{if strpos($CompanyDetails['website'], "http") === false}//{/if}{$CompanyDetails['website']}" target="_blank"><img class="img-responsive user-logo"  title="{$CompanyDetails['companyname']}" src="test/logo/{$CompanyDetails['logoname']}"></a>
+{** REPLACED-892D9584023B011A16909E3CF722C056// <img class="img-responsive user-logo" src="layouts/v7/resources/Images/vtiger.png">**}
+{**PVTPATCHER-892D9584023B011A16909E3CF722C056-FINISH**}
 				<div>
-					<span class="{if !$ERROR}hide{/if} failureMessage" id="validationMessage">{$MESSAGE}</span>
-					<span class="{if !$MAIL_STATUS}hide{/if} successMessage">{$MESSAGE}</span>
+					<span class="{if !$ERROR}hide{/if} failureMessage" id="validationMessage">{**PVTPATCHER-C2245E54EBE111FA747BF85FDB19E27F-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($MESSAGE, 'ParsVT')}
+{** REPLACED-C2245E54EBE111FA747BF85FDB19E27F// {$MESSAGE}**}
+{**PVTPATCHER-C2245E54EBE111FA747BF85FDB19E27F-FINISH**}</span>
+					<span class="{if !$MAIL_STATUS}hide{/if} successMessage">{**PVTPATCHER-C2245E54EBE111FA747BF85FDB19E27F-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($MESSAGE, 'ParsVT')}
+{** REPLACED-C2245E54EBE111FA747BF85FDB19E27F// {$MESSAGE}**}
+{**PVTPATCHER-C2245E54EBE111FA747BF85FDB19E27F-FINISH**}</span>
 				</div>
 
 				<div id="loginFormDiv">
@@ -217,18 +293,42 @@
 						<input type="hidden" name="module" value="Users"/>
 						<input type="hidden" name="action" value="Login"/>
 						<div class="group">
-							<input id="username" type="text" name="username" placeholder="Username">
+							<input id="username" type="text" name="username" {**PVTPATCHER-A7E4786F433208074C5CCA15A4714610-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+placeholder="{vtranslate('Username', 'ParsVT')}"
+{** REPLACED-A7E4786F433208074C5CCA15A4714610// placeholder="Username"**}
+{**PVTPATCHER-A7E4786F433208074C5CCA15A4714610-FINISH**}>
 							<span class="bar"></span>
-							<label>Username</label>
+							{**PVTPATCHER-E41AB6317DD36F7D78A5B012B23E46FA-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<label>{vtranslate('Username', 'ParsVT')}</label>
+{** REPLACED-E41AB6317DD36F7D78A5B012B23E46FA// <label>Username</label>**}
+{**PVTPATCHER-E41AB6317DD36F7D78A5B012B23E46FA-FINISH**}
 						</div>
 						<div class="group">
-							<input id="password" type="password" name="password" placeholder="Password">
+							<input id="password" type="password" name="password" {**PVTPATCHER-01151101F67FF490DFBC96DA6991DDE5-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+placeholder="{vtranslate('Password', 'ParsVT')}"
+{** REPLACED-01151101F67FF490DFBC96DA6991DDE5// placeholder="Password"**}
+{**PVTPATCHER-01151101F67FF490DFBC96DA6991DDE5-FINISH**}>
 							<span class="bar"></span>
-							<label>Password</label>
+							{**PVTPATCHER-FF4BB31CE5634551F3B83E53BC343AE4-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<label>{vtranslate('Password', 'ParsVT')}</label>
+{** REPLACED-FF4BB31CE5634551F3B83E53BC343AE4// <label>Password</label>**}
+{**PVTPATCHER-FF4BB31CE5634551F3B83E53BC343AE4-FINISH**}
 						</div>
 						<div class="group">
-							<button type="submit" class="button buttonBlue">Sign in</button><br>
-							<a class="forgotPasswordLink" style="color: #15c;">forgot password?</a>
+							<button type="submit" class="button buttonBlue">{**PVTPATCHER-0A68FD34F24D186DC7FF71BAE2AFC486-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Sign in', 'ParsVT')}
+{** REPLACED-0A68FD34F24D186DC7FF71BAE2AFC486// Sign in**}
+{**PVTPATCHER-0A68FD34F24D186DC7FF71BAE2AFC486-FINISH**}</button><br>
+							<a class="forgotPasswordLink" style="color: #15c;">{**PVTPATCHER-9547BFF34D74E972D46A0E524D010B96-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('forgot password?', 'ParsVT')}
+{** REPLACED-9547BFF34D74E972D46A0E524D010B96// forgot password?**}
+{**PVTPATCHER-9547BFF34D74E972D46A0E524D010B96-FINISH**}</a>
 						</div>
 					</form>
 				</div>
@@ -236,18 +336,42 @@
 				<div id="forgotPasswordDiv" class="hide">
 					<form class="form-horizontal" action="forgotPassword.php" method="POST">
 						<div class="group">
-							<input id="fusername" type="text" name="username" placeholder="Username" >
+							<input id="fusername" type="text" name="username" {**PVTPATCHER-A7E4786F433208074C5CCA15A4714610-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+placeholder="{vtranslate('Username', 'ParsVT')}"
+{** REPLACED-A7E4786F433208074C5CCA15A4714610// placeholder="Username"**}
+{**PVTPATCHER-A7E4786F433208074C5CCA15A4714610-FINISH**} >
 							<span class="bar"></span>
-							<label>Username</label>
+							{**PVTPATCHER-E41AB6317DD36F7D78A5B012B23E46FA-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<label>{vtranslate('Username', 'ParsVT')}</label>
+{** REPLACED-E41AB6317DD36F7D78A5B012B23E46FA// <label>Username</label>**}
+{**PVTPATCHER-E41AB6317DD36F7D78A5B012B23E46FA-FINISH**}
 						</div>
 						<div class="group">
-							<input id="email" type="email" name="emailId" placeholder="Email" >
+							<input id="email" type="email" name="emailId" {**PVTPATCHER-AE8411A5285042C0928AC87CD8110853-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+placeholder="{vtranslate('Email', 'ParsVT')}"
+{** REPLACED-AE8411A5285042C0928AC87CD8110853// placeholder="Email"**}
+{**PVTPATCHER-AE8411A5285042C0928AC87CD8110853-FINISH**} >
 							<span class="bar"></span>
-							<label>Email</label>
+							{**PVTPATCHER-C1CE515C32B33D3C57CF6E7A5FFDA768-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<label>{vtranslate('Email', 'ParsVT')}</label>
+{** REPLACED-C1CE515C32B33D3C57CF6E7A5FFDA768// <label>Email</label>**}
+{**PVTPATCHER-C1CE515C32B33D3C57CF6E7A5FFDA768-FINISH**}
 						</div>
 						<div class="group">
-							<button type="submit" class="button buttonBlue forgot-submit-btn">Submit</button><br>
-							<span>Please enter details and submit<a class="forgotPasswordLink pull-right" style="color: #15c;">Back</a></span>
+							<button type="submit" class="button buttonBlue forgot-submit-btn">{**PVTPATCHER-8339387F1FBF344965E0DA7C19684F3A-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Submit', 'ParsVT')}
+{** REPLACED-8339387F1FBF344965E0DA7C19684F3A// Submit**}
+{**PVTPATCHER-8339387F1FBF344965E0DA7C19684F3A-FINISH**}</button><br>
+							{**PVTPATCHER-DA2325ED43F3FDD80197CADCEA262EBF-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<span>{vtranslate('Please enter details and submit', 'ParsVT')}<a class="forgotPasswordLink {if vglobal('current_language') eq 'fa_ir'}pull-left{else}pull-right{/if}" style="color: #15c;">{vtranslate('Back', 'ParsVT')}</a></span>
+{** REPLACED-DA2325ED43F3FDD80197CADCEA262EBF// <span>Please enter details and submit<a class="forgotPasswordLink pull-right" style="color: #15c;">Back</a></span>**}
+{**PVTPATCHER-DA2325ED43F3FDD80197CADCEA262EBF-FINISH**}
 						</div>
 					</form>
 				</div>
@@ -266,7 +390,11 @@
 						{foreach key=BLOCK_NAME item=BLOCKS_DATA from=$JSON_DATA}
 							{if $BLOCKS_DATA}
 								<div>
-									<h4>{$BLOCKS_DATA[0].heading}</h4>
+									<h4>{**PVTPATCHER-57DB793EF63B0B26243D702E1BAEDD2F-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($BLOCKS_DATA[0].heading, 'ParsVT')}
+{** REPLACED-57DB793EF63B0B26243D702E1BAEDD2F// {$BLOCKS_DATA[0].heading}**}
+{**PVTPATCHER-57DB793EF63B0B26243D702E1BAEDD2F-FINISH**}</h4>
 									<ul class="bxslider">
 										{foreach item=BLOCK_DATA from=$BLOCKS_DATA}
 											<li class="slide">
@@ -280,7 +408,11 @@
 												<div title="{$BLOCK_DATA.summary}">
 													<h3><b>{$BLOCK_DATA.displayTitle}</b></h3>
 													{$BLOCK_DATA.displaySummary}<br><br>
-													<a href="{$BLOCK_DATA.url}" target="_blank"><u>{$BLOCK_DATA.urlalt}</u></a>
+													<a href="{$BLOCK_DATA.url}" target="_blank"><u>{**PVTPATCHER-878543E1D8AF8733D31053F9C33E04B4-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($BLOCK_DATA.urlalt, 'ParsVT')}
+{** REPLACED-878543E1D8AF8733D31053F9C33E04B4// {$BLOCK_DATA.urlalt}**}
+{**PVTPATCHER-878543E1D8AF8733D31053F9C33E04B4-FINISH**}</u></a>
 												</div>
 												{if $BLOCK_DATA.image}
 													</div>
@@ -301,10 +433,22 @@
 				{else}
 					<div class="inActiveImgDiv">
 						<div>
-							<h4>Get more out of Vtiger with extensions from</h4>
-							<h4>Vtiger Marketplace</h4>
+							<h4>{**PVTPATCHER-A8BEA4DC3C332ED5C6C8D58D5DC0F649-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Get more out of Vtiger with extensions from', 'ParsVT')}
+{** REPLACED-A8BEA4DC3C332ED5C6C8D58D5DC0F649// Get more out of Vtiger with extensions from**}
+{**PVTPATCHER-A8BEA4DC3C332ED5C6C8D58D5DC0F649-FINISH**}</h4>
+							<h4>{**PVTPATCHER-6C28C074815E500F762DC7D98C610082-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('VTFarsi Marketplace', 'ParsVT')}
+{** REPLACED-6C28C074815E500F762DC7D98C610082// Vtiger Marketplace**}
+{**PVTPATCHER-6C28C074815E500F762DC7D98C610082-FINISH**}</h4>
 						</div>
-						<a href="https://marketplace.vtiger.com/app/listings" target="_blank" style="margin-right: 25px;"><img src="layouts/v7/resources/Images/extensionstore.png" style="width: 85%; height: 100%; margin-top: 25px;"/></a>
+						{**PVTPATCHER-D05E53FB711D82924AC64FB6986BA81A-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<a href="http://vtfarsi.ir/%D9%85%D8%A7%DA%98%D9%88%D9%84-%D9%88%DB%8C%D8%AA%D8%A7%DB%8C%DA%AF%D8%B1/" target="_blank" style="margin-right: 25px;"><img src="layouts/v7/modules/ParsVT/images/extensionstore.png" style="width: 85%; height: 100%; margin-top: 25px;"/></a>
+{** REPLACED-D05E53FB711D82924AC64FB6986BA81A// <a href="https://marketplace.vtiger.com/app/listings" target="_blank" style="margin-right: 25px;"><img src="layouts/v7/resources/Images/extensionstore.png" style="width: 85%; height: 100%; margin-top: 25px;"/></a>**}
+{**PVTPATCHER-D05E53FB711D82924AC64FB6986BA81A-FINISH**}
 					</div>
 				{/if}
 				</div>
@@ -337,10 +481,18 @@
 					var result = true;
 					var errorMessage = '';
 					if (username === '') {
-						errorMessage = 'Please enter valid username';
+						errorMessage = '{**PVTPATCHER-41D5488A83904F573031C1DA9E4007BF-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Please enter valid username', 'ParsVT')}
+{** REPLACED-41D5488A83904F573031C1DA9E4007BF// Please enter valid username**}
+{**PVTPATCHER-41D5488A83904F573031C1DA9E4007BF-FINISH**}';
 						result = false;
 					} else if (password === '') {
-						errorMessage = 'Please enter valid password';
+						errorMessage = '{**PVTPATCHER-313C0DE684BB30803DCF615C15C12200-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Please enter valid password', 'ParsVT')}
+{** REPLACED-313C0DE684BB30803DCF615C15C12200// Please enter valid password**}
+{**PVTPATCHER-313C0DE684BB30803DCF615C15C12200-FINISH**}';
 						result = false;
 					}
 					if (errorMessage) {
@@ -360,13 +512,25 @@
 					var result = true;
 					var errorMessage = '';
 					if (username === '') {
-						errorMessage = 'Please enter valid username';
+						errorMessage = '{**PVTPATCHER-41D5488A83904F573031C1DA9E4007BF-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Please enter valid username', 'ParsVT')}
+{** REPLACED-41D5488A83904F573031C1DA9E4007BF// Please enter valid username**}
+{**PVTPATCHER-41D5488A83904F573031C1DA9E4007BF-FINISH**}';
 						result = false;
 					} else if (!emailFilter.test(email1) || email == '') {
-						errorMessage = 'Please enter valid email address';
+						errorMessage = '{**PVTPATCHER-7A8857861E685FE8D0AF83D1A1729931-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Please enter valid email address', 'ParsVT')}
+{** REPLACED-7A8857861E685FE8D0AF83D1A1729931// Please enter valid email address**}
+{**PVTPATCHER-7A8857861E685FE8D0AF83D1A1729931-FINISH**}';
 						result = false;
 					} else if (email.match(illegalChars)) {
-						errorMessage = 'The email address contains illegal characters.';
+						errorMessage = '{**PVTPATCHER-A9FF5A32D6AFAB752C8F66A173199D41-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('The email address contains illegal characters.', 'ParsVT')}
+{** REPLACED-A9FF5A32D6AFAB752C8F66A173199D41// The email address contains illegal characters.**}
+{**PVTPATCHER-A9FF5A32D6AFAB752C8F66A173199D41-FINISH**}';
 						result = false;
 					}
 					if (errorMessage) {

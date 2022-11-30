@@ -25,7 +25,11 @@
 					<a title="{vtranslate($MODULE, $MODULE)}" href='{$DEFAULT_FILTER_URL}'><h4 class="module-title pull-left text-uppercase">&nbsp;{vtranslate($MODULE, $MODULE)}&nbsp;</h4></a>
 				</span>
 				<span>
-					<p class="current-filter-name pull-left">&nbsp;<span class="fa fa-angle-right" aria-hidden="true"></span>&nbsp;{$VIEW}&nbsp;</p>
+					<p class="current-filter-name pull-left">&nbsp;<span class="fa fa-angle-right" aria-hidden="true"></span>&nbsp;{**PVTPATCHER-B8ED168DCACD0D672472A2459FEC2FBD-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($VIEW, $MODULE)}
+{** REPLACED-B8ED168DCACD0D672472A2459FEC2FBD// {$VIEW}**}
+{**PVTPATCHER-B8ED168DCACD0D672472A2459FEC2FBD-FINISH**}&nbsp;</p>
 				</span>
 				{if $VIEWID}
 					{foreach item=FILTER_TYPES from=$CUSTOM_VIEWS}
@@ -37,7 +41,11 @@
 						{/foreach}
 					{/foreach}
 					<span>
-						<p class="current-filter-name filter-name pull-left">&nbsp;<span class="fa fa-angle-right" aria-hidden="true"></span>&nbsp;{$CVNAME}&nbsp;</p>
+						<p class="current-filter-name filter-name pull-left">&nbsp;<span class="fa fa-angle-right" aria-hidden="true"></span>&nbsp;{**PVTPATCHER-7209BD90BAF619DAF05A23E00E0131C8-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($CVNAME, $MODULE)}
+{** REPLACED-7209BD90BAF619DAF05A23E00E0131C8// {$CVNAME}**}
+{**PVTPATCHER-7209BD90BAF619DAF05A23E00E0131C8-FINISH**}&nbsp;</p>
 					</span>
 				{/if}
 			</div>

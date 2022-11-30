@@ -71,6 +71,18 @@ class PBXManager_ListView_Model extends Vtiger_ListView_Model {
 
         $listViewContoller = $this->get('listview_controller');
 
+       // VTFarsi.ir begin
+       $searchParams = $this->get('search_params');
+       if(empty($searchParams)) {
+           $searchParams = array();
+       }
+       $glue = "";
+       if(count($queryGenerator->getWhereFields()) > 0 && (count($searchParams)) > 0) {
+           $glue = QueryGenerator::$AND;
+       }
+       $queryGenerator->parseAdvFilterList($searchParams, $glue);
+       // VTFarsi.ir end
+
         $searchKey = $this->get('search_key');
         $searchValue = $this->get('search_value');
         $operator = $this->get('operator');
@@ -166,9 +178,20 @@ class PBXManager_ListView_Model extends Vtiger_ListView_Model {
         foreach ($listViewEntries as $recordId => $record) {
             //To Replace RecordingUrl by Icon
             $recordingUrl = explode('>', $listViewEntries[$recordId]['recordingurl']);
+			$audio_url = false;
+			
+			if($recordingUrl[0] != ""){				
+				$audio_url = strip_tags($recordingUrl[0]);
+				preg_match('/href=(["\'])([^\1]*)\1/i', $recordingUrl[0], $str);
+				$audio_url = $str[2];
+			}
+
             $url = explode('<', $recordingUrl[1]);
-            if ($url[0] != '' && $listViewEntries[$recordId]['callstatus'] == 'completed') {
-                $listViewEntries[$recordId]['recordingurl'] = $recordingUrl[0] . '>' . '<i class="icon-volume-up"></i>' . '</a>';
+            if ($url[0] != '' ) {
+                // VTFarsi.ir begin
+				$src = '<audio preload="metadata" src="'.$audio_url.'" controls></audio>';
+				$listViewEntries[$recordId]['recordingurl'] = $src;
+                // VTFarsi.ir end
             } else {
                 $listViewEntries[$recordId]['recordingurl'] = '';
             }
@@ -177,32 +200,61 @@ class PBXManager_ListView_Model extends Vtiger_ListView_Model {
             if ($listViewEntries[$recordId]['direction'] == 'outbound') {
                 if ($listViewEntries[$recordId]['callstatus'] == 'ringing' || $listViewEntries[$recordId]['callstatus'] == 'in-progress') {
                     $listViewEntries[$recordId]['callstatus'] = '<span class="label label-info"><i class="icon-arrow-up icon-white">
-                        </i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        <!-- VTFarsi.ir begin -->
+                        </i>&nbsp;' . vtranslate($listViewEntries[$recordId]["callstatus"], $moduleName) . '</span>';
+                        //</i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        // VTFarsi.ir end
                 } else if ($listViewEntries[$recordId]['callstatus'] == 'completed') {
                     $listViewEntries[$recordId]['callstatus'] = '<span class="label label-success"><i class="icon-arrow-up icon-white">
-                        </i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        <!-- VTFarsi.ir begin -->
+                        </i>&nbsp;' . vtranslate($listViewEntries[$recordId]["callstatus"], $moduleName) . '</span>';
+                        //</i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        // VTFarsi.ir end
                 } else if ($listViewEntries[$recordId]['callstatus'] == 'no-answer') {
-                    $listViewEntries[$recordId]['callstatus'] = '<span class="label label-important"><i class="icon-arrow-up icon-white">
-                        </i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                    $listViewEntries[$recordId]['callstatus'] = '<span class="label label-danger"><i class="icon-arrow-up icon-white">
+                        <!-- VTFarsi.ir begin -->
+                        </i>&nbsp;' . vtranslate($listViewEntries[$recordId]["callstatus"], $moduleName) . '</span>';
+                        //</i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        // VTFarsi.ir end
                 } else {
                     $listViewEntries[$recordId]['callstatus'] = '<span class="label label-warning"><i class="icon-arrow-up icon-white">
-                        </i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        <!-- VTFarsi.ir begin -->
+                        </i>&nbsp;' . vtranslate($listViewEntries[$recordId]["callstatus"], $moduleName) . '</span>';
+                        //</i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        // VTFarsi.ir end
                 }
             } else if ($listViewEntries[$recordId]['direction'] == 'inbound') {
                 if ($listViewEntries[$recordId]['callstatus'] == 'ringing' || $listViewEntries[$recordId]['callstatus'] == 'in-progress') {
                     $listViewEntries[$recordId]['callstatus'] = '<span class="label label-info"><i class="icon-arrow-down icon-white">
-                        </i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        <!-- VTFarsi.ir begin -->
+                        </i>&nbsp;' . vtranslate($listViewEntries[$recordId]["callstatus"], $moduleName) . '</span>';
+                        //</i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        // VTFarsi.ir end
                 } else if ($listViewEntries[$recordId]['callstatus'] == 'completed') {
                     $listViewEntries[$recordId]['callstatus'] = '<span class="label label-success"><i class="icon-arrow-down icon-white">
-                        </i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        <!-- VTFarsi.ir begin -->
+                        </i>&nbsp;' . vtranslate($listViewEntries[$recordId]["callstatus"], $moduleName) . '</span>';
+                        //</i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                    // VTFarsi.ir end
                 } else if ($listViewEntries[$recordId]['callstatus'] == 'no-answer') {
-                    $listViewEntries[$recordId]['callstatus'] = '<span class="label label-important"><i class="icon-arrow-down icon-white">
-                        </i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                    $listViewEntries[$recordId]['callstatus'] = '<span class="label label-danger"><i class="icon-arrow-down icon-white">
+                        <!-- VTFarsi.ir begin -->
+                        </i>&nbsp;' . vtranslate($listViewEntries[$recordId]["callstatus"], $moduleName) . '</span>';
+                        //</i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        // VTFarsi.ir end
                 } else {
                     $listViewEntries[$recordId]['callstatus'] = '<span class="label label-warning"><i class="icon-arrow-down icon-white">
-                        </i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        <!-- VTFarsi.ir begin -->
+                        </i>&nbsp;' . vtranslate($listViewEntries[$recordId]["callstatus"], $moduleName) . '</span>';
+                        //</i>&nbsp;' . $listViewEntries[$recordId]["callstatus"] . '</span>';
+                        // VTFarsi.ir end
                 }
             }
+
+            // VTFarsi.ir begin
+            $listViewEntries[$recordId]['direction'] = vtranslate($listViewEntries[$recordId]['direction'], $moduleName);
+            // VTFarsi.ir end
+
         }
         //END
 

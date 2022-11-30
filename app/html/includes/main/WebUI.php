@@ -24,7 +24,11 @@ class Vtiger_WebUI extends Vtiger_EntryPoint {
 	protected function checkLogin (Vtiger_Request $request) {
 		if (!$this->hasLogin()) {
 			$return_params = $_SERVER['QUERY_STRING'];
-			if($return_params && !$_SESSION['return_params']) {
+/**PVTPATCHER-5BF15E2C2843A8C3052A5EFDC134B5AB-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+if($return_params && !$_SESSION['return_params'] && strpos($return_params, 'IncomingCallPoll') === false) {
+/** REPLACED-5BF15E2C2843A8C3052A5EFDC134B5AB// if($return_params && !$_SESSION['return_params']) {**/
+/**PVTPATCHER-5BF15E2C2843A8C3052A5EFDC134B5AB-FINISH**/
 				//Take the url that user would like to redirect after they have successfully logged in.
 				$return_params = urlencode($return_params);
 				Vtiger_Session::set('return_params', $return_params);

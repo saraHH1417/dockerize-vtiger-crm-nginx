@@ -28,7 +28,11 @@
 					<div class="portal-fields-switch portal-fields-switchOn" id="readWriteSwitch" disabled></div>
 				</div>
 				<div class="col-sm-10 col-xs-10" style="padding:10px;">
-					<span class="redColor">*</span>Mandatory Fields
+					<span class="redColor">*</span>{**PVTPATCHER-1D8344D7BBD3CAA532D07B551E0D8EA7-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Mandatory Fields',$QUALIFIED_MODULE)}
+{** REPLACED-1D8344D7BBD3CAA532D07B551E0D8EA7// Mandatory Fields**}
+{**PVTPATCHER-1D8344D7BBD3CAA532D07B551E0D8EA7-FINISH**}
 				</div>
 			</div>
 			<div class="row">

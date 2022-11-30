@@ -28,7 +28,11 @@
 										{foreach from=$ALL_RECORDS item=PROFILE_MODEL}
 											{assign var=PROFILE_ID value=$PROFILE_MODEL->get('profileid')}
 											{if $PROFILE_ID neq $RECORD_MODEL->getId()}
-												<option value="{$PROFILE_ID}">{$PROFILE_MODEL->get('profilename')}</option>
+												<option value="{$PROFILE_ID}">{**PVTPATCHER-14821EC7F9781DC02B51F6A5902F7879-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($PROFILE_MODEL->get('profilename'), $QUALIFIED_MODULE)}
+{** REPLACED-14821EC7F9781DC02B51F6A5902F7879// {$PROFILE_MODEL->get('profilename')}**}
+{**PVTPATCHER-14821EC7F9781DC02B51F6A5902F7879-FINISH**}</option>
 											{/if}
 										{/foreach}
 									</optgroup>

@@ -19,7 +19,11 @@
                     <ul>
                         <li data-role="{$ROOT_ROLE->getParentRoleString()}" data-roleid="{$ROOT_ROLE->getId()}">
                             <div class="toolbar-handle">
-                                <a href="javascript:;" class="btn btn-primary">{$ROOT_ROLE->getName()}</a>
+                                <a href="javascript:;" class="btn btn-primary">{**PVTPATCHER-83EF97A192A1980A7367DFFEED110FA1-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($ROOT_ROLE->getName())}
+{** REPLACED-83EF97A192A1980A7367DFFEED110FA1// {$ROOT_ROLE->getName()}**}
+{**PVTPATCHER-83EF97A192A1980A7367DFFEED110FA1-FINISH**}</a>
                             </div>
                             {assign var="ROLE" value=$ROOT_ROLE}
                             {include file=vtemplate_path("RoleTree.tpl", "Settings:Roles")}

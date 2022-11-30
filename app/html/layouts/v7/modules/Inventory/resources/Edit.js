@@ -7,6 +7,14 @@
  * All Rights Reserved.
  *************************************************************************************/
 
+/**PVTPATCHER-5C571E4973022DE9AFDE961724197E06-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+var crmlanguage = app.getUserLanguage().slice(0,2);
+var leftalignment = 'left';
+if (typeof(crmlanguage) !== 'undefined' && crmlanguage === 'fa') {
+	var leftalignment = 'right';
+}
+/**PVTPATCHER-5C571E4973022DE9AFDE961724197E06-FINISH**/
 Vtiger_Edit_Js("Inventory_Edit_Js", {
     
     zeroDiscountType : 'zero' ,
@@ -2030,7 +2038,7 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
         this.finalDiscountEle.popover({
 			'content' : finalDiscountUI,
 			'html' : true,
-			'placement' : 'left',
+			'placement' : leftalignment,
 			'animation' : true,
 			'title' : 'Discount',
 			'trigger' : 'manual',
@@ -2107,7 +2115,7 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
         chargesTrigger.popover({
                 'content' : chargesUI,
                 'html' : true,
-                'placement' : 'left',
+                'placement' : leftalignment,
                 'animation' : true,
                 'title' : chargesTrigger.text(),
                 'trigger' : 'manual',
@@ -2171,7 +2179,7 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
         finalTaxTriggerer.popover({
                 'content' : finalTaxUI,
                 'html' : true,
-                'placement' : 'left',
+                'placement' : leftalignment,
                 'animation' : true,
                 'title' : finalTaxUI.find('.popover_title').val(),
                 'trigger' : 'manual',
@@ -2234,7 +2242,7 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
         chargeTaxTriggerer.popover({
                 'content' : chargeTaxesUI,
                 'html' : true,
-                'placement' : 'left',
+                'placement' : leftalignment,
                 'animation' : true,
                 'title' : 'Discount',
                 'trigger' : 'manual',
@@ -2296,7 +2304,7 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
         deductTaxesTriggerer.popover({
                 'content' : deductTaxForm,
                 'html' : true,
-                'placement' : 'left',
+                'placement' : leftalignment,
                 'animation' : true,
                 'title' : deductTaxesTriggerer.text(),
                 'trigger' : 'manual',
@@ -2815,4 +2823,3 @@ Vtiger_Edit_Js("Inventory_Edit_Js", {
     },
 });
     
-

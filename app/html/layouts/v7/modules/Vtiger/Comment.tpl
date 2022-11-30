@@ -8,7 +8,11 @@
  ************************************************************************************}
 {strip}
 	<div class="commentDiv {if $COMMENT->get('is_private')}privateComment{/if}">
-		<div class="singleComment">
+		{**PVTPATCHER-4085A4EEFC6DF0AE4E171C8471251CCB-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<div class="singleComment" {if $COMMENT->get('is_private')}style="background: #ffffbe;"{elseif !empty($COMMENT->get('customer'))}style="background: #bee1ff;"{/if}>
+{** REPLACED-4085A4EEFC6DF0AE4E171C8471251CCB// <div class="singleComment">**}
+{**PVTPATCHER-4085A4EEFC6DF0AE4E171C8471251CCB-FINISH**}
 			<input type="hidden" name="is_private" value="{$COMMENT->get('is_private')}">
 			<div class="commentInfoHeader" data-commentid="{$COMMENT->getId()}" data-parentcommentid="{$COMMENT->get('parent_comments')}" data-relatedto = "{$COMMENT->get('related_to')}">
 

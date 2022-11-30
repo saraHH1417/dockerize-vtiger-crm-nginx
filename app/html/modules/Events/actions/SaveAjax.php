@@ -81,7 +81,11 @@ class Events_SaveAjax_Action extends Events_Save_Action {
 				$subject = $request->get('subject');
 				if ($startTime != '' && $startDate != '') {
 					$recordModel->set('eventstatus', 'Planned');
-					$recordModel->set('subject', '[Followup] ' . $subject);
+/**PVTPATCHER-FB4BF2F3089EFE9F189B6E274F94C167-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+$recordModel->set('subject', vtranslate('[Followup] ','ParsVT') . $subject);
+/** REPLACED-FB4BF2F3089EFE9F189B6E274F94C167// $recordModel->set('subject', '[Followup] ' . $subject);**/
+/**PVTPATCHER-FB4BF2F3089EFE9F189B6E274F94C167-FINISH**/
 					$recordModel->set('date_start', $startDate);
 					$recordModel->set('time_start', $startTime);
 

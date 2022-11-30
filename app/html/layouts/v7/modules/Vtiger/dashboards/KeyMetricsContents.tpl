@@ -11,7 +11,11 @@
 	{foreach item=KEYMETRIC from=$KEYMETRICS}
 	<div style="padding-bottom:6px;">
 		<span class="pull-right">{$KEYMETRIC.count}</span>
-		<a href="?module={$KEYMETRIC.module}&view=List&viewname={$KEYMETRIC.id}">{$KEYMETRIC.name}</a>
+		<a href="?module={$KEYMETRIC.module}&view=List&viewname={$KEYMETRIC.id}">{**PVTPATCHER-52454138D27EDAC4E728E8C96D21D39E-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($KEYMETRIC.name)}
+{** REPLACED-52454138D27EDAC4E728E8C96D21D39E// {$KEYMETRIC.name}**}
+{**PVTPATCHER-52454138D27EDAC4E728E8C96D21D39E-FINISH**}</a>
 	</div>	
 	{/foreach}
 </div>

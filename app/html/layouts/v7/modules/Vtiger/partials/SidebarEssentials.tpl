@@ -101,7 +101,16 @@
 
                         {/if}
                         <div class="list-group hide noLists">
-                            <h6 class="lists-header"><center> {vtranslate('LBL_NO')} {vtranslate('LBL_LISTS')} {vtranslate('LBL_FOUND')} ... </center></h6>
+                            <h6 class="lists-header"><center> {**PVTPATCHER-CB930DD8DC2DF5515FA7AC32C1DD4675-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+								{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No record found', 'ParsVT')}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate('LBL_LISTS')} {vtranslate('LBL_FOUND')}
+								{/if}
+{** REPLACED-CB930DD8DC2DF5515FA7AC32C1DD4675// {vtranslate('LBL_NO')} {vtranslate('LBL_LISTS')} {vtranslate('LBL_FOUND')}**}
+{**PVTPATCHER-CB930DD8DC2DF5515FA7AC32C1DD4675-FINISH**} ... </center></h6>
                         </div>
                 </div>
             </div>

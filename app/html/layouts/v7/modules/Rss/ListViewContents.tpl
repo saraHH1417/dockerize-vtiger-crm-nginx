@@ -45,7 +45,16 @@
 								<tr>
 									<td>
 										{assign var=SINGLE_MODULE value="SINGLE_$MODULE"}
-										{vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}. {vtranslate('LBL_CREATE')}<a class="rssAddButton" href="#" data-href="{$QUICK_LINKS['SIDEBARLINK'][0]->getUrl()}">&nbsp;{vtranslate($SINGLE_MODULE, $MODULE)}</a>
+										{**PVTPATCHER-F4CE6E481745916ED987DD9E849D8CA8-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No record found', 'ParsVT')}.
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-F4CE6E481745916ED987DD9E849D8CA8// {vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}.**}
+{**PVTPATCHER-F4CE6E481745916ED987DD9E849D8CA8-FINISH**} {vtranslate('LBL_CREATE')}<a class="rssAddButton" href="#" data-href="{$QUICK_LINKS['SIDEBARLINK'][0]->getUrl()}">&nbsp;{vtranslate($SINGLE_MODULE, $MODULE)}</a>
 									</td>
 								</tr>
 							</tbody>

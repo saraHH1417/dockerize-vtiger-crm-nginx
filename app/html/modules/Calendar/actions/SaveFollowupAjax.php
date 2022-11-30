@@ -45,7 +45,11 @@ class Calendar_SaveFollowupAjax_Action extends Calendar_SaveAjax_Action {
         
         $recordModel = Vtiger_Record_Model::getInstanceById($recordId);
         $subject = $recordModel->get('subject');
-        $followupSubject = "[Followup] ".$subject;
+/**PVTPATCHER-697F899044E78A9BE0B9618F70F3FADB-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+$followupSubject = vtranslate('[Followup] ','ParsVT').$subject;
+/** REPLACED-697F899044E78A9BE0B9618F70F3FADB// $followupSubject = "[Followup] ".$subject;**/
+/**PVTPATCHER-697F899044E78A9BE0B9618F70F3FADB-FINISH**/
         $recordModel->set('subject',$followupSubject);
         //followup event is Planned
         $recordModel->set('eventstatus',"Planned");

@@ -227,6 +227,10 @@ class CustomView extends CRMEntity {
 
 			$option = '';
 			$viewname = $cvrow['viewname'];
+/**PVTPATCHER-F824BD9B797E8C82D65E2B23ACF696A5-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+$viewname = vtranslate($viewname,$this->customviewmodule);
+/**PVTPATCHER-F824BD9B797E8C82D65E2B23ACF696A5-FINISH**/
 			if ($cvrow['status'] == CV_STATUS_DEFAULT || $cvrow['userid'] == $current_user->id) {
 				$disp_viewname = $viewname;
 			} else {

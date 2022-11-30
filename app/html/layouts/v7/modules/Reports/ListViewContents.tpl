@@ -152,7 +152,16 @@
 									<div class="emptyRecordsDiv">
 										<div class="emptyRecordsContent">
 											{assign var=SINGLE_MODULE value="SINGLE_$MODULE"}
-											{vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}.{if $IS_MODULE_EDITABLE} <a href="{$MODULE_MODEL->getCreateRecordUrl()}"> {vtranslate('LBL_CREATE')} </a> {if Users_Privileges_Model::isPermitted($MODULE, 'Import') && $LIST_VIEW_MODEL->isImportEnabled()} {vtranslate('LBL_OR', $MODULE)} <a style="color:blue" href="#" onclick="return Vtiger_Import_Js.triggerImportAction()"> {vtranslate('LBL_IMPORT', $MODULE)} </a>{vtranslate($MODULE, $MODULE)}{else}{vtranslate($SINGLE_MODULE, $MODULE)}{/if}{/if}
+											{**PVTPATCHER-90ACC7F12078EA19AC8FDA23FDB1D22F-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+                                                                {if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No %s found.', 'ParsVT',vtranslate($MODULE, $MODULE))}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}.
+								{/if}
+{** REPLACED-90ACC7F12078EA19AC8FDA23FDB1D22F// {vtranslate('LBL_NO')} {vtranslate($MODULE, $MODULE)} {vtranslate('LBL_FOUND')}.**}
+{**PVTPATCHER-90ACC7F12078EA19AC8FDA23FDB1D22F-FINISH**}{if $IS_MODULE_EDITABLE} <a href="{$MODULE_MODEL->getCreateRecordUrl()}"> {vtranslate('LBL_CREATE')} </a> {if Users_Privileges_Model::isPermitted($MODULE, 'Import') && $LIST_VIEW_MODEL->isImportEnabled()} {vtranslate('LBL_OR', $MODULE)} <a style="color:blue" href="#" onclick="return Vtiger_Import_Js.triggerImportAction()"> {vtranslate('LBL_IMPORT', $MODULE)} </a>{vtranslate($MODULE, $MODULE)}{else}{vtranslate($SINGLE_MODULE, $MODULE)}{/if}{/if}
 										</div>
 									</div>
 								</td>

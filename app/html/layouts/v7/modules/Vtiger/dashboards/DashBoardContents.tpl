@@ -17,7 +17,11 @@
                         <a data-toggle="tab" href="#tab_{$TAB_DATA["id"]}">
                             <div>
                                 <span class="name textOverflowEllipsis" value="{$TAB_DATA["tabname"]}" style="width:10%">
-                                    <strong>{$TAB_DATA["tabname"]}</strong>
+                                    {**PVTPATCHER-9BFD9D90EE6F05E9124E485544317C33-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<strong>{vtranslate($TAB_DATA["tabname"] , 'ParsVT')}</strong>
+{** REPLACED-9BFD9D90EE6F05E9124E485544317C33// <strong>{$TAB_DATA["tabname"]}</strong>**}
+{**PVTPATCHER-9BFD9D90EE6F05E9124E485544317C33-FINISH**}
                                 </span>
                                 <span class="editTabName hide">
                                     <input type="text" name="tabName"/>

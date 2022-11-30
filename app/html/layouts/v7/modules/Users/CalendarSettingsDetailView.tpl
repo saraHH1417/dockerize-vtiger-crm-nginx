@@ -24,7 +24,11 @@
                     <div class="col-xs-4 marginTop5px">
                         <div class=" pull-right detailViewButtoncontainer">
                             <div class="btn-group  pull-right">
-                                <a class="btn btn-default" href="{$RECORD->getCalendarSettingsEditViewUrl()}">Edit</a>
+                                {**PVTPATCHER-5FCD6A77CECC58F09F529E95EE26477C-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<a class="btn btn-default" href="{$RECORD->getCalendarSettingsEditViewUrl()}">{vtranslate('LBL_EDIT', $MODULE)}</a>
+{** REPLACED-5FCD6A77CECC58F09F529E95EE26477C// <a class="btn btn-default" href="{$RECORD->getCalendarSettingsEditViewUrl()}">Edit</a>**}
+{**PVTPATCHER-5FCD6A77CECC58F09F529E95EE26477C-FINISH**}
                             </div>  
                         </div>
                     </div>

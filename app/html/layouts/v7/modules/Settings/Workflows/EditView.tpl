@@ -34,7 +34,11 @@
                         <span class="redColor">*</span>
                      </label>
                      <div class="col-sm-5 controls">
-                        <input class="form-control" id="name"  name="workflowname" value="{$WORKFLOW_MODEL_OBJ->workflowname}" data-rule-required="true">
+                        <input class="form-control" id="name"  name="workflowname" value="{**PVTPATCHER-7851E2ED87B28E7D02E20DE5659DD3D1-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($WORKFLOW_MODEL_OBJ->workflowname, $QUALIFIED_MODULE)}
+{** REPLACED-7851E2ED87B28E7D02E20DE5659DD3D1// {$WORKFLOW_MODEL_OBJ->workflowname}**}
+{**PVTPATCHER-7851E2ED87B28E7D02E20DE5659DD3D1-FINISH**}" data-rule-required="true">
                      </div>
                   </div>
                   <div class="form-group">
@@ -42,7 +46,11 @@
                         {vtranslate('LBL_DESCRIPTION', $QUALIFIED_MODULE)}
                      </label>
                      <div class="col-sm-5 controls">
-                        <textarea class="form-control" name="summary" id="summary">{$WORKFLOW_MODEL->get('summary')}</textarea>
+                        <textarea class="form-control" name="summary" id="summary">{**PVTPATCHER-2CF023C3F218152FDBDF0DC649AC30DE-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($WORKFLOW_MODEL->get('summary'), $QUALIFIED_MODULE)}
+{** REPLACED-2CF023C3F218152FDBDF0DC649AC30DE// {$WORKFLOW_MODEL->get('summary')}**}
+{**PVTPATCHER-2CF023C3F218152FDBDF0DC649AC30DE-FINISH**}</textarea>
                      </div>
                   </div>
                   <div class="form-group">
@@ -61,8 +69,24 @@
                                      {assign var=TARGET_MODULE_NAME value=$MODULE_MODEL->getName()}
                                      {assign var=SINGLE_MODULE value="SINGLE_$TARGET_MODULE_NAME"}
                                      <option value="{$MODULE_MODEL->getName()}" {if $SELECTED_MODULE == $MODULE_MODEL->getName()} selected {/if}
-                                         data-create-label="{vtranslate($SINGLE_MODULE, $TARGET_MODULE_NAME)} {vtranslate('LBL_CREATION', $QUALIFIED_MODULE)}"
-                                         data-update-label="{vtranslate($SINGLE_MODULE, $TARGET_MODULE_NAME)} {vtranslate('LBL_UPDATED', $QUALIFIED_MODULE)}"
+                                         {**PVTPATCHER-8D55D850E36E0DFF510E239A30F3D541-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE eq 'fa_ir' or  $LANGUAGE eq 'fa_af'}
+                        data-create-label="{vtranslate('LBL_CREATION', $QUALIFIED_MODULE)} {vtranslate($SINGLE_MODULE, $TARGET_MODULE_NAME)}"
+                        {else}
+                        data-create-label="{vtranslate($SINGLE_MODULE, $TARGET_MODULE_NAME)} {vtranslate('LBL_CREATION', $QUALIFIED_MODULE)}"
+                        {/if}
+{** REPLACED-8D55D850E36E0DFF510E239A30F3D541// data-create-label="{vtranslate($SINGLE_MODULE, $TARGET_MODULE_NAME)} {vtranslate('LBL_CREATION', $QUALIFIED_MODULE)}"**}
+{**PVTPATCHER-8D55D850E36E0DFF510E239A30F3D541-FINISH**}
+                                         {**PVTPATCHER-95B558031771748DB97C5006AEB85038-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE eq 'fa_ir' or  $LANGUAGE eq 'fa_af'}
+                        data-update-label="{vtranslate('LBL_UPDATE', 'Settings:Vtiger')} {vtranslate($SINGLE_MODULE, $TARGET_MODULE_NAME)}"
+                        {else}
+                        data-update-label="{vtranslate($SINGLE_MODULE, $TARGET_MODULE_NAME)} {vtranslate('LBL_UPDATED', $QUALIFIED_MODULE)}"
+                        {/if}
+{** REPLACED-95B558031771748DB97C5006AEB85038// data-update-label="{vtranslate($SINGLE_MODULE, $TARGET_MODULE_NAME)} {vtranslate('LBL_UPDATED', $QUALIFIED_MODULE)}"**}
+{**PVTPATCHER-95B558031771748DB97C5006AEB85038-FINISH**}
                                          >
                                          {if $MODULE_MODEL->getName() eq 'Calendar'}
                                              {vtranslate('LBL_TASK', $MODULE_MODEL->getName())}

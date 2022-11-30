@@ -32,7 +32,11 @@
                 <div class="col-lg-7">
                     <div class="input-daterange input-group dateRange widgetFilter" id="datepicker" name="createdtime">
                         <input type="text" class="input-sm form-control" name="start" style="height:30px;"/>
-                        <span class="input-group-addon">to</span>
+                        {**PVTPATCHER-F82B5893C1547822E260ADF8C565600D-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<span class="input-group-addon">{vtranslate('to','ParsVT')}</span>
+{** REPLACED-F82B5893C1547822E260ADF8C565600D// <span class="input-group-addon">to</span>**}
+{**PVTPATCHER-F82B5893C1547822E260ADF8C565600D-FINISH**}
                         <input type="text" class="input-sm form-control" name="end" style="height:30px;"/>
                     </div>
                 </div>

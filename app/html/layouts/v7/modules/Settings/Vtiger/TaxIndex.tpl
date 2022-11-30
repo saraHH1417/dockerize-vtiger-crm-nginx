@@ -43,8 +43,16 @@
 							{foreach item=PRODUCT_SERVICE_TAX_MODEL from=$PRODUCT_AND_SERVICES_TAXES}
 								<tr class="opacity" data-taxid="{$PRODUCT_SERVICE_TAX_MODEL->get('taxid')}" data-taxtype="{$PRODUCT_SERVICE_TAX_MODEL->getType()}">
 									<td style="border-left:none;border-right:none;" class="{$WIDTHTYPE}"><span class="taxLabel" style="width:120px">{$PRODUCT_SERVICE_TAX_MODEL->getName()}</span></td>
-									<td style="border-left:none;border-right:none;" class="{$WIDTHTYPE}"><span class="taxType">{$PRODUCT_SERVICE_TAX_MODEL->getTaxType()}</span></td>
-									<td style="border-left:none;border-right:none;" class="{$WIDTHTYPE}"><span class="taxMethod">{$PRODUCT_SERVICE_TAX_MODEL->getTaxMethod()}</span></td>
+									<td style="border-left:none;border-right:none;" class="{$WIDTHTYPE}"><span class="taxType">{**PVTPATCHER-BB31A77E949DA513AA79E198CD577464-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($PRODUCT_SERVICE_TAX_MODEL->getTaxType(), $QUALIFIED_MODULE)}
+{** REPLACED-BB31A77E949DA513AA79E198CD577464// {$PRODUCT_SERVICE_TAX_MODEL->getTaxType()}**}
+{**PVTPATCHER-BB31A77E949DA513AA79E198CD577464-FINISH**}</span></td>
+									<td style="border-left:none;border-right:none;" class="{$WIDTHTYPE}"><span class="taxMethod">{**PVTPATCHER-791EE80E8E7470160E40DD20539E8E80-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($PRODUCT_SERVICE_TAX_MODEL->getTaxMethod(), $QUALIFIED_MODULE)}
+{** REPLACED-791EE80E8E7470160E40DD20539E8E80// {$PRODUCT_SERVICE_TAX_MODEL->getTaxMethod()}**}
+{**PVTPATCHER-791EE80E8E7470160E40DD20539E8E80-FINISH**}</span></td>
 									<td style="border-left:none;border-right:none;" class="{$WIDTHTYPE}"><span class="taxPercentage">{$PRODUCT_SERVICE_TAX_MODEL->getTax()}%</span></td>
 									<td style="border-left:none;border-right:none;" class="{$WIDTHTYPE}"><input type="checkbox" class="editTaxStatus" {if !$PRODUCT_SERVICE_TAX_MODEL->isDeleted()}checked{/if} /></td>
 									<td style="border-left:none;border-right:none;" class="{$WIDTHTYPE}">

@@ -7,7 +7,12 @@
 * All Rights Reserved.
 *************************************************************************************}
 
+{**PVTPATCHER-AE749120F4E82DE0A20518B2CC591786-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
 <div style='padding:5px;'>
+{** REPLACED-AE749120F4E82DE0A20518B2CC591786// <div style='padding:5px;'>**}
+{**PVTPATCHER-AE749120F4E82DE0A20518B2CC591786-FINISH**}
 	{if $HISTORIES neq false}
 		{foreach key=$index item=HISTORY from=$HISTORIES}
 			{assign var=MODELNAME value=get_class($HISTORY)}
@@ -42,11 +47,28 @@
 							{if $HISTORY->isUpdate()}
 								{assign var=FIELDS value=$HISTORY->getFieldInstances()}
 								<div>
-									<div><b>{$USER->getName()}</b> {vtranslate('LBL_UPDATED')} <a class="cursorPointer" {if stripos($DETAILVIEW_URL, 'javascript:')===0}
+									{**PVTPATCHER-F44AD9F0D796A8FE1565502C1017F7AC-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+									{if stripos($DETAILVIEW_URL, 'javascript:')===0}
+									{assign var=CHANGEDLINK value="onclick='{$DETAILVIEW_URL|substr:strlen('javascript:')}'"}  
+									{else}
+									{assign var=CHANGEDLINK value="onclick='window.location.href=\"{$DETAILVIEW_URL}\"'"}  
+									{/if}
+									{vtranslate('%s Updated by %s', "ParsVT", "<a class=\"cursorPointer\" {$CHANGEDLINK}>{$PARENT->getName()}</a>", "<b>{$USER->getName()}</b>")}
+							{else}
+									<div><b>{$USER->getName()}</b> {vtranslate('LBL_UPDATED')}
+{** REPLACED-F44AD9F0D796A8FE1565502C1017F7AC// <div><b>{$USER->getName()}</b> {vtranslate('LBL_UPDATED')}**}
+{**PVTPATCHER-F44AD9F0D796A8FE1565502C1017F7AC-FINISH**} <a class="cursorPointer" {if stripos($DETAILVIEW_URL, 'javascript:')===0}
 																								  onclick='{$DETAILVIEW_URL|substr:strlen("javascript:")}' {else} onclick='window.location.href="{$DETAILVIEW_URL}"' {/if}>
 											{$PARENT->getName()}</a>
 									</div>
+									{**PVTPATCHER-8D5E74160C4602061357BB507547D74D-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{/if}
 									{foreach from=$FIELDS key=INDEX item=FIELD}
+{** REPLACED-8D5E74160C4602061357BB507547D74D// {foreach from=$FIELDS key=INDEX item=FIELD}**}
+{**PVTPATCHER-8D5E74160C4602061357BB507547D74D-FINISH**}
 										{if $INDEX lt 2}
 											{if $FIELD && $FIELD->getFieldInstance() && $FIELD->getFieldInstance()->isViewableInDetailView()}
 												<div>
@@ -69,15 +91,79 @@
 										{/if}
 									{/foreach}
 								</div>
-							{else if $HISTORY->isCreate()}
+							{**PVTPATCHER-F59907D9763D24C428B793882CC5D64B-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{else if $HISTORY->isCreate()}
+                							{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+									{if stripos($DETAILVIEW_URL, 'javascript:')===0}
+									{assign var=CHANGEDLINK value="onclick='{$DETAILVIEW_URL|substr:strlen('javascript:')}'"}  
+									{else}
+									{assign var=CHANGEDLINK value="onclick='window.location.href=\"{$DETAILVIEW_URL}\"'"}  
+									{/if}
+                                                                        <div>
+									{vtranslate('%s Added by %s', "ParsVT", "<a class=\"cursorPointer\" {$CHANGEDLINK}>{$PARENT->getName()}</a>", "<b>{$USER->getName()}</b>")}
+                                                                        </div>
+							{else}
+{** REPLACED-F59907D9763D24C428B793882CC5D64B// {else if $HISTORY->isCreate()}**}
+{**PVTPATCHER-F59907D9763D24C428B793882CC5D64B-FINISH**}
 								<div>
 									<b>{$USER->getName()}</b> {vtranslate('LBL_ADDED')} 
 									<a class="cursorPointer" {if stripos($DETAILVIEW_URL, 'javascript:')===0} onclick='{$DETAILVIEW_URL|substr:strlen("javascript:")}' {else} onclick='window.location.href="{$DETAILVIEW_URL}"' {/if}>{$PARENT->getName()}</a>
 								</div>
+							{**PVTPATCHER-B60A1CBD94CDC9284A1909BDA7454BB8-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{/if}
 							{else if ($HISTORY->isRelationLink() || $HISTORY->isRelationUnLink())}
+{** REPLACED-B60A1CBD94CDC9284A1909BDA7454BB8// {else if ($HISTORY->isRelationLink() || $HISTORY->isRelationUnLink())}**}
+{**PVTPATCHER-B60A1CBD94CDC9284A1909BDA7454BB8-FINISH**}
 								{assign var=RELATION value=$HISTORY->getRelationInstance()}
 								{assign var=LINKED_RECORD_DETAIL_URL value=$RELATION->getLinkedRecord()->getDetailViewUrl()}
-								{assign var=PARENT_DETAIL_URL value=$RELATION->getParent()->getParent()->getDetailViewUrl()}
+								{**PVTPATCHER-612651577CB993B96FA155F2185DA0C1-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=PARENT_DETAIL_URL value=$RELATION->getParent()->getParent()->getDetailViewUrl()}
+                							{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+                                <div>
+                                    {if $RELATION->getLinkedRecord()->getModuleName() eq 'Calendar'}
+                                        {if isPermitted('Calendar', 'DetailView', $RELATION->getLinkedRecord()->getId()) eq 'yes'}
+                                                   {if stripos($LINKED_RECORD_DETAIL_URL, 'javascript:')===0}
+                                                        {assign var=LINKEDRECORDURL value="<a class='cursorPointer' onclick='{$LINKED_RECORD_DETAIL_URL|substr:strlen('javascript:')}'>{$RELATION->getLinkedRecord()->getName()}</a>"}
+                                                   {else}
+                                                        {assign var=LINKEDRECORDURL value="<a class='cursorPointer' onclick='window.location.href=\"{$LINKED_RECORD_DETAIL_URL}\"'>{$RELATION->getLinkedRecord()->getName()}</a>"}
+                                                   {/if}
+                                        {else}
+                                            {assign var=LINKEDRECORDURL value="{vtranslate($RELATION->getLinkedRecord()->getModuleName(), $RELATION->getLinkedRecord()->getModuleName())}"}
+
+                                            
+                                        {/if}
+                                    {else if $RELATION->getLinkedRecord()->getModuleName() == 'ModComments'}
+                                         {assign var=LINKEDRECORDURL value="<i>\"{$RELATION->getLinkedRecord()->getName()}\"</i>"}
+
+                                        
+                                    {else}
+                                       {if stripos($LINKED_RECORD_DETAIL_URL, 'javascript:')===0}
+                                         {assign var=LINKEDRECORDURL value="<a class='cursorPointer' onclick='{$LINKED_RECORD_DETAIL_URL|substr:strlen('javascript:')}'>{$RELATION->getLinkedRecord()->getName()}</a>"}
+                                       {else}
+                                         {assign var=LINKEDRECORDURL value="<a class='cursorPointer' onclick='window.location.href=\"{$LINKED_RECORD_DETAIL_URL}\"'>{$RELATION->getLinkedRecord()->getName()}</a>"}
+                                       {/if}
+
+                                    {/if}
+                                    
+                                    {if stripos($PARENT_DETAIL_URL, 'javascript:')===0}
+                                	{assign var=FORRECORD value="<a class='cursorPointer'  onclick='{$PARENT_DETAIL_URL|substr:strlen('javascript:')}'>{$RELATION->getParent()->getParent()->getName()}</a>"}
+                                	{else}
+                                	{assign var=FORRECORD value="<a class='cursorPointer'  onclick='window.location.href=\"{$PARENT_DETAIL_URL}\"'>{$RELATION->getParent()->getParent()->getName()}</a>"}
+                                	{/if}
+                                	
+                                    {if $HISTORY->isRelationLink()}
+                                        {vtranslate('%s Added for %s by %s', 'ParsVT', $LINKEDRECORDURL  ,$FORRECORD, "<b>{$USER->getName()}</b>")}
+                                    {else}
+                                        {vtranslate('%s Removed for %s by %s', 'ParsVT', $LINKEDRECORDURL  ,$FORRECORD, "<b>{$USER->getName()}</b>")}
+                                    {/if}
+
+                                </div>
+                        {else}
+{** REPLACED-612651577CB993B96FA155F2185DA0C1// {assign var=PARENT_DETAIL_URL value=$RELATION->getParent()->getParent()->getDetailViewUrl()}**}
+{**PVTPATCHER-612651577CB993B96FA155F2185DA0C1-FINISH**}
 								<div>
 									<b>{$USER->getName()}</b>
 									{if $HISTORY->isRelationLink()}
@@ -101,16 +187,51 @@
 							   onclick='{$PARENT_DETAIL_URL|substr:strlen("javascript:")}' {else} onclick='window.location.href="{$PARENT_DETAIL_URL}"' {/if}>
 									{$RELATION->getParent()->getParent()->getName()}</a>
 							</div>
+						{**PVTPATCHER-0B95249DB899D4C2C07D30D7B0E06F76-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{/if}
 						{else if $HISTORY->isRestore()}
+{** REPLACED-0B95249DB899D4C2C07D30D7B0E06F76// {else if $HISTORY->isRestore()}**}
+{**PVTPATCHER-0B95249DB899D4C2C07D30D7B0E06F76-FINISH**}
 							<div>
-								<b>{$USER->getName()}</b> {vtranslate('LBL_RESTORED')} <a class="cursorPointer" {if stripos($DETAILVIEW_URL, 'javascript:')===0}
+								{**PVTPATCHER-F989E39B4DD192F5CF5065090F6254A4-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+							             	{if stripos($DETAILVIEW_URL, 'javascript:')===0}
+								                {assign var=SHOWRESTOREURL value="<a class='cursorPointer'  onclick='{$DETAILVIEW_URL|substr:strlen('javascript:')}'>{$PARENT->getName()}</a>"}
+							            	{else}
+								                {assign var=SHOWRESTOREURL value="<a class='cursorPointer'  onclick='window.location.href=\"{$DETAILVIEW_URL}\"'>{$PARENT->getName()}</a>"}
+							            	{/if}
+								            {vtranslate('%s Restored by %s', 'ParsVT', $SHOWRESTOREURL , "<b>{$USER->getName()}</b>")}
+                                                                         </div>
+                                                                         {else}
+                                                                         <b>{$USER->getName()}</b> {vtranslate('LBL_RESTORED')}
+{** REPLACED-F989E39B4DD192F5CF5065090F6254A4// <b>{$USER->getName()}</b> {vtranslate('LBL_RESTORED')}**}
+{**PVTPATCHER-F989E39B4DD192F5CF5065090F6254A4-FINISH**} <a class="cursorPointer" {if stripos($DETAILVIEW_URL, 'javascript:')===0}
 																						  onclick='{$DETAILVIEW_URL|substr:strlen("javascript:")}' {else} onclick='window.location.href="{$DETAILVIEW_URL}"' {/if}>
 									{$PARENT->getName()}</a>
 							</div>
-						{else if $HISTORY->isDelete()}
+						{**PVTPATCHER-111C6E3293E779E6EC3E2F284D92512C-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{/if}
+                                                                         {else if $HISTORY->isDelete()}
+{** REPLACED-111C6E3293E779E6EC3E2F284D92512C// {else if $HISTORY->isDelete()}**}
+{**PVTPATCHER-111C6E3293E779E6EC3E2F284D92512C-FINISH**}
 							<div>
-								<b>{$USER->getName()}</b> {vtranslate('LBL_DELETED')} 
-								<strong> {$PARENT->getName()}</strong>
+								{**PVTPATCHER-7BE8357076D9EE5DFDE00848EBE09484-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+                                                                             {vtranslate('%s Deleted by %s', 'ParsVT', $PARENT->getName() , "<strong>{$USER->getName()}</strong>")}
+                                                                        {else}
+                                                                             <b>{$USER->getName()}</b> {vtranslate('LBL_DELETED')}
+{** REPLACED-7BE8357076D9EE5DFDE00848EBE09484// <b>{$USER->getName()}</b> {vtranslate('LBL_DELETED')}**}
+{**PVTPATCHER-7BE8357076D9EE5DFDE00848EBE09484-FINISH**} 
+								{**PVTPATCHER-7DADD039AE471DBCB5897FF100DED35F-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<strong> {$PARENT->getName()}</strong>
+                                                                         {/if}
+{** REPLACED-7DADD039AE471DBCB5897FF100DED35F// <strong> {$PARENT->getName()}</strong>**}
+{**PVTPATCHER-7DADD039AE471DBCB5897FF100DED35F-FINISH**}
 							</div>
 						{/if}
 					</div>
@@ -125,7 +246,15 @@
 					<div class="col-lg-10 pull-left" style="margin-top:5px;">
 						{assign var=COMMENT_TIME value=$HISTORY->getCommentedTime()}
 						<div>
-							<b>{$HISTORY->getCommentedByName()}</b> {vtranslate('LBL_COMMENTED')} {vtranslate('LBL_ON')} <a class="textOverflowEllipsis" href="{$HISTORY->getParentRecordModel()->getDetailViewUrl()}">{$HISTORY->getParentRecordModel()->getName()}</a>
+							{**PVTPATCHER-721E1F54742AA418DDA98C2A2E2CF263-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+                                                                        {vtranslate('New comment for %s added by %s', 'ParsVT', "<a class='textOverflowEllipsis' href='{$HISTORY->getParentRecordModel()->getDetailViewUrl()}'>{$HISTORY->getParentRecordModel()->getName()}</a>" , "<b>{$HISTORY->getCommentedByName()}</b>")}
+                                                                         {else}
+                                                                         <b>{$HISTORY->getCommentedByName()}</b> {vtranslate('LBL_COMMENTED')} {vtranslate('LBL_ON')} <a class="textOverflowEllipsis" href="{$HISTORY->getParentRecordModel()->getDetailViewUrl()}">{$HISTORY->getParentRecordModel()->getName()}</a>
+                                                                         {/if}
+{** REPLACED-721E1F54742AA418DDA98C2A2E2CF263// <b>{$HISTORY->getCommentedByName()}</b> {vtranslate('LBL_COMMENTED')} {vtranslate('LBL_ON')} <a class="textOverflowEllipsis" href="{$HISTORY->getParentRecordModel()->getDetailViewUrl()}">{$HISTORY->getParentRecordModel()->getName()}</a>**}
+{**PVTPATCHER-721E1F54742AA418DDA98C2A2E2CF263-FINISH**}
 						</div>
 						<div><i>"{nl2br($HISTORY->get('commentcontent'))}"</i></div>
 					</div>

@@ -7,7 +7,17 @@
 * All Rights Reserved.
 ************************************************************************************}
 
+{**PVTPATCHER-5E5DF27337D0DC7574C37DADE034563F-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<style>
+div.date-picker-wrapper.no-gap.two-months {
+    left: unset !important; 
+    right: 200px !important; 
+}
+</style>
 {strip}
+{** REPLACED-5E5DF27337D0DC7574C37DADE034563F// {strip}**}
+{**PVTPATCHER-5E5DF27337D0DC7574C37DADE034563F-FINISH**}
 	<div id="taskManagementContainer" class='fc-overlay-modal modal-content' style="height:100%;">
 		<input type="hidden" name="colors" value='{json_encode($COLORS)}'>
 		<div class="overlayHeader">
@@ -57,7 +67,11 @@
 					{foreach item=PRIORITY from=$PRIORITIES}
 						<div class="col-lg-4 contentsBlock {strtolower($PRIORITY)} ui-droppable" data-priority='{$PRIORITY}' data-page="{$PAGE}">
 							<div class="{strtolower($PRIORITY)}-header" style="border-bottom: 2px solid {$COLORS[$PRIORITY]}">
-								<div class="title" style="background:{$COLORS[$PRIORITY]}"><span>{$PRIORITY}</span></div>
+								<div class="title" style="background:{$COLORS[$PRIORITY]}">{**PVTPATCHER-5B8A736E44D11A33743A3A8C7DA024F8-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<span>{vtranslate($PRIORITY,'ParsVT')}</span>
+{** REPLACED-5B8A736E44D11A33743A3A8C7DA024F8// <span>{$PRIORITY}</span>**}
+{**PVTPATCHER-5B8A736E44D11A33743A3A8C7DA024F8-FINISH**}</div>
 							</div>
 							<br>
 							<div class="{strtolower($PRIORITY)}-content content" data-priority='{$PRIORITY}' style="border-bottom: 1px solid {$COLORS[$PRIORITY]};padding-bottom: 10px">

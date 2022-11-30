@@ -70,7 +70,11 @@
                 <span class="col-lg-7">
                     <div class="input-daterange input-group dateRange widgetFilter" id="datepicker" name="modifiedtime">
                         <input type="text" class="input-sm form-control" name="start" style="height:30px;"/>
-                        <span class="input-group-addon">to</span>
+                        {**PVTPATCHER-1D02052709642795D026B0101D70BD11-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<span class="input-group-addon">{vtranslate('to','ParsVT')}</span>
+{** REPLACED-1D02052709642795D026B0101D70BD11// <span class="input-group-addon">to</span>**}
+{**PVTPATCHER-1D02052709642795D026B0101D70BD11-FINISH**}
                         <input type="text" class="input-sm form-control" name="end" style="height:30px;"/>
                     </div>
                 </span>

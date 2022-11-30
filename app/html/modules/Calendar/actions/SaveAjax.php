@@ -96,7 +96,11 @@ class Calendar_SaveAjax_Action extends Vtiger_SaveAjax_Action {
 				$subject = $request->get('subject');
 				if($startTime != '' && $startDate != ''){
 					$recordModel->set('eventstatus', 'Planned');
-					$recordModel->set('subject','[Followup] '.$subject);
+/**PVTPATCHER-A5C0947BD191AF8BCB633019AE38B54E-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+$recordModel->set('subject',vtranslate('[Followup] ','ParsVT').$subject);
+/** REPLACED-A5C0947BD191AF8BCB633019AE38B54E// $recordModel->set('subject','[Followup] '.$subject);**/
+/**PVTPATCHER-A5C0947BD191AF8BCB633019AE38B54E-FINISH**/
 					$recordModel->set('date_start',$startDate);
 					$recordModel->set('time_start',$startTime);
 
@@ -216,4 +220,3 @@ class Calendar_SaveAjax_Action extends Vtiger_SaveAjax_Action {
     }
 
 }
-

@@ -19,7 +19,7 @@
 					<h4>{vtranslate('LBL_SYSTEM_CONFIGURATION', 'Install')} </h4>
 				</div>
 				<div class="col-sm-2">
-					<a href="https://wiki.vtiger.com/vtiger6/" target="_blank" class="pull-right">
+					<a href="http://vtfarsi.ir/crm-wiki/" target="_blank" class="pull-right">
 						<img src="{'help.png'|vimage_path}" alt="Help-Icon"/>
 					</a>
 				</div>
@@ -90,7 +90,7 @@
 								<td>
 									<select name="currency_name" class="select2" style="width:220px;">
 										{foreach key=CURRENCY_NAME item=CURRENCY_INFO from=$CURRENCIES}
-											<option value="{$CURRENCY_NAME}" {if $CURRENCY_NAME eq 'USA, Dollars'} selected {/if}>{$CURRENCY_NAME} ({$CURRENCY_INFO.1})</option>
+											<option value="{$CURRENCY_NAME}" {if $CURRENCY_NAME eq 'Iran, Rials'} selected {/if}>{$CURRENCY_NAME} ({$CURRENCY_INFO.1})</option>
 										{/foreach}
 									</select>
 								</td>
@@ -133,7 +133,7 @@
 									<select class="select2" style="width:220px;" name="dateformat">
 										<option value="mm-dd-yyyy">mm-dd-yyyy</option>
 										<option value="dd-mm-yyyy">dd-mm-yyyy</option>
-										<option value="yyyy-mm-dd">yyyy-mm-dd</option>
+										<option value="yyyy-mm-dd" selected>yyyy-mm-dd</option>
 									</select>
 								</td>
 							</tr>
@@ -144,7 +144,7 @@
 								<td>
 									<select class="select2" name="timezone" style="width:300px;">
 										{foreach item=TIMEZONE from=$TIMEZONES}
-											<option value="{$TIMEZONE}" {if $TIMEZONE eq 'America/Los_Angeles'}selected{/if}>{vtranslate($TIMEZONE, 'Users')}</option>
+											<option value="{$TIMEZONE}" {if $TIMEZONE eq 'Asia/Tehran'}selected{/if}>{vtranslate($TIMEZONE, 'Users')}</option>
 										{/foreach}
 									</select>
 								</td>

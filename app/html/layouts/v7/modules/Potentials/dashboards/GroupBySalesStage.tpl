@@ -66,7 +66,11 @@
 			<span class="col-lg-7">
                 <div class="input-daterange input-group dateRange widgetFilter" id="datepicker" name="expectedclosedate">
                     <input type="text" class="input-sm form-control" name="start" style="height:30px;"/>
-                    <span class="input-group-addon">to</span>
+                    {**PVTPATCHER-5BB128939939BDAC2D38CA2233C2F512-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<span class="input-group-addon">{vtranslate('to','ParsVT')}</span>
+{** REPLACED-5BB128939939BDAC2D38CA2233C2F512// <span class="input-group-addon">to</span>**}
+{**PVTPATCHER-5BB128939939BDAC2D38CA2233C2F512-FINISH**}
                     <input type="text" class="input-sm form-control" name="end" style="height:30px;"/>
                 </div>
 			</span>

@@ -44,7 +44,7 @@ $HELPDESK_SUPPORT_EMAIL_REPLY_ID = $HELPDESK_SUPPORT_EMAIL_ID;
       db_name
 */
 
-$dbconfig['db_server'] = 'mariadb';
+$dbconfig['db_server'] = 'mysql';
 $dbconfig['db_port'] = ':3306';
 $dbconfig['db_username'] = 'vtiger_user';
 $dbconfig['db_password'] = 'vtiger_user@123';

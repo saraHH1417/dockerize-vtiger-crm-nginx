@@ -14,7 +14,11 @@
                      {if $RECORD_ID neq ''}
                         <h3 class="editHeader" style="margin-top:5px;" title="{vtranslate('LBL_EDITING', $MODULE)} {vtranslate($SINGLE_MODULE_NAME, $MODULE)} {$RECORD_STRUCTURE_MODEL->getRecordName()}">{vtranslate('LBL_EDITING', $MODULE)} {vtranslate($SINGLE_MODULE_NAME, $MODULE)} - {$RECORD_STRUCTURE_MODEL->getRecordName()}</h3>
                      {else}
-                        <h3 class="editHeader" style="margin-top:5px;">{vtranslate('LBL_CREATING_NEW', $MODULE)} {vtranslate($SINGLE_MODULE_NAME, $MODULE)}</h3>
+                        <h3 class="editHeader" style="margin-top:5px;">{**PVTPATCHER-84B1760EBF8A0B078A4FB3CB70CC8084-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE eq 'fa_ir' or  $LANGUAGE eq 'fa_af'}{vtranslate($SINGLE_MODULE_NAME, $MODULE)} {vtranslate('LBL_CREATING_NEW', $MODULE)}{else}{vtranslate('LBL_CREATING_NEW', $MODULE)} {vtranslate($SINGLE_MODULE_NAME, $MODULE)}{/if}
+{** REPLACED-84B1760EBF8A0B078A4FB3CB70CC8084// {vtranslate('LBL_CREATING_NEW', $MODULE)} {vtranslate($SINGLE_MODULE_NAME, $MODULE)}**}
+{**PVTPATCHER-84B1760EBF8A0B078A4FB3CB70CC8084-FINISH**}</h3>
                      {/if}
                </div>
             <div class="editViewBody">

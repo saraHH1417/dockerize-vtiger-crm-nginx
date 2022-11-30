@@ -71,7 +71,11 @@
 				{foreach key=index item=COMMENT from=$COMMENTS}
 					{assign var=CREATOR_NAME value={decode_html($COMMENT->getCommentedByName())}}
 					<div class="commentDetails">
-						<div class="singleComment" {if $COMMENT->get('is_private')}style="background: #fff9ea;"{/if}>
+						{**PVTPATCHER-C4BF82AC43EDED247FE861BE7075D319-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<div class="singleComment" {if $COMMENT->get('is_private')}style="background: #ffffbe;"{elseif !empty($COMMENT->get('customer'))}style="background: #bee1ff;"{/if}>
+{** REPLACED-C4BF82AC43EDED247FE861BE7075D319// <div class="singleComment" {if $COMMENT->get('is_private')}style="background: #fff9ea;"{/if}>**}
+{**PVTPATCHER-C4BF82AC43EDED247FE861BE7075D319-FINISH**}
 							<input type="hidden" name='is_private' value="{$COMMENT->get('is_private')}">
 							{assign var=PARENT_COMMENT_MODEL value=$COMMENT->getParentCommentModel()}
 							{assign var=CHILD_COMMENTS_MODEL value=$COMMENT->getChildComments()}

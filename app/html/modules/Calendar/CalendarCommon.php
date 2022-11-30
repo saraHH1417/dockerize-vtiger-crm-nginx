@@ -104,6 +104,11 @@ function addAcceptEventLink($body,$user_id,$recordModel) {
     //$AcceptTrackingUrl not found in body of template
     $acceptLink = '<div class="invitationresponse"><a href="' . 
             $acceptInvitationUrl. '" target="_blank">Accept - Add Event to Vtiger Calendar</a></div>';
+/**PVTPATCHER-6333173DAFB564C1A7F63EF8DC2CEF95-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+$acceptLink = '<div class="invitationresponse"><a href="' .
+            $acceptInvitationUrl. '" target="_blank">'.vtranslate("Accept - Add Event to Vtiger Calendar","Calendar").'</a></div>';
+/**PVTPATCHER-6333173DAFB564C1A7F63EF8DC2CEF95-FINISH**/
     return substr_replace($body, $acceptLink, strpos($body, '</body>'), 0);
 }
 

@@ -8,7 +8,11 @@
 * All Rights Reserved.
 ********************************************************************************/
 -->*}
-{strip}
+{**PVTPATCHER-CE3BA520FDFC7C33703210C805E343AE-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{strip}{if $LANGUAGE neq 'fa_ir' and  $LANGUAGE neq 'fa_af'}{$right='right'}{else}{$right='left'}{/if}
+{** REPLACED-CE3BA520FDFC7C33703210C805E343AE// {strip}**}
+{**PVTPATCHER-CE3BA520FDFC7C33703210C805E343AE-FINISH**}
     <div class="container-fluid" id="layoutEditorContainer">
         <input id="selectedModuleName" type="hidden" value="{$SELECTED_MODULE_NAME}" />
         <div class="widget_header row-fluid">
@@ -62,7 +66,11 @@
 										{if $IS_BLOCK_SORTABLE}<img class="alignMiddle" src="{vimage_path('drag.png')}" />&nbsp;&nbsp;{/if}
                                         <strong>{vtranslate($BLOCK_LABEL_KEY, $SELECTED_MODULE_NAME)}</strong>
                                     </div>
-                                    <div class="span6 marginLeftZero" style="float:right !important;"><div class="pull-right btn-toolbar blockActions" style="margin: 4px;">
+                                    <div class="span6 marginLeftZero" style="{**PVTPATCHER-80594FF09963DCA866B2F1E698A901E1-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+float:{$right} !important;
+{** REPLACED-80594FF09963DCA866B2F1E698A901E1// float:right !important;**}
+{**PVTPATCHER-80594FF09963DCA866B2F1E698A901E1-FINISH**}"><div class="pull-right btn-toolbar blockActions" style="margin: 4px;">
                                             {if $BLOCK_MODEL->isAddCustomFieldEnabled()}
                                                 <div class="btn-group">
                                                     <button class="btn addCustomField" type="button">

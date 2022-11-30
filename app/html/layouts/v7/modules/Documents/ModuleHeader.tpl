@@ -38,7 +38,15 @@
 							{/if}
 						{/foreach}
 					{/foreach}
-					<p  class="current-filter-name filter-name pull-left cursorPointer" title="{$CVNAME}">&nbsp;<span class="fa fa-angle-right pull-left" aria-hidden="true"></span><a  href='{$MODULE_MODEL->getListViewUrl()}&viewname={$VIEWID}'>&nbsp;{$CVNAME}&nbsp;</a> </p>
+					<p  class="current-filter-name filter-name pull-left cursorPointer" title="{**PVTPATCHER-E6C09A80D575254A6089978A2F7DD7D1-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($CVNAME, $MODULE)}
+{** REPLACED-E6C09A80D575254A6089978A2F7DD7D1// {$CVNAME}**}
+{**PVTPATCHER-E6C09A80D575254A6089978A2F7DD7D1-FINISH**}">&nbsp;<span class="fa fa-angle-right pull-left" aria-hidden="true"></span><a  href='{$MODULE_MODEL->getListViewUrl()}&viewname={$VIEWID}'>&nbsp;{**PVTPATCHER-E6C09A80D575254A6089978A2F7DD7D1-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($CVNAME, $MODULE)}
+{** REPLACED-E6C09A80D575254A6089978A2F7DD7D1// {$CVNAME}**}
+{**PVTPATCHER-E6C09A80D575254A6089978A2F7DD7D1-FINISH**}&nbsp;</a> </p>
 				{/if}
 				{assign var=SINGLE_MODULE_NAME value='SINGLE_'|cat:$MODULE}
 				{if $RECORD and $smarty.request.view eq 'Edit'}

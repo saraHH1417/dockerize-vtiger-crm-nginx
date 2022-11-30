@@ -10,7 +10,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+        {**PVTPATCHER-8B2BA9E3DB68F85F6AC43821A788DA94-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if vglobal('default_language') eq 'fa_ir'}
+         <link type="text/css" rel="stylesheet" href="modules/ParsVT/resources/styles/fonts/fonts.php?font=IRANSans" media="screen" />
+        {/if}
         <style type="text/css">
+{** REPLACED-8B2BA9E3DB68F85F6AC43821A788DA94// <style type="text/css">**}
+{**PVTPATCHER-8B2BA9E3DB68F85F6AC43821A788DA94-FINISH**}
             body{
                 font-family: Tahoma, "Trebuchet MS","Lucida Grande",Verdana !important;
                 //background: #F5FAEE !important;/*#f1f6e8;*/
@@ -76,16 +83,34 @@
             .line{
 
             }
-        </style>
+        {**PVTPATCHER-6E7907C66CC3BB561EEDB1CF2A4402B2-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if vglobal('default_language') eq 'fa_ir'}
+            #content, #btn {
+               direction: rtl;
+               font-family: 'VtigerFont', Tahoma;
+            }
+            {/if}
+            </style>
+{** REPLACED-6E7907C66CC3BB561EEDB1CF2A4402B2// </style>**}
+{**PVTPATCHER-6E7907C66CC3BB561EEDB1CF2A4402B2-FINISH**}
         <script language='JavaScript'>
             function checkPassword() {
                 var password = document.getElementById('password').value;
                 var confirmPassword = document.getElementById('confirmPassword').value;
                 if (password == '' && confirmPassword == '') {
-                    alert('Please enter new Password');
+                    {**PVTPATCHER-B8992C9C1242A6E88E93C53C44F0E232-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+alert('{vtranslate('Please enter new Password', 'ParsVT')}');
+{** REPLACED-B8992C9C1242A6E88E93C53C44F0E232// alert('Please enter new Password');**}
+{**PVTPATCHER-B8992C9C1242A6E88E93C53C44F0E232-FINISH**}
                     return false;
                 } else if (password != confirmPassword) {
-                    alert('Password and Confirm Password should be same');
+                    {**PVTPATCHER-CC5580946358679AFF6F1494D6498A80-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+alert('{vtranslate('Password and Confirm Password should be same', 'ParsVT')}');
+{** REPLACED-CC5580946358679AFF6F1494D6498A80// alert('Password and Confirm Password should be same');**}
+{**PVTPATCHER-CC5580946358679AFF6F1494D6498A80-FINISH**}
                     return false;
                 } else {
                     return true;
@@ -121,7 +146,11 @@
                                     <tr><td></td></tr>
                                     <tr>
                                         <td></td>
-                                        <td style="text-align:right"><input type="submit" id="btn" value="Submit" onclick="return checkPassword();"/></td>
+                                        <td style="text-align:right"><input type="submit" id="btn" {**PVTPATCHER-AFB52953A4C9165B9BE8B6C0AC9CCD04-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+value="{vtranslate('Submit', 'ParsVT')}"
+{** REPLACED-AFB52953A4C9165B9BE8B6C0AC9CCD04// value="Submit"**}
+{**PVTPATCHER-AFB52953A4C9165B9BE8B6C0AC9CCD04-FINISH**} onclick="return checkPassword();"/></td>
                                     </tr>
                                 </table>
                             </form>

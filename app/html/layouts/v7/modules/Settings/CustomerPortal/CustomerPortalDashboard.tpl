@@ -23,14 +23,27 @@
 			{if $module eq 'HelpDesk' && isset($WIDGETS_MODULE_LIST['HelpDesk'])}
 				<div class="portal-record-widget-container" >
 					<div class="portal-record-widget-content" >
-						<h5>{vtranslate('LBL_RECENT',$QUALIFIED_MODULE)} {vtranslate({$module},'Vtiger')} {vtranslate('LBL_REC_WIDGET',$QUALIFIED_MODULE)}</h5>
+						<h5>{**PVTPATCHER-6522BC5805B97375E1665C1F8DC78447-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+								{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('LBL_REC_WIDGET',$QUALIFIED_MODULE)} {vtranslate('LBL_RECENT',$QUALIFIED_MODULE)} {vtranslate({$module},'Vtiger')} 
+								{else}
+								{vtranslate('LBL_RECENT',$QUALIFIED_MODULE)} {vtranslate({$module},'Vtiger')} {vtranslate('LBL_REC_WIDGET',$QUALIFIED_MODULE)}
+								{/if}
+{** REPLACED-6522BC5805B97375E1665C1F8DC78447// {vtranslate('LBL_RECENT',$QUALIFIED_MODULE)} {vtranslate({$module},'Vtiger')} {vtranslate('LBL_REC_WIDGET',$QUALIFIED_MODULE)}**}
+{**PVTPATCHER-6522BC5805B97375E1665C1F8DC78447-FINISH**}</h5>
 					</div>
 
 					<div class="portal-record-control-container">
 						<div class="checkbox label-checkbox" style="padding: 10px 5px;">
 							<label>
 								<input id="{$module}" type="checkbox" class="widgetsInfo" value="{$status}" name="widgets[]" {if $status}checked{/if}/>
-								&nbsp;&nbsp;Enable
+								{**PVTPATCHER-F26CE3E625DE23F01895E73843D53A55-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+&nbsp;&nbsp;{vtranslate('Enable',$QUALIFIED_MODULE)}
+{** REPLACED-F26CE3E625DE23F01895E73843D53A55// &nbsp;&nbsp;Enable**}
+{**PVTPATCHER-F26CE3E625DE23F01895E73843D53A55-FINISH**}
 							</label>
 						</div>
 					</div>
@@ -68,14 +81,27 @@
 			{if $module neq 'HelpDesk' && isset($WIDGETS_MODULE_LIST[$module])}
 				<div class="portal-helpdesk-widget-container" >
 					<div class="portal-helpdesk-widget-header" >
-						<h5>{vtranslate('LBL_RECENT',$QUALIFIED_MODULE)} {vtranslate({$module},'Vtiger')} {vtranslate('LBL_REC_WIDGET',$QUALIFIED_MODULE)}</h5>
+						<h5>{**PVTPATCHER-6522BC5805B97375E1665C1F8DC78447-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+								{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('LBL_REC_WIDGET',$QUALIFIED_MODULE)} {vtranslate('LBL_RECENT',$QUALIFIED_MODULE)} {vtranslate({$module},'Vtiger')} 
+								{else}
+								{vtranslate('LBL_RECENT',$QUALIFIED_MODULE)} {vtranslate({$module},'Vtiger')} {vtranslate('LBL_REC_WIDGET',$QUALIFIED_MODULE)}
+								{/if}
+{** REPLACED-6522BC5805B97375E1665C1F8DC78447// {vtranslate('LBL_RECENT',$QUALIFIED_MODULE)} {vtranslate({$module},'Vtiger')} {vtranslate('LBL_REC_WIDGET',$QUALIFIED_MODULE)}**}
+{**PVTPATCHER-6522BC5805B97375E1665C1F8DC78447-FINISH**}</h5>
 					</div>
 
 					<div class="portal-helpdesk-widget-controls">
 						<div class="checkbox label-checkbox" style="padding: 10px 5px;">
 							<label>
 								<input class="widgetsInfo" id="{$module}" type="checkbox" value="{$status}" name="widgets[]" {if $status}checked{/if}/>
-								&nbsp;&nbsp;Enable
+								{**PVTPATCHER-F26CE3E625DE23F01895E73843D53A55-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+&nbsp;&nbsp;{vtranslate('Enable',$QUALIFIED_MODULE)}
+{** REPLACED-F26CE3E625DE23F01895E73843D53A55// &nbsp;&nbsp;Enable**}
+{**PVTPATCHER-F26CE3E625DE23F01895E73843D53A55-FINISH**}
 							</label>
 						</div>
 					</div>

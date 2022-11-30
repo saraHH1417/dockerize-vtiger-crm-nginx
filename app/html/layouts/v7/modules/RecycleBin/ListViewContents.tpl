@@ -55,7 +55,11 @@
                                 {else}
                                     <i class="fa fa-sort customsort"></i>
                                 {/if}
-                                &nbsp;{vtranslate($LISTVIEW_HEADER->get('label'), $MODULE)}&nbsp;
+                                &nbsp;{**PVTPATCHER-6676BCEA932ADDD32D2BF18FF2FAE423-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($LISTVIEW_HEADER->get('label'), $SOURCE_MODULE)}
+{** REPLACED-6676BCEA932ADDD32D2BF18FF2FAE423// {vtranslate($LISTVIEW_HEADER->get('label'), $MODULE)}**}
+{**PVTPATCHER-6676BCEA932ADDD32D2BF18FF2FAE423-FINISH**}&nbsp;
                             </a>
                             {if $COLUMN_NAME eq $LISTVIEW_HEADER->get('name')}
                                 <a href="#" class="removeSorting"><i class="fa fa-remove"></i></a>

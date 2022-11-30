@@ -2637,6 +2637,12 @@ Vtiger.Class("Vtiger_List_Js", {
 
 			}
 			var windowBottom = jQuery(window).height() - dropdown.offset().top;
+/**PVTPATCHER-DF2756DC40DD3114DD8C990C5BC6F361-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+var crmlanguage = app.getUserLanguage().slice(0,2);
+			var calccurrtargetLeft = currtargetLeft;
+			if (typeof(crmlanguage) !== 'undefined' && crmlanguage === 'fa') { calccurrtargetLeft = currtargetLeft - 130; }
+/**PVTPATCHER-DF2756DC40DD3114DD8C990C5BC6F361-FINISH**/
 			if (windowBottom < 250) {
 				ftop = 'auto';
 				fbottom = dropdownBottom + 'px';
@@ -2649,7 +2655,12 @@ Vtiger.Class("Vtiger_List_Js", {
 				'display': 'block',
 				'position': 'absolute',
 				'top': ftop,
-				'left': currtargetLeft + 'px',
+/**PVTPATCHER-20FBA7B32B7AF034880C08A3708EAD77-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+'left': calccurrtargetLeft + 'px',
+				'width': '130px',
+/** REPLACED-20FBA7B32B7AF034880C08A3708EAD77// 'left': currtargetLeft + 'px',**/
+/**PVTPATCHER-20FBA7B32B7AF034880C08A3708EAD77-FINISH**/
 				'bottom': fbottom
 			}).appendTo(containerTarget);
 

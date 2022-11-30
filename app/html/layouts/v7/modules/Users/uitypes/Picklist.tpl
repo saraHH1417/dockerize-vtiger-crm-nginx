@@ -37,7 +37,11 @@
 			 {else}
 				{assign var=OPTION_VALUE value=Vtiger_Util_Helper::toSafeHTML($PICKLIST_NAME)}
 			 {/if}
-			 <option value="{$OPTION_VALUE}" {if decode_html($FIELD_MODEL->get('fieldvalue')) eq decode_html($PICKLIST_NAME)} selected {/if}>{$PICKLIST_VALUE}</option>
+			 <option value="{$OPTION_VALUE}" {if decode_html($FIELD_MODEL->get('fieldvalue')) eq decode_html($PICKLIST_NAME)} selected {/if}>{**PVTPATCHER-E3C3E3316B9C41F481001E9946798F15-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($PICKLIST_VALUE)}
+{** REPLACED-E3C3E3316B9C41F481001E9946798F15// {$PICKLIST_VALUE}**}
+{**PVTPATCHER-E3C3E3316B9C41F481001E9946798F15-FINISH**}</option>
 		{/foreach}
 	</select>
 {/strip}

@@ -116,7 +116,11 @@
 					{if $MODULE_NAME neq 'Events'}
 						<tr>
 							<td class="verticalAlignMiddleImp">
-								<input class="modulesCheckBox" type="checkbox" name="permissions[{$TABID}][is_permitted]" data-value="{$TABID}" data-module-state="" {if $RECORD_MODEL->hasModulePermission($PROFILE_MODULE)}checked="true"{else} data-module-unchecked="true" {/if}> {$PROFILE_MODULE->get('label')|vtranslate:$PROFILE_MODULE->getName()}
+								<input class="modulesCheckBox" type="checkbox" name="permissions[{$TABID}][is_permitted]" data-value="{$TABID}" data-module-state="" {if $RECORD_MODEL->hasModulePermission($PROFILE_MODULE)}checked="true"{else} data-module-unchecked="true" {/if}> {**PVTPATCHER-E723797056DDCE40647A55254A6C29B1-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($PROFILE_MODULE->get('label'),$PROFILE_MODULE->getName())}
+{** REPLACED-E723797056DDCE40647A55254A6C29B1// {$PROFILE_MODULE->get('label')|vtranslate:$PROFILE_MODULE->getName()}**}
+{**PVTPATCHER-E723797056DDCE40647A55254A6C29B1-FINISH**}
 							</td>
 							{assign var="BASIC_ACTION_ORDER" value=array(2,3,0,1)}
 							{foreach from=$BASIC_ACTION_ORDER item=ORDERID}

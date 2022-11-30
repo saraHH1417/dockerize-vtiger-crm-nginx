@@ -11,7 +11,11 @@
 	<div class="modal-dialog modal-lg configColumnsContainer">
 		<div class="modal-content">
 			{assign var=HEADER_TITLE value={vtranslate('LBL_CONFIG_COLUMNS', $MODULE)}}
-			{include file="ModalHeader.tpl"|vtemplate_path:$MODULE TITLE=$HEADER_TITLE|cat:' - '|cat:$CV_MODEL->get('viewname')}
+			{**PVTPATCHER-3E4ECCA9EC79D480349FC4851DB16DC8-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{include file="ModalHeader.tpl"|vtemplate_path:$MODULE TITLE=$HEADER_TITLE|cat:' - '|cat:vtranslate($CV_MODEL->get('viewname'), $QUALIFIED_MODULE)}
+{** REPLACED-3E4ECCA9EC79D480349FC4851DB16DC8// {include file="ModalHeader.tpl"|vtemplate_path:$MODULE TITLE=$HEADER_TITLE|cat:' - '|cat:$CV_MODEL->get('viewname')}**}
+{**PVTPATCHER-3E4ECCA9EC79D480349FC4851DB16DC8-FINISH**}
 			<form class="form-horizontal configColumnsForm" method="post" action="index.php">
 				<input type="hidden" name="module" value="CustomView"/>
 				<input type="hidden" name="action" value="SaveAjax"/>

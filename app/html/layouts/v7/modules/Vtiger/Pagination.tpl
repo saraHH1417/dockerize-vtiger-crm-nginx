@@ -32,7 +32,11 @@
                     </div>
                     <div class="listview-pagejump">
                         <input type="text" id="pageToJump" placeholder="{vtranslate('LBL_LISTVIEW_JUMP_TO',$moduleName)}" class="{$CLASS_VIEW_PAGING_INPUT} text-center"/>&nbsp;
-                        <button type="button" id="pageToJumpSubmit" class="btn btn-success {$CLASS_VIEW_PAGING_INPUT_SUBMIT} text-center">{'GO'}</button>
+                        <button type="button" id="pageToJumpSubmit" class="btn btn-success {$CLASS_VIEW_PAGING_INPUT_SUBMIT} text-center">{**PVTPATCHER-2E43BC3A9D430F397E05D46635E3621B-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('GO','ParsVT')}
+{** REPLACED-2E43BC3A9D430F397E05D46635E3621B// {'GO'}**}
+{**PVTPATCHER-2E43BC3A9D430F397E05D46635E3621B-FINISH**}</button>
                     </div>    
                 </li>
             </ul>

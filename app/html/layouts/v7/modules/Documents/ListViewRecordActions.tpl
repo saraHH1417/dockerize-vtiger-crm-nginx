@@ -40,10 +40,18 @@
             {assign var=RECORD_ID value=$LISTVIEW_ENTRY->getId()}
             {assign var="DOCUMENT_RECORD_MODEL" value=Vtiger_Record_Model::getInstanceById($RECORD_ID)}
             {if $DOCUMENT_RECORD_MODEL->get('filename') && $DOCUMENT_RECORD_MODEL->get('filestatus')}
-                <li><a data-id="{$LISTVIEW_ENTRY->getId()}" name="viewfile" href="javascript:void(0)" data-filelocationtype="{$DOCUMENT_RECORD_MODEL->get('filelocationtype')}" data-filename="{$DOCUMENT_RECORD_MODEL->get('filename')}" onclick="Vtiger_Header_Js.previewFile(event)">File Preview</a></li>
+                <li><a data-id="{$LISTVIEW_ENTRY->getId()}" name="viewfile" href="javascript:void(0)" data-filelocationtype="{$DOCUMENT_RECORD_MODEL->get('filelocationtype')}" data-filename="{$DOCUMENT_RECORD_MODEL->get('filename')}" onclick="Vtiger_Header_Js.previewFile(event)">{**PVTPATCHER-081D6541A33BFF15135A90FCB8E7BB3F-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('File Preview', $MODULE)}
+{** REPLACED-081D6541A33BFF15135A90FCB8E7BB3F// File Preview**}
+{**PVTPATCHER-081D6541A33BFF15135A90FCB8E7BB3F-FINISH**}</a></li>
             {/if}
             {if $DOCUMENT_RECORD_MODEL->get('filename') && $DOCUMENT_RECORD_MODEL->get('filestatus') && $DOCUMENT_RECORD_MODEL->get('filelocationtype') eq 'I'}
-                <li><a data-id="{$LISTVIEW_ENTRY->getId()}" name="downloadfile" href="{$DOCUMENT_RECORD_MODEL->getDownloadFileURL()}">Download</a></li>
+                <li><a data-id="{$LISTVIEW_ENTRY->getId()}" name="downloadfile" {**PVTPATCHER-5960D666DCF8B2F8CA02998D5045627E-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+href="{$DOCUMENT_RECORD_MODEL->getDownloadFileURL()}">{vtranslate('Download', $MODULE)}</a>
+{** REPLACED-5960D666DCF8B2F8CA02998D5045627E// href="{$DOCUMENT_RECORD_MODEL->getDownloadFileURL()}">Download</a>**}
+{**PVTPATCHER-5960D666DCF8B2F8CA02998D5045627E-FINISH**}</li>
             {/if}
         </ul>
     </span>

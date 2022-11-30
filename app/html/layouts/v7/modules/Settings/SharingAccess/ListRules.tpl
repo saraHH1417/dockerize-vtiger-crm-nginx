@@ -46,10 +46,18 @@
                                             {$smarty.foreach.customRuleIterator.index + 1}
                                         </td>
                                         <td>
-                                            <a href="{$RULE_MODEL->getSourceDetailViewUrl()}">{vtranslate('SINGLE_'|cat:$RULE_MODEL->getSourceMemberName(), $QUALIFIED_MODULE)}::{$RULE_MODEL->getSourceMember()->getName()}</a>
+                                            <a href="{$RULE_MODEL->getSourceDetailViewUrl()}">{**PVTPATCHER-4DCC0364367FA5D0E1DE996D2CED3E12-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('SINGLE_'|cat:$RULE_MODEL->getSourceMemberName(), $QUALIFIED_MODULE)}::{vtranslate($RULE_MODEL->getSourceMember()->getName())}
+{** REPLACED-4DCC0364367FA5D0E1DE996D2CED3E12// {vtranslate('SINGLE_'|cat:$RULE_MODEL->getSourceMemberName(), $QUALIFIED_MODULE)}::{$RULE_MODEL->getSourceMember()->getName()}**}
+{**PVTPATCHER-4DCC0364367FA5D0E1DE996D2CED3E12-FINISH**}</a>
                                         </td>
                                         <td>
-                                            <a href="{$RULE_MODEL->getTargetDetailViewUrl()}">{vtranslate('SINGLE_'|cat:$RULE_MODEL->getTargetMemberName(), $QUALIFIED_MODULE)}::{$RULE_MODEL->getTargetMember()->getName()}</a>
+                                            <a href="{$RULE_MODEL->getTargetDetailViewUrl()}">{**PVTPATCHER-FE93BA9F9028CF2646B652460FC0ECC9-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('SINGLE_'|cat:$RULE_MODEL->getTargetMemberName(), $QUALIFIED_MODULE)}::{vtranslate($RULE_MODEL->getTargetMember()->getName())}
+{** REPLACED-FE93BA9F9028CF2646B652460FC0ECC9// {vtranslate('SINGLE_'|cat:$RULE_MODEL->getTargetMemberName(), $QUALIFIED_MODULE)}::{$RULE_MODEL->getTargetMember()->getName()}**}
+{**PVTPATCHER-FE93BA9F9028CF2646B652460FC0ECC9-FINISH**}</a>
                                         </td>
                                         <td>
                                             {if $RULE_MODEL->isReadOnly()}

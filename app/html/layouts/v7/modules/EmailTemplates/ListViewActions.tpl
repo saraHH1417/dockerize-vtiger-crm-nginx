@@ -126,7 +126,11 @@
                             {assign var=DEFAULT_FILTER_URL value=$MODULE_MODEL->getListViewUrl()|cat:"&viewname="|cat:$DEFAULT_FILTER_ID}
                         {/if}
                         {if $CVNAME neq 'All'}
-                            <div>{vtranslate('LBL_DISPLAYING_RESULTS',$MODULE)} {vtranslate('LBL_FROM',$MODULE)} <b>{$CVNAME}</b>. <a style="color:blue" href='{$DEFAULT_FILTER_URL}'>{vtranslate('LBL_SEARCH_IN',$MODULE)} {vtranslate('ALL',$MODULE)} {vtranslate($MODULE, $MODULE)}</a> </div>
+                            <div>{vtranslate('LBL_DISPLAYING_RESULTS',$MODULE)} {vtranslate('LBL_FROM',$MODULE)} <b>{**PVTPATCHER-08EC70BFDAA12CF1377A6D0769A28DF7-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($CVNAME , $MODULE)}
+{** REPLACED-08EC70BFDAA12CF1377A6D0769A28DF7// {$CVNAME}**}
+{**PVTPATCHER-08EC70BFDAA12CF1377A6D0769A28DF7-FINISH**}</b>. <a style="color:blue" href='{$DEFAULT_FILTER_URL}'>{vtranslate('LBL_SEARCH_IN',$MODULE)} {vtranslate('ALL',$MODULE)} {vtranslate($MODULE, $MODULE)}</a> </div>
                         {/if}
                     {/if}
                 {/if}

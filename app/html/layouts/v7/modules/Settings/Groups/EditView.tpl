@@ -22,7 +22,11 @@
 						{if !empty($MODE)}
 							{vtranslate('LBL_EDITING', $MODULE)} {vtranslate('SINGLE_'|cat:$MODULE, $QUALIFIED_MODULE)} - {$RECORD_MODEL->getName()}
 						{else}
-							{vtranslate('LBL_CREATING_NEW', $MODULE)} {vtranslate('SINGLE_'|cat:$MODULE, $QUALIFIED_MODULE)}
+							{**PVTPATCHER-754CB1D2295E2AF0B2A57B4E22D903FF-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE neq 'fa_ir' and  $LANGUAGE neq 'fa_af'}{vtranslate('SINGLE_'|cat:$MODULE, $QUALIFIED_MODULE)} {vtranslate('LBL_CREATING_NEW', $MODULE)}{else}{vtranslate('LBL_CREATING_NEW', $MODULE)} {vtranslate('SINGLE_'|cat:$MODULE, $QUALIFIED_MODULE)}{/if}
+{** REPLACED-754CB1D2295E2AF0B2A57B4E22D903FF// {vtranslate('LBL_CREATING_NEW', $MODULE)} {vtranslate('SINGLE_'|cat:$MODULE, $QUALIFIED_MODULE)}**}
+{**PVTPATCHER-754CB1D2295E2AF0B2A57B4E22D903FF-FINISH**}
 						{/if}
 					</h4>
 					<hr>

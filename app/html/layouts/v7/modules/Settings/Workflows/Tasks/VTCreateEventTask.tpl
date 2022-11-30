@@ -199,14 +199,33 @@
                                     </span>
                                 </div>
                             </div>
-                            <div class="row form-group {if $TASK_OBJECT->recurringtype eq 'Weekly'}show{else}hide{/if}" id="repeatWeekUI">
+                            {**PVTPATCHER-A8F177B3B6446067C8CC9C1AD2143CF9-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<div class="row form-group {if $TASK_OBJECT->recurringtype eq 'Weekly'}show{else}hide{/if}" id="repeatWeekUI">
+                                {if $LANGUAGE eq 'fa_ir' or  $LANGUAGE eq 'fa_af'}
+                                {**PVTPATCHER-9B73DA051686CE1496DE3D5C064FCFDD-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE neq 'fa_ir' and  $LANGUAGE neq 'fa_af'}
+                                <div class="col-sm-1 col-xs-1"><input name="sat_flag" value="saturday" {if $TASK_OBJECT->sat_flag eq "saturday"}checked{/if} type="checkbox">{vtranslate('LBL_SM_SAT', $QUALIFIED_MODULE)}</div>
+                                {/if}
+{** REPLACED-9B73DA051686CE1496DE3D5C064FCFDD// <div class="col-sm-1 col-xs-1"><input name="sat_flag" value="saturday" {if $TASK_OBJECT->sat_flag eq "saturday"}checked{/if} type="checkbox">{vtranslate('LBL_SM_SAT', $QUALIFIED_MODULE)}</div>**}
+{**PVTPATCHER-9B73DA051686CE1496DE3D5C064FCFDD-FINISH**}
+                                {/if}
+{** REPLACED-A8F177B3B6446067C8CC9C1AD2143CF9// <div class="row form-group {if $TASK_OBJECT->recurringtype eq 'Weekly'}show{else}hide{/if}" id="repeatWeekUI">**}
+{**PVTPATCHER-A8F177B3B6446067C8CC9C1AD2143CF9-FINISH**}
                                 <div class="col-sm-1 col-xs-1"><input name="sun_flag" value="sunday" {if $TASK_OBJECT->sun_flag eq "sunday"}checked{/if} type="checkbox"/>{vtranslate('LBL_SM_SUN', $QUALIFIED_MODULE)}</div>
                                 <div class="col-sm-1 col-xs-1"><input name="mon_flag" value="monday" {if $TASK_OBJECT->mon_flag eq "monday"}checked{/if} type="checkbox">{vtranslate('LBL_SM_MON', $QUALIFIED_MODULE)}</div>
                                 <div class="col-sm-1 col-xs-1"><input name="tue_flag" value="tuesday" {if $TASK_OBJECT->tue_flag eq "tuesday"}checked{/if} type="checkbox">{vtranslate('LBL_SM_TUE', $QUALIFIED_MODULE)}</div>
                                 <div class="col-sm-1 col-xs-1"><input name="wed_flag" value="wednesday" {if $TASK_OBJECT->wed_flag eq "wednesday"}checked{/if} type="checkbox">{vtranslate('LBL_SM_WED', $QUALIFIED_MODULE)}</div>
                                 <div class="col-sm-1 col-xs-1"><input name="thu_flag" value="thursday" {if $TASK_OBJECT->thu_flag eq "thursday"}checked{/if} type="checkbox">{vtranslate('LBL_SM_THU', $QUALIFIED_MODULE)}</div>
                                 <div class="col-sm-1 col-xs-1"><input name="fri_flag" value="friday" {if $TASK_OBJECT->fri_flag eq "friday"}checked{/if} type="checkbox">{vtranslate('LBL_SM_FRI', $QUALIFIED_MODULE)}</div>
+                                {**PVTPATCHER-9B73DA051686CE1496DE3D5C064FCFDD-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE neq 'fa_ir' and  $LANGUAGE neq 'fa_af'}
                                 <div class="col-sm-1 col-xs-1"><input name="sat_flag" value="saturday" {if $TASK_OBJECT->sat_flag eq "saturday"}checked{/if} type="checkbox">{vtranslate('LBL_SM_SAT', $QUALIFIED_MODULE)}</div>
+                                {/if}
+{** REPLACED-9B73DA051686CE1496DE3D5C064FCFDD// <div class="col-sm-1 col-xs-1"><input name="sat_flag" value="saturday" {if $TASK_OBJECT->sat_flag eq "saturday"}checked{/if} type="checkbox">{vtranslate('LBL_SM_SAT', $QUALIFIED_MODULE)}</div>**}
+{**PVTPATCHER-9B73DA051686CE1496DE3D5C064FCFDD-FINISH**}
                             </div>
                             <div class="{if $TASK_OBJECT->recurringtype eq 'Monthly'}show{else}hide{/if}" id="repeatMonthUI">
                                 <div class="row form-group">

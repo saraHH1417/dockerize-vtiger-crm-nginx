@@ -31,7 +31,11 @@
 									</a>
 								</span>
                             </div>&nbsp;&nbsp;
-                            <input style="opacity: 0;" type="checkbox" data-on-color="success" class="taskStatus" data-statusurl="{$TASK->getChangeStatusUrl()}" {if $TASK->isActive()} checked="" value="on" {else} value="off" {/if} />
+                            <input style="opacity: 0;" type="checkbox" data-on-color="success" {**PVTPATCHER-EDAC6C1D2053560F149EA50437A46EBE-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+class="taskStatus"   data-on-text="{vtranslate('Active', $QUALIFIED_MODULE)}" data-off-text="{vtranslate('InActive', $QUALIFIED_MODULE)}"
+{** REPLACED-EDAC6C1D2053560F149EA50437A46EBE// class="taskStatus"**}
+{**PVTPATCHER-EDAC6C1D2053560F149EA50437A46EBE-FINISH**} data-statusurl="{$TASK->getChangeStatusUrl()}" {if $TASK->isActive()} checked="" value="on" {else} value="off" {/if} />
                         </td>
                         <td class="listViewEntryValue">{vtranslate($TASK->getTaskType()->getLabel(),$QUALIFIED_MODULE)}</td>
 						<td><span class="pull-left">{Vtiger_Util_Helper::toSafeHTML($TASK->getName())}</span></td>

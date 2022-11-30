@@ -21,7 +21,11 @@
 			<input type=hidden name="timeFormatOptions" data-value='{$DAY_STARTS}' />
 			<div>
 				<h4 class="textOverflowEllipsis maxWidth50">
-					<img class="cursorPointer alignMiddle blockToggle {if !($IS_HIDDEN)} hide {/if}" src="{vimage_path('arrowRight.png')}" data-mode="hide" data-id={$BLOCK_LIST[$BLOCK_LABEL_KEY]->get('id')}>
+					<img class="cursorPointer alignMiddle blockToggle {if !($IS_HIDDEN)} hide {/if}" {**PVTPATCHER-421047CE3C16EBEE831D98C7B17BF7AE-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{if $LANGUAGE eq 'fa_ir' or  $LANGUAGE eq 'fa_af'}src="layouts/v7/modules/ParsVT/images/arrowLeft.png"{else}src="{vimage_path('arrowRight.png')}"{/if}
+{** REPLACED-421047CE3C16EBEE831D98C7B17BF7AE// src="{vimage_path('arrowRight.png')}"**}
+{**PVTPATCHER-421047CE3C16EBEE831D98C7B17BF7AE-FINISH**} data-mode="hide" data-id={$BLOCK_LIST[$BLOCK_LABEL_KEY]->get('id')}>
 					<img class="cursorPointer alignMiddle blockToggle {if ($IS_HIDDEN)} hide {/if}" src="{vimage_path('arrowdown.png')}" data-mode="show" data-id={$BLOCK_LIST[$BLOCK_LABEL_KEY]->get('id')}>&nbsp;
 					{vtranslate({$BLOCK_LABEL_KEY},{$MODULE_NAME})}
 				</h4>

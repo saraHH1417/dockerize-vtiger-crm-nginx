@@ -12,7 +12,11 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Vtiger</title>
+		{**PVTPATCHER-12F3AE3DCF91FEC8D4A0474F080BAE36-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<title>{vtranslate('Vtiger','ParsVT')}</title>
+{** REPLACED-12F3AE3DCF91FEC8D4A0474F080BAE36// <title>Vtiger</title>**}
+{**PVTPATCHER-12F3AE3DCF91FEC8D4A0474F080BAE36-FINISH**}
 		<link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
 		<link rel="stylesheet" href="../../{$TEMPLATE_WEBPATH}/resources/libs/angularjs/angular-material.min.css">
 		<!--link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic"-->

@@ -1,15 +1,11 @@
 FROM mysql:8.0.31
 
-ARG DBUSER;
-ARG DBPassword;
-ARG DBHOST;
-ARG DBNAME;
 
 RUN rm -rf /etc/my.cnf
 COPY my.cnf /etc
 
 
-COPY ./queries/database.sql /docker-entrypoint-initdb.d
+# COPY ./queries/database.sql /docker-entrypoint-initdb.d
 
 # ADD ./queries/database.sql /etc/mysql/data.sql
 

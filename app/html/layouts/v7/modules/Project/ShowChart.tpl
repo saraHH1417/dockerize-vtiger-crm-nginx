@@ -242,7 +242,20 @@
                     {assign var="PROJECT_TASK_MODEL" value=Vtiger_Module_Model::getInstance('ProjectTask')}
                     {assign var="IS_MODULE_EDITABLE" value=$PROJECT_TASK_MODEL->isPermitted('CreateView')}
                     {assign var=SINGLE_MODULE value="SINGLE_ProjectTask"}
-					{vtranslate('LBL_NO')} {vtranslate('ProjectTask', 'ProjectTask')} {vtranslate('LBL_FOUND')} {vtranslate('LBL_NO_DATE_VALUE_MSG', 'ProjectTask')}.{if $IS_MODULE_EDITABLE} <a href="{$PROJECT_TASK_MODEL->getCreateRecordUrl()}&projectid={$PARENT_ID}"> {vtranslate('LBL_CREATE')} </a>{/if}
+					{**PVTPATCHER-7BBA96A6161844D5DDA194177C0230E4-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+								{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+								{vtranslate('No %s found.', 'ParsVT',vtranslate('ProjectTask', 'ProjectTask'))}
+								{else}
+								{vtranslate('LBL_NO')} {vtranslate('ProjectTask', 'ProjectTask')} {vtranslate('LBL_FOUND')}
+								{/if}
+{** REPLACED-7BBA96A6161844D5DDA194177C0230E4// {vtranslate('LBL_NO')} {vtranslate('ProjectTask', 'ProjectTask')} {vtranslate('LBL_FOUND')}**}
+{**PVTPATCHER-7BBA96A6161844D5DDA194177C0230E4-FINISH**} {vtranslate('LBL_NO_DATE_VALUE_MSG', 'ProjectTask')}.{if $IS_MODULE_EDITABLE} <a href="{$PROJECT_TASK_MODEL->getCreateRecordUrl()}&projectid={$PARENT_ID}"> {**PVTPATCHER-83D8D502720DE3859215CF6D5741F524-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('LBL_CREATE')} {vtranslate('ProjectTask', 'ProjectTask')}
+{** REPLACED-83D8D502720DE3859215CF6D5741F524// {vtranslate('LBL_CREATE')}**}
+{**PVTPATCHER-83D8D502720DE3859215CF6D5741F524-FINISH**} </a>{/if}
 				</td>
 			</tr>
 		</tbody>

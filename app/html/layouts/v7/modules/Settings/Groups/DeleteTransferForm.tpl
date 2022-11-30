@@ -10,7 +10,11 @@
 
 {strip}
     <div class="modal-dialog modelContainer">
-        {assign var=HEADER_TITLE value={vtranslate('LBL_DELETE_RECORD', $QUALIFIED_MODULE)}|cat:" "|cat:{vtranslate('SINGLE_'|cat:$MODULE, $QUALIFIED_MODULE)}|cat:" - "|cat:{$RECORD_MODEL->getName()}}
+        {**PVTPATCHER-D74DD80217244A53F884787C57CF9D10-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=HEADER_TITLE value={vtranslate('LBL_DELETE_RECORD', $QUALIFIED_MODULE)}|cat:" "|cat:{vtranslate('SINGLE_'|cat:$MODULE, $QUALIFIED_MODULE)}|cat:" - "|cat:{vtranslate($RECORD_MODEL->getName())}}
+{** REPLACED-D74DD80217244A53F884787C57CF9D10// {assign var=HEADER_TITLE value={vtranslate('LBL_DELETE_RECORD', $QUALIFIED_MODULE)}|cat:" "|cat:{vtranslate('SINGLE_'|cat:$MODULE, $QUALIFIED_MODULE)}|cat:" - "|cat:{$RECORD_MODEL->getName()}}**}
+{**PVTPATCHER-D74DD80217244A53F884787C57CF9D10-FINISH**}
         {include file="ModalHeader.tpl"|vtemplate_path:$MODULE TITLE=$HEADER_TITLE}
         <div class="modal-content">
             <form class="form-horizontal" id="DeleteModal" name="AddComment" method="post" action="index.php">
@@ -36,7 +40,11 @@
                                     <optgroup label="{vtranslate('LBL_GROUPS', $QUALIFIED_MODULE)}">
                                         {foreach from=$ALL_GROUPS key=GROUP_ID item=GROUP_MODEL}
                                             {if $RECORD_MODEL->getId() != $GROUP_ID }
-                                                <option value="{$GROUP_ID}">{$GROUP_MODEL->getName()}</option>
+                                                <option value="{$GROUP_ID}">{**PVTPATCHER-1F3B6BA9A2C0D29ACC60941387C28813-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($GROUP_MODEL->getName())}
+{** REPLACED-1F3B6BA9A2C0D29ACC60941387C28813// {$GROUP_MODEL->getName()}**}
+{**PVTPATCHER-1F3B6BA9A2C0D29ACC60941387C28813-FINISH**}</option>
                                             {/if}
                                         {/foreach}
                                     </optgroup>

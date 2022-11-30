@@ -15,7 +15,11 @@
 					<h4 title="{vtranslate($MODULE, $MODULE)}" class="module-title pull-left text-uppercase">&nbsp;{vtranslate($MODULE, $MODULE)}&nbsp;</h4>
 				</span>
 				<span>
-					<p class="current-filter-name pull-left"><span class="fa fa-angle-right" aria-hidden="true"></span>&nbsp;{$VIEW}&nbsp;</p>
+					<p class="current-filter-name pull-left"><span class="fa fa-angle-right" aria-hidden="true"></span>&nbsp;{**PVTPATCHER-DA4523F14A0ECA30D1D280B7EEBB1DED-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate($VIEW, $MODULE)}
+{** REPLACED-DA4523F14A0ECA30D1D280B7EEBB1DED// {$VIEW}**}
+{**PVTPATCHER-DA4523F14A0ECA30D1D280B7EEBB1DED-FINISH**}&nbsp;</p>
 				</span>
 				<span>
 					<p class="current-filter-name pull-left textOverflowEllipsis" style="width:250px;"><span class="fa fa-angle-right" aria-hidden="true"></span>&nbsp;{vtranslate($SOURCE_MODULE,$SOURCE_MODULE)}&nbsp;</p>

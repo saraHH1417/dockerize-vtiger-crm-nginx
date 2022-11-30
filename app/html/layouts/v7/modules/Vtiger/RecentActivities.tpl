@@ -46,7 +46,16 @@
                                     {/if}
                                     <div class="update_info">
                                         <h5>
-                                            <span class="field-name">{$RECENT_ACTIVITY->getModifiedBy()->getName()}</span> {vtranslate('LBL_CREATED', $MODULE_NAME)}
+                                            {**PVTPATCHER-5A40342CAF0FE9EAAA7BA09102DA59AB-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+									{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+									{vtranslate('Created By %s', 'ParsVT', "<span class=\"field-name\">{$RECENT_ACTIVITY->getModifiedBy()->getName()}</span>")}
+									{else}
+									<span class="field-name">{$RECENT_ACTIVITY->getModifiedBy()->getName()}</span> {vtranslate('LBL_CREATED', $MODULE_NAME)}
+									{/if}
+{** REPLACED-5A40342CAF0FE9EAAA7BA09102DA59AB// <span class="field-name">{$RECENT_ACTIVITY->getModifiedBy()->getName()}</span> {vtranslate('LBL_CREATED', $MODULE_NAME)}**}
+{**PVTPATCHER-5A40342CAF0FE9EAAA7BA09102DA59AB-FINISH**}
                                         </h5>
                                     </div>
                                 </li>
@@ -75,7 +84,16 @@
                                     <div class="update_info">
                                         <div> 
                                             <h5>
-                                                <span class="field-name">{$RECENT_ACTIVITY->getModifiedBy()->getDisplayName()} </span> {vtranslate('LBL_UPDATED', $MODULE_NAME)}
+                                                {**PVTPATCHER-15F8F66971025B465D541A73C30A8AA4-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{assign var=CURRENT_USER_MODEL value=Users_Record_Model::getCurrentUserModel()}
+									{if $CURRENT_USER_MODEL->get('language') eq 'fa_ir' or  $CURRENT_USER_MODEL->get('language') eq 'fa_af'}
+									{vtranslate('Updated By %s', 'ParsVT', "<span class=\"field-name\">{$RECENT_ACTIVITY->getModifiedBy()->getDisplayName()}</span>")}
+									{else}
+									<span class="field-name">{$RECENT_ACTIVITY->getModifiedBy()->getDisplayName()} </span> {vtranslate('LBL_UPDATED', $MODULE_NAME)}
+									{/if}
+{** REPLACED-15F8F66971025B465D541A73C30A8AA4// <span class="field-name">{$RECENT_ACTIVITY->getModifiedBy()->getDisplayName()} </span> {vtranslate('LBL_UPDATED', $MODULE_NAME)}**}
+{**PVTPATCHER-15F8F66971025B465D541A73C30A8AA4-FINISH**}
                                             </h5>
                                         </div>
                                         {foreach item=FIELDMODEL from=$RECENT_ACTIVITY->getFieldInstances()}

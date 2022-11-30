@@ -1575,7 +1575,11 @@ Vtiger.Class('Settings_LayoutEditor_Js', {
 			app.helper.showConfirmationBox({'title': app.vtranslate('LBL_WARNING'),
 				'message'	: message,
 				buttons		:{
-								cancel	: {label: 'No', className: 'btn-default confirm-box-btn-pad pull-right'},
+/**PVTPATCHER-B731E4BC39AA36949B78F10862C246CC-START-lng730**/
+/** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **/
+cancel	: {label: app.vtranslate('No'), className: 'btn-default confirm-box-btn-pad pull-right'},
+/** REPLACED-B731E4BC39AA36949B78F10862C246CC// cancel	: {label: 'No', className: 'btn-default confirm-box-btn-pad pull-right'},**/
+/**PVTPATCHER-B731E4BC39AA36949B78F10862C246CC-FINISH**/
 								confirm	: {label: app.vtranslate('JS_FIELD_DELETE_CONFIRMATION'), className: 'confirm-box-ok confirm-box-btn-pad btn-primary'}
 							 }
 					}).then(function (data) {

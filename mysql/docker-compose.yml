@@ -1,7 +1,7 @@
 version: '3'
 services:
  # Mysql configuration
-  mariadb:
+  mysql:
     build: 
       context: .
       dockerfile: Dockerfile
@@ -12,15 +12,15 @@ services:
     ports:
         - "3324:3306"
     volumes:
-        - "parsvt_mariadb:/var/lib/mysql" 
+        - "parsvt_mysql:/var/lib/mysql"
     networks:
-      - mariadb
+      - mysql
 
 volumes:
-  parsvt_mariadb:
-    name: parsvt_mariadb
+  parsvt_mysql:
+    name: parsvt_mysql
 networks:
-  mariadb:
-    name: mariadb
+  mysql:
+    name: mysql
 
   

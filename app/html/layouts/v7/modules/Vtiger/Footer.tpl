@@ -9,9 +9,22 @@
 
 <footer class="app-footer">
 	<p>
-		Powered by vtiger CRM - {$VTIGER_VERSION}&nbsp;&nbsp;© 2004 - {date('Y')}&nbsp;&nbsp;
-		<a href="//www.vtiger.com" target="_blank">Vtiger</a>&nbsp;|&nbsp;
-		<a href="https://www.vtiger.com/privacy-policy" target="_blank">Privacy Policy</a>
+		{**PVTPATCHER-BF11CE5F46990149590ED39B6CE65144-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Powered by vtiger CRM','ParsVT')}
+{** REPLACED-BF11CE5F46990149590ED39B6CE65144// Powered by vtiger CRM**}
+{**PVTPATCHER-BF11CE5F46990149590ED39B6CE65144-FINISH**} - {$VTIGER_VERSION}&nbsp;&nbsp;© 2004 - {date('Y')}&nbsp;&nbsp;
+		{**PVTPATCHER-67C9592C8E1991BD00DD10F98955C1BE-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+<a href="//www.vtiger.com" target="_blank">{vtranslate('Vtiger','ParsVT')}</a>&nbsp;&nbsp;|&nbsp;
+		<a href="//www.vtiger.ir" target="_blank">{vtranslate('VTFarsi','ParsVT')}</a>&nbsp;&nbsp;|&nbsp;
+{** REPLACED-67C9592C8E1991BD00DD10F98955C1BE// <a href="//www.vtiger.com" target="_blank">Vtiger</a>&nbsp;|&nbsp;**}
+{**PVTPATCHER-67C9592C8E1991BD00DD10F98955C1BE-FINISH**}
+		<a href="https://www.vtiger.com/privacy-policy" target="_blank">{**PVTPATCHER-DDDDC614D67F7EEF554B4EE2EF550E1B-START-theme730**}
+{** Don't remove the Start and Finish Markup! Modified: 2022-11-30 10:51:01 **}
+{vtranslate('Privacy Policy','ParsVT')}
+{** REPLACED-DDDDC614D67F7EEF554B4EE2EF550E1B// Privacy Policy**}
+{**PVTPATCHER-DDDDC614D67F7EEF554B4EE2EF550E1B-FINISH**}</a>
 	</p>
 </footer>
 </div>
